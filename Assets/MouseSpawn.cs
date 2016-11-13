@@ -8,8 +8,10 @@ public class MouseSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+
+        ObjectPoolingManager.Instance.CreatePool(scratch, 200, 200);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,7 +19,13 @@ public class MouseSpawn : MonoBehaviour {
         if (Input.GetMouseButton(0)) 
         {
             mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(scratch, new Vector3(mouse.x, mouse.y, 3), Quaternion.identity);
+            GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
+            if (go != null)
+            {
+                go.transform.position = new Vector3(mouse.x, mouse.y, 3);
+                go.transform.rotation = Quaternion.identity;
+            }
+            //Instantiate(scratch, new Vector3(mouse.x, mouse.y, 3), Quaternion.identity);
         }
 	}
 }
