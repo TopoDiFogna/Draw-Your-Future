@@ -19,7 +19,6 @@ public class SplatterLife : MonoBehaviour {
 
 	void OnEnable()
     {
-        tr.localScale = scale;
         timer = 0f;
         vanishing = false;
     }
@@ -38,6 +37,7 @@ public class SplatterLife : MonoBehaviour {
             tr.localScale -= new Vector3(0.01f, 0.01f, 0);
             if (tr.localScale.x <= 0)
             {
+                tr.localScale = scale;
                 gameObject.SetActive(false);
             }
         }
