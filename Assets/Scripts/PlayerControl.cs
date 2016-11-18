@@ -3,6 +3,11 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+    int lay;
+
+    public int ScLayer;
+
+
     Transform tr;
     Rigidbody2D rb;
     public GameObject paint;
@@ -17,6 +22,7 @@ public class PlayerControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        lay = gameObject.layer;
         tr = transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
 	}
@@ -27,10 +33,6 @@ public class PlayerControl : MonoBehaviour {
         {
             rb.AddForce(Vector2.up*Jump_force,ForceMode2D.Impulse);
             Jumping = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(paint,new Vector3(tr.position.x, tr.position.y,3),Quaternion.identity);
         }
 	}
 
@@ -44,6 +46,30 @@ public class PlayerControl : MonoBehaviour {
         if (Jumping == true && coll.gameObject.tag == "Terrain")
         {
             Jumping = false;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.gameObject.tag == "Scratch")
+        {
+            gameObject.layer = ScLayer;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Scratch")
+        {
+            gameObject.layer = ScLayer;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Scratch")
+        {
+            gameObject.layer = lay;
         }
     }
 }
