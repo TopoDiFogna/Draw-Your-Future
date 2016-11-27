@@ -26,7 +26,7 @@ GameObject:
   - 61: {fileID: 61000010043651828}
   - 61: {fileID: 61000012501115900}
   m_Layer: 9
-  m_Name: cage
+  m_Name: Cage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
