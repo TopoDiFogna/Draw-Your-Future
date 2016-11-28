@@ -10,7 +10,7 @@ public class CannonOn : MonoBehaviour {
     public GameObject Direction;
     public float BallPower;
 
-    Vector2 CBSPosition;
+    Vector3 CBSPosition;
     Vector2 BallDir;
 
     public bool activated = false;
