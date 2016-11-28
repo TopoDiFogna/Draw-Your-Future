@@ -27,7 +27,7 @@ GameObject:
   - 50: {fileID: 50000012430354470}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,9 @@ MonoBehaviour:
   m_scratch_layer: 9
   m_paint: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
   m_speed: 20
-  m_climbing_speed: 15
+  m_climbing_speed: 5
   m_Jump_force: 10
+  IsNearLadder: 0
 --- !u!212 &212000012265379028
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Terrain
   - Scratch
+  - Climbable
+  - FlyingEnd
+  - FlyingBoundary
   layers:
   - Default
   - TransparentFX
