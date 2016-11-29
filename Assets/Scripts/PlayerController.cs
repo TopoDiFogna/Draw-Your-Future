@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sr;
 
     // Status variables
-    bool jumping = false;
+    public bool jumping = false;
 
     public bool IsNearLadder = false;
 
@@ -79,6 +79,11 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
             jumping = true;
         }
+    }
+
+    public void StopAnimation()
+    {
+        animator.SetFloat("Horizontal", 0);
     }
 
     void FixedUpdate()

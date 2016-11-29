@@ -20,29 +20,41 @@ public class FlyingMovement : MonoBehaviour {
         tr.position += (Target.transform.position - tr.position).normalized * speed*Time.deltaTime;
 	}
 
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        CheckTriggers(coll);
+    }
+
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "FlyingBoundary" && Target.name==coll.gameObject.name && !seek && !hasplayer)
+        CheckTriggers(coll);
+    }
+
+    void CheckTriggers(Collider2D coll)
+    {
+        if (coll.tag == "FlyingBoundary" && Target.name == coll.gameObject.name && !seek && !hasplayer)
         {
             Target = coll.gameObject.GetComponent<FlyingBoundaries>().OtherSide;
         }
-        else if(coll.tag == "Player")
+        else if (coll.tag == "Player")
         {
             seek = false;
             hasplayer = true;
             Target = carry;
             coll.gameObject.transform.parent = gameObject.transform;
-            coll.gameObject.GetComponent<PlayerControl>().enabled = false;
+            coll.gameObject.GetComponent<PlayerController>().StopAnimation();
+            coll.gameObject.GetComponent<PlayerController>().enabled = false;
             coll.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
         }
-        else if(coll.tag == "FlyingEnd" && hasplayer)
+        else if (coll.tag == "FlyingEnd" && hasplayer)
         {
             hasplayer = false;
             GameObject p = gameObject.transform.GetChild(0).gameObject;
-            p.GetComponent<PlayerControl>().enabled = true;
-            p.GetComponent<PlayerControl>().Jumping = true;
+            p.GetComponent<PlayerController>().enabled = true;
+            p.GetComponent<PlayerController>().jumping = true;
             p.GetComponent<Rigidbody2D>().isKinematic = false;
             p.transform.parent = null;
+            print("YUNODODIS");
         }
     }
 }
