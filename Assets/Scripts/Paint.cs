@@ -49,6 +49,8 @@ public class Paint : MonoBehaviour {
     IEnumerator DisablePaint()
     {
         yield return new WaitForSeconds(timetolive);
+        tr.position = new Vector2(1000,1000);
+        yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
     }
 }
