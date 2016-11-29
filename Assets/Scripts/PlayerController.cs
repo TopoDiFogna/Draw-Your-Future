@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
 
     // Player Properties
     int lay;
-    Transform tr;
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer sr;
@@ -38,7 +37,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         lay = gameObject.layer;
-        tr = transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
@@ -90,11 +88,11 @@ public class PlayerController : MonoBehaviour
     {
         if (!IsNearLadder)
         {
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * m_speed, rb.velocity.y);
+            rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
         }
         else
         {
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * m_speed, Input.GetAxis("Vertical") * m_climbing_speed);
+            rb.velocity = new Vector2(m_horizontal * m_speed, m_vertical * m_climbing_speed);
         }
     }
 
