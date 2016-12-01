@@ -8,29 +8,31 @@ public class BarrelController : MonoBehaviour {
     public float omegaX;
     public float omegaY;
     float index = 0;
+    Vector3 start_position;
     Transform tr;
 
 
 	// Use this for initialization
 	void Start () {
         tr = GetComponent<Transform>();
+        start_position = tr.position;
 	}
 
-    public void Update()
+    private void Update()
     {
         index += Time.deltaTime;
         float x = amplitudeX * Mathf.Cos(omegaX * index);
         float y = amplitudeY * Mathf.Sin(omegaY * index);
-        transform.position = new Vector3(x, y, 0);
+        tr.position = start_position + new Vector3(x, y, 0);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collision.transform.parent = tr;
+    }
 
-
-
-
-
-
-
-
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.transform.parent = null;
+    }
 }

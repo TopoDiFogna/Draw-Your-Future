@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000012925758224}
   - 61: {fileID: 61000011887251236}
   - 50: {fileID: 50000010930741306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThrowingBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}

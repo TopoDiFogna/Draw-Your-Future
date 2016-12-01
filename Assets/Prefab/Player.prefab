@@ -70,12 +70,12 @@ CircleCollider2D:
   m_GameObject: {fileID: 1000013828586744}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f6ba1bbe6144de54b92d1dc36c6be8f5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.67}
   serializedVersion: 2
-  m_Radius: 0.43522
+  m_Radius: 0.46650457
 --- !u!61 &61000012562823502
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -84,12 +84,12 @@ BoxCollider2D:
   m_GameObject: {fileID: 1000013828586744}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f6ba1bbe6144de54b92d1dc36c6be8f5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.018260956, y: 0.24195576}
+  m_Offset: {x: -0.0061597824, y: 0.14028215}
   serializedVersion: 2
-  m_Size: {x: 1.0458698, y: 1.4273944}
+  m_Size: {x: 0.93191075, y: 1.6307411}
 --- !u!95 &95000012398153820
 Animator:
   serializedVersion: 3
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scratch_layer: 8
   m_paint: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
-  m_speed: 20
+  m_speed: 15
   m_climbing_speed: 5
   m_Jump_force: 10
   jumping: 0
