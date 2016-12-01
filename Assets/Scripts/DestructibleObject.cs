@@ -16,7 +16,8 @@ public class DestructibleObject : MonoBehaviour {
         if(coll.gameObject.tag == "Projectile")
         {
             m_counter++;
-            if(m_counter>=m_hitlimit)
+            coll.gameObject.SetActive(false);
+            if (m_counter>=m_hitlimit)
                 Destroy(gameObject);
         }
     }

@@ -8,13 +8,17 @@ public class RockTTL : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(TTLRock());
 	}
+
+    private void OnEnable()
+    {
+        StartCoroutine(TTLRock());
+    }
 
     private IEnumerator TTLRock()
     {
         yield return new WaitForSeconds(timetolive);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }

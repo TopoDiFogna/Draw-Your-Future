@@ -71,12 +71,20 @@ public class PlayerController : MonoBehaviour
         {
             // TODO 
         }*/
- 
+
         if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder)
         {
             rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
             jumping = true;
+            animator.SetBool("Jumping", true);
+            StartCoroutine(StopJumpAnimation());
         }
+    }
+
+    IEnumerator StopJumpAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Jumping", false);
     }
 
     public void StopAnimation()
@@ -101,6 +109,7 @@ public class PlayerController : MonoBehaviour
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
             jumping = false;
+            animator.SetBool("Jumping", false);
         }
     }
 

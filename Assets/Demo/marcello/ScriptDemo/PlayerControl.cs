@@ -7,8 +7,6 @@ public class PlayerControl : MonoBehaviour {
 
     public int ScLayer;
 
-
-    Transform tr;
     Rigidbody2D rb;
     public GameObject paint;
 
@@ -26,7 +24,6 @@ public class PlayerControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         lay = gameObject.layer;
-        tr = transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
 	}
 	

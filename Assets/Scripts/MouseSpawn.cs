@@ -3,12 +3,12 @@ using System.Collections;
 
 public class MouseSpawn : MonoBehaviour {
 
-    public GameObject scratch;
+    public GameObject m_scratch;
     Vector3 mouse_position;
 
 	// Use this for initialization
 	void Start () {
-        ObjectPoolingManager.Instance.CreatePool(scratch, 200, 200);
+        ObjectPoolingManager.Instance.CreatePool(m_scratch, 200, 200);
     }
 	
 	// Update is called once per frame

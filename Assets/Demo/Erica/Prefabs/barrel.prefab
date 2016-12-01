@@ -23,7 +23,7 @@ GameObject:
   - 61: {fileID: 61000010632176772}
   - 114: {fileID: 114000011848920594}
   m_Layer: 0
-  m_Name: Barrel
+  m_Name: barrel
   m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
