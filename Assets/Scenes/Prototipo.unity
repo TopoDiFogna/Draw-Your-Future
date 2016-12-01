@@ -1344,11 +1344,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 73.19
+      value: 70.36
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.38
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2372,7 +2372,7 @@ GameObject:
   - 4: {fileID: 1800725955}
   - 61: {fileID: 1800725956}
   - 114: {fileID: 1800725957}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RockSpawner
   m_TagString: Untagged
   m_Icon: {fileID: -1462388694956747189, guid: 0000000000000000d000000000000000, type: 0}
@@ -2386,7 +2386,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1800725954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.29, y: 5.18, z: 0}
+  m_LocalPosition: {x: 6.29, y: 0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
