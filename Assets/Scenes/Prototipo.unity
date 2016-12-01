@@ -1645,7 +1645,7 @@ GameObject:
   - 61: {fileID: 1407680677}
   - 50: {fileID: 1407680676}
   m_Layer: 0
-  m_Name: Wall (2)
+  m_Name: Desctructible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
