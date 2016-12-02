@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     float m_vertical = 0f;
 
     //Variables for level control
+    /*
     public bool IsAfterCheckPoint
     {
         set
@@ -58,8 +59,8 @@ public class PlayerController : MonoBehaviour
         {
             checkPointPosition = value;
         }
-    }
-    Vector3 checkPointPosition;
+    }*/
+    public Vector3 checkPointPosition;
 
 
     //Death variables
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
     public float timeJump = 0.1f;
     public Camera blackCamera;
 
-    
+
     // Use this for initialization
     void Start()
     {
@@ -87,12 +88,12 @@ public class PlayerController : MonoBehaviour
         m_vertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
 
-        if(facing_right && m_horizontal < 0)
+        if (facing_right && m_horizontal < 0)
         {
             sr.flipX = true;
             facing_right = false;
         }
-        else if(!facing_right && m_horizontal > 0)
+        else if (!facing_right && m_horizontal > 0)
         {
             sr.flipX = false;
             facing_right = true;
@@ -207,14 +208,7 @@ public class PlayerController : MonoBehaviour
         blackCamera.enabled = true;
         //Camera.main.enabled = false;
         yield return new WaitForSeconds(timeToDie);
-        if (isAfterCheckPoint)
-        {
-            transform.position= checkPointPosition;
-        }
-        else
-        {
-            transform.position = startingPosition;
-        }
+        transform.position = checkPointPosition;
         Camera.main.enabled = true;
         blackCamera.enabled = false;
     }
@@ -229,16 +223,9 @@ public class PlayerController : MonoBehaviour
         Vector3 startingPoint = new Vector3(transform.position.x, transform.position.y, 0);
         Vector3 endingPoint;
         float time = 0;
+        endingPoint = checkPointPosition;
 
-        if (isAfterCheckPoint)
-        {
-            endingPoint = checkPointPosition;
-        }else
-        {
-            endingPoint = startingPosition;
-        }
-
-        while(time <= timeToDie)
+        while (time <= timeToDie)
         {
             transform.position = Vector3.Lerp(startingPoint, endingPoint, time / timeToDie);
             time += timeJump;

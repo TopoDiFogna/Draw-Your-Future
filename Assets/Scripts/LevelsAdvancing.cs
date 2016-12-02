@@ -9,8 +9,8 @@ public class LevelsAdvancing : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        script.StartingPosition = m_levels[currentLevel].StartingPoint;
-        script.CheckPointPosition = m_levels[currentLevel].CheckPoint;
+        /*script.StartingPosition = m_levels[currentLevel].StartingPoint;
+        script.CheckPointPosition = m_levels[currentLevel].CheckPoint;*/
 	}
 	
 	// Update is called once per frame

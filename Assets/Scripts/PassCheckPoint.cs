@@ -19,7 +19,7 @@ public class PassCheckPoint : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            script.IsAfterCheckPoint = true;
+            //script.IsAfterCheckPoint = true;
         }
     }
 }
