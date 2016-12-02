@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelsAdvancing : MonoBehaviour {
 
-    private int currentLevel = 1;
+    private int currentLevel = 0;
     public LevelsCheckpoint[] m_levels;
     public PlayerController script;
 

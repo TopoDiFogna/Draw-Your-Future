@@ -196,11 +196,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Die11()
+    {
+        StartCoroutine(Die1());
+    }
+
     //Versione di morte con scomparsa dello schermo e ritorno immediato
     public IEnumerator Die1()
     {
         blackCamera.enabled = true;
-        Camera.main.enabled = false;
+        //Camera.main.enabled = false;
         yield return new WaitForSeconds(timeToDie);
         if (isAfterCheckPoint)
         {

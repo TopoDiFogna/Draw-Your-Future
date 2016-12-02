@@ -11,5 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c66edb428f587a48b26c9b703cd1016, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  startingObject: {fileID: 0}
-  checkpointObject: {fileID: 0}
+  startingObject: {fileID: 4000013318326992, guid: 90a500b890cd382498e6e6258f19fae9,
+    type: 2}
+  checkpointObject: {fileID: 4000012262129852, guid: a3e6637b52d3e44438b407cb8099f358,
+    type: 2}
