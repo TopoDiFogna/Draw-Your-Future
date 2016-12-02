@@ -1693,6 +1693,25 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c531c20d944d6f540b49684e2b52dc42, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1257552889 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012404603562, guid: f58defe8ac4c5a34391f76527894387c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1402004302}
+--- !u!58 &1257552891
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257552889}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -1.57}
+  serializedVersion: 2
+  m_Radius: 2.717537
 --- !u!1001 &1264338013
 Prefab:
   m_ObjectHideFlags: 0
@@ -1900,7 +1919,8 @@ Prefab:
       propertyPath: m_Name
       value: Floor (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61000013176553794, guid: f58defe8ac4c5a34391f76527894387c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f58defe8ac4c5a34391f76527894387c, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1404337114 stripped
