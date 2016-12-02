@@ -1490,11 +1490,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.92
+      value: 67.25
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.08
+      value: -3.71
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2564,6 +2564,7 @@ GameObject:
   - 4: {fileID: 1800725955}
   - 61: {fileID: 1800725956}
   - 114: {fileID: 1800725957}
+  - 50: {fileID: 1800725958}
   m_Layer: 0
   m_Name: RockSpawner
   m_TagString: Untagged
@@ -2611,6 +2612,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawned_object: {fileID: 1000013813004752, guid: 3c1759de63a6fd0449b9f4648e09f443,
     type: 2}
+--- !u!50 &1800725958
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800725954}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1802142663
 Prefab:
   m_ObjectHideFlags: 0
