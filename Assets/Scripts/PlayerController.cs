@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer sr;
+    BoxCollider2D boxColl;
+    CircleCollider2D circleColl;
 
     // Status variables
     public bool jumping = false;
@@ -33,6 +35,40 @@ public class PlayerController : MonoBehaviour
     float m_horizontal = 0f;
     float m_vertical = 0f;
 
+    //Variables for level control
+    public bool IsAfterCheckPoint
+    {
+        set
+        {
+            isAfterCheckPoint = value;
+        }
+    }
+    bool isAfterCheckPoint = false;
+    public Vector3 StartingPosition
+    {
+        set
+        {
+            startingPosition = value;
+        }
+    }
+    Vector3 startingPosition;
+    public Vector3 CheckPointPosition
+    {
+        set
+        {
+            checkPointPosition = value;
+        }
+    }
+    Vector3 checkPointPosition;
+
+
+    //Death variables
+    [Range(0.5f, 3.0f)]
+    public float timeToDie = 1.0f;
+    public float timeJump = 0.1f;
+    public Camera blackCamera;
+
+    
     // Use this for initialization
     void Start()
     {
@@ -40,6 +76,8 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
+        boxColl = gameObject.GetComponent<BoxCollider2D>();
+        circleColl = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -132,6 +170,8 @@ public class PlayerController : MonoBehaviour
             IsNearLadder = true;
             rb.isKinematic = true;
         }
+
+
     }
 
     void OnTriggerStay2D(Collider2D coll)
@@ -154,5 +194,52 @@ public class PlayerController : MonoBehaviour
             IsNearLadder = false;
             rb.isKinematic = false;
         }
+    }
+
+    //Versione di morte con scomparsa dello schermo e ritorno immediato
+    public IEnumerator Die1()
+    {
+        blackCamera.enabled = true;
+        Camera.main.enabled = false;
+        yield return new WaitForSeconds(timeToDie);
+        if (isAfterCheckPoint)
+        {
+            transform.position= checkPointPosition;
+        }
+        else
+        {
+            transform.position = startingPosition;
+        }
+        Camera.main.enabled = true;
+        blackCamera.enabled = false;
+    }
+
+
+    //Versione di morte con ritorno graduale
+    public void Die2()
+    {
+        rb.isKinematic = true;
+        circleColl.enabled = false;
+        boxColl.enabled = false;
+        Vector3 startingPoint = new Vector3(transform.position.x, transform.position.y, 0);
+        Vector3 endingPoint;
+        float time = 0;
+
+        if (isAfterCheckPoint)
+        {
+            endingPoint = checkPointPosition;
+        }else
+        {
+            endingPoint = startingPosition;
+        }
+
+        while(time <= timeToDie)
+        {
+            transform.position = Vector3.Lerp(startingPoint, endingPoint, time / timeToDie);
+            time += timeJump;
+        }
+        rb.isKinematic = false;
+        circleColl.enabled = true;
+        boxColl.enabled = true;
     }
 }

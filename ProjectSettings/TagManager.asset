@@ -10,6 +10,8 @@ TagManager:
   - FlyingEnd
   - FlyingBoundary
   - Projectile
+  - Checkpoint
+  - SecondaryCamera
   layers:
   - Default
   - TransparentFX
