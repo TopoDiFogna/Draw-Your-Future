@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     // Status variables
     public bool jumping = false;
+    public bool sliding = false;
 
     public bool IsNearLadder = false;
 
@@ -133,14 +134,20 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!IsNearLadder)
+
+        if (!IsNearLadder && !sliding)
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+        }
+        else if(sliding && !IsNearLadder)
+        {
+            //donothing
         }
         else
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, m_vertical * m_climbing_speed);
         }
+
     }
 
     void OnCollisionEnter2D(Collision2D coll)
