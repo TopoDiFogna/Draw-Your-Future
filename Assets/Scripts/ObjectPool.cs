@@ -27,7 +27,7 @@ public class ObjectPool
 	private int maxPoolSize;
 
 	//initial and default number of objects to have in the list.
-	private int initialPoolSize;
+	//private int initialPoolSize;
 
 	/// <summary>
 	/// Constructor for creating a new Object Pool.
@@ -75,7 +75,7 @@ public class ObjectPool
 		//store our other variables that are useful.
 		this.maxPoolSize = maxPoolSize;
 		this.pooledObj = obj;
-		this.initialPoolSize = initialPoolSize;
+		//this.initialPoolSize = initialPoolSize;
 
 		//are we supposed to shrink?
 		if(shouldShrink)

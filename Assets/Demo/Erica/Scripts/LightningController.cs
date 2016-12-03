@@ -4,7 +4,7 @@ using System.Collections;
 public class LightningController : MonoBehaviour {
 
     SpriteRenderer rend;
-    Collider2D collider;
+    Collider2D coll;
     bool visible = false;
     public float timeVisible;
     public float timeNotVisible;
@@ -12,7 +12,7 @@ public class LightningController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<SpriteRenderer>();
-        collider = GetComponent<BoxCollider2D>();
+        coll = GetComponent<BoxCollider2D>();
 	}
 	
 	// Update is called once per frame
@@ -27,10 +27,10 @@ public class LightningController : MonoBehaviour {
     {
         visible = true;
         rend.enabled = true;
-        collider.enabled = true;
+        coll.enabled = true;
         yield return new WaitForSeconds(timeVisible);
         rend.enabled = false;
-        collider.enabled = false;
+        coll.enabled = false;
         yield return new WaitForSeconds(timeNotVisible);
         visible = false;
     }
