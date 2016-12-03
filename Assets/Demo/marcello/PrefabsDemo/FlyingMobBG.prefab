@@ -36,8 +36,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012236469408}
-  - 58: {fileID: 58000010017061156}
   - 114: {fileID: 114000010434076342}
+  - 60: {fileID: 60000011371035446}
   m_Layer: 0
   m_Name: MonsterSight
   m_TagString: Untagged
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012897545598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -6.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013410940682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 6.35, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -165,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012473280028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.69, y: 0.35, z: 0}
+  m_LocalPosition: {x: 9.99, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -203,8 +203,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014164431742}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.30546713, y: 2.2561831, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.19, y: 1.0461831, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -263,20 +263,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58000010017061156
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012663404574}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4
 --- !u!58 &58000011465564548
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -437,6 +423,25 @@ PolygonCollider2D:
       - {x: 0.47, y: -0.45}
       - {x: 0.42, y: -0.32999998}
       - {x: 0.59999996, y: -0.16}
+--- !u!60 &60000011371035446
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012663404574}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.033834934, y: -0.04901719}
+      - {x: 3.979669, y: -5.6128545}
+      - {x: 3.430284, y: -5.580354}
+      - {x: -0.06327677, y: -5.5972733}
+      - {x: -4.0473466, y: -5.545176}
 --- !u!114 &114000010434076342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -518,6 +523,8 @@ MonoBehaviour:
   hasplayer: 0
   speed: 2
   tr: {fileID: 4000013986901066}
+  m_reset_time: 3
+  can_grab: 1
 --- !u!212 &212000010966404488
 SpriteRenderer:
   m_ObjectHideFlags: 1

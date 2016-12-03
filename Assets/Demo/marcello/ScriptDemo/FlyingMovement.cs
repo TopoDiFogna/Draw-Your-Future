@@ -57,6 +57,7 @@ public class FlyingMovement : MonoBehaviour {
             p.GetComponent<Rigidbody2D>().isKinematic = false;
             p.transform.parent = null;
             can_grab = false;
+            transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
             StartCoroutine(ResetGrab());
             print("YUNODODIS");
         }
