@@ -8,7 +8,7 @@ public class FlyingEnemySight : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.tag == "Player" && !monster.GetComponentInParent<FlyingMovement>().seek)
+        if(coll.tag == "Player" && !monster.GetComponentInParent<FlyingMovement>().seek && monster.GetComponentInParent<FlyingMovement>().can_grab)
         {
             old = monster.GetComponentInParent<FlyingMovement>().Target;
             monster.GetComponentInParent<FlyingMovement>().seek = true;

@@ -49,6 +49,7 @@ public class FishController : MonoBehaviour {
         //rb.AddForce(m_jumpDirection * m_jumpForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(m_timeToJump);
         script.enabled = false;
+        rb.velocity = new Vector2();
         rend.enabled = false;
         yield return new WaitForSeconds(m_timeToWait);
         tr.position = startingPosition;

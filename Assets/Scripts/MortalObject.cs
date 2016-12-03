@@ -8,8 +8,9 @@ public class MortalObject : MonoBehaviour {
         if (coll.tag == "Player")
         {
             print("ECCHECAZZO");
-            coll.GetComponent<PlayerController>().Die11();
-            //coll.GetComponent<PlayerController>().Die2();
+            //coll.GetComponent<PlayerController>().Die11();
+            coll.GetComponent<PlayerController>().Die2();
+            gameObject.SetActive(false);
         }
     }
 }

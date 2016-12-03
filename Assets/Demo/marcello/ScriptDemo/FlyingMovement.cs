@@ -9,6 +9,8 @@ public class FlyingMovement : MonoBehaviour {
     public bool hasplayer = false;
     public float speed = 20;
     public Transform tr;
+    public float m_reset_time = 3f;
+    public bool can_grab = true;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +38,7 @@ public class FlyingMovement : MonoBehaviour {
         {
             Target = coll.gameObject.GetComponent<FlyingBoundaries>().OtherSide;
         }
-        else if (coll.tag == "Player")
+        else if (coll.tag == "Player" && can_grab)
         {
             seek = false;
             hasplayer = true;
@@ -54,7 +56,15 @@ public class FlyingMovement : MonoBehaviour {
             p.GetComponent<PlayerController>().jumping = true;
             p.GetComponent<Rigidbody2D>().isKinematic = false;
             p.transform.parent = null;
+            can_grab = false;
+            StartCoroutine(ResetGrab());
             print("YUNODODIS");
         }
+    }
+
+    IEnumerator ResetGrab()
+    {
+        yield return new WaitForSeconds(m_reset_time);
+        can_grab = true;
     }
 }
