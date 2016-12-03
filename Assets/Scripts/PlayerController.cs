@@ -215,10 +215,13 @@ public class PlayerController : MonoBehaviour
 
     public void DieWithFade()
     {
-        dead = true;
-        StopAnimation();
-        CameraFade.StartAlphaFade(Color.black, false, timeToDie*2f, 0f); // Fades out the screen to black   
-        StartCoroutine(ResetScene());
+        if (!dead)
+        {
+            dead = true;
+            StopAnimation();
+            CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
+            StartCoroutine(ResetScene());
+        }
     }
 
     private IEnumerator ResetScene()
