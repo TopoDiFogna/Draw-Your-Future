@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     // Status variables
     public bool jumping = false;
     public bool sliding = false;
+    public bool dead = false;
 
     public bool IsNearLadder = false;
 
@@ -36,36 +37,11 @@ public class PlayerController : MonoBehaviour
     float m_horizontal = 0f;
     float m_vertical = 0f;
 
-    //Variables for level control
-    /*
-    public bool IsAfterCheckPoint
-    {
-        set
-        {
-            isAfterCheckPoint = value;
-        }
-    }
-    bool isAfterCheckPoint = false;
-    public Vector3 StartingPosition
-    {
-        set
-        {
-            startingPosition = value;
-        }
-    }
-    Vector3 startingPosition;
-    public Vector3 CheckPointPosition
-    {
-        set
-        {
-            checkPointPosition = value;
-        }
-    }*/
     public Vector3 checkPointPosition;
 
 
     //Death variables
-    [Range(0.5f, 3.0f)]
+    [Range(0.5f, 5.0f)]
     public float timeToDie = 1.0f;
     public float timeJump = 0.1f;
     public Camera blackCamera;
@@ -87,32 +63,23 @@ public class PlayerController : MonoBehaviour
     {
         m_horizontal = Input.GetAxisRaw("Horizontal");
         m_vertical = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
+        if (!sliding && !dead)
+        {
+            animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
+        }
 
-        if (facing_right && m_horizontal < 0)
+        if (facing_right && rb.velocity.x < 0)
         {
             sr.flipX = true;
             facing_right = false;
         }
-        else if (!facing_right && m_horizontal > 0)
+        else if (!facing_right && rb.velocity.x > 0)
         {
             sr.flipX = false;
             facing_right = true;
         }
 
-        /*if (climbing)
-        {
-            if (m_vertical != 0)
-            {
-                tr.position += new Vector3(0, m_climbing_speed * m_vertical * Time.deltaTime, 0);
-            }
-        }
-        else
-        {
-            // TODO 
-        }*/
-
-        if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder)
+        if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder && !dead)
         {
             rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
             jumping = true;
@@ -130,19 +97,23 @@ public class PlayerController : MonoBehaviour
     public void StopAnimation()
     {
         animator.SetFloat("Horizontal", 0);
+        animator.SetBool("Jumping", false);
     }
 
     void FixedUpdate()
     {
-
-        if (!IsNearLadder && !sliding)
-        {
-            rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
-        }
-        else if(sliding && !IsNearLadder)
+        if (dead || (sliding && !IsNearLadder))
         {
             //donothing
         }
+        else if (!IsNearLadder && !sliding)
+        {
+            rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+        }
+        //else if(sliding && !IsNearLadder)
+        //{
+        //    //donothing
+        //}
         else
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, m_vertical * m_climbing_speed);
@@ -240,5 +211,22 @@ public class PlayerController : MonoBehaviour
         rb.isKinematic = false;
         circleColl.enabled = true;
         boxColl.enabled = true;
+    }
+
+    public void DieWithFade()
+    {
+        dead = true;
+        StopAnimation();
+        CameraFade.StartAlphaFade(Color.black, false, timeToDie*2f, 0f); // Fades out the screen to black   
+        StartCoroutine(ResetScene());
+    }
+
+    private IEnumerator ResetScene()
+    {
+        yield return new WaitForSeconds(timeToDie);
+        transform.position = checkPointPosition;
+        yield return new WaitForSeconds(1f);
+        CameraFade.instance.Die();
+        dead = false;
     }
 }

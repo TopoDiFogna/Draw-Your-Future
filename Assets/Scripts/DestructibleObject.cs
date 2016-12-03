@@ -17,8 +17,8 @@ public class DestructibleObject : MonoBehaviour {
         {
             m_counter++;
             coll.gameObject.SetActive(false);
-            if (m_counter>=m_hitlimit)
-                Destroy(gameObject);
+            if (m_counter >= m_hitlimit)
+                gameObject.SetActive(false);
         }
     }
 }
