@@ -36,31 +36,6 @@ public class PlayerController : MonoBehaviour
     float m_horizontal = 0f;
     float m_vertical = 0f;
 
-    //Variables for level control
-    /*
-    public bool IsAfterCheckPoint
-    {
-        set
-        {
-            isAfterCheckPoint = value;
-        }
-    }
-    bool isAfterCheckPoint = false;
-    public Vector3 StartingPosition
-    {
-        set
-        {
-            startingPosition = value;
-        }
-    }
-    Vector3 startingPosition;
-    public Vector3 CheckPointPosition
-    {
-        set
-        {
-            checkPointPosition = value;
-        }
-    }*/
     public Vector3 checkPointPosition;
 
 
@@ -87,30 +62,21 @@ public class PlayerController : MonoBehaviour
     {
         m_horizontal = Input.GetAxisRaw("Horizontal");
         m_vertical = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
+        if (!sliding)
+        {
+            animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
+        }
 
-        if (facing_right && m_horizontal < 0)
+        if (facing_right && rb.velocity.x < 0)
         {
             sr.flipX = true;
             facing_right = false;
         }
-        else if (!facing_right && m_horizontal > 0)
+        else if (!facing_right && rb.velocity.x > 0)
         {
             sr.flipX = false;
             facing_right = true;
         }
-
-        /*if (climbing)
-        {
-            if (m_vertical != 0)
-            {
-                tr.position += new Vector3(0, m_climbing_speed * m_vertical * Time.deltaTime, 0);
-            }
-        }
-        else
-        {
-            // TODO 
-        }*/
 
         if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder)
         {
