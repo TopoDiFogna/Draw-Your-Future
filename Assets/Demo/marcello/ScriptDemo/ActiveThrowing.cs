@@ -22,6 +22,7 @@ public class ActiveThrowing : MonoBehaviour {
             script.enabled = true;
             cc.enabled = true;
             gameObject.GetComponent<ActiveThrowing>().enabled = false;
+            gameObject.layer = 0;
             sr.sortingOrder = 2;
         }
     }
