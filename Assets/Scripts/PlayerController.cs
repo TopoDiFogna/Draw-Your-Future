@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     // Status variables
     public bool jumping = false;
     public bool sliding = false;
+    public bool dead = false;
 
     public bool IsNearLadder = false;
 
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Death variables
-    [Range(0.5f, 3.0f)]
+    [Range(0.5f, 5.0f)]
     public float timeToDie = 1.0f;
     public float timeJump = 0.1f;
     public Camera blackCamera;
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         m_horizontal = Input.GetAxisRaw("Horizontal");
         m_vertical = Input.GetAxisRaw("Vertical");
-        if (!sliding)
+        if (!sliding && !dead)
         {
             animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
         }
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
             facing_right = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder)
+        if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder && !dead)
         {
             rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
             jumping = true;
@@ -96,19 +97,23 @@ public class PlayerController : MonoBehaviour
     public void StopAnimation()
     {
         animator.SetFloat("Horizontal", 0);
+        animator.SetBool("Jumping", false);
     }
 
     void FixedUpdate()
     {
-
-        if (!IsNearLadder && !sliding)
-        {
-            rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
-        }
-        else if(sliding && !IsNearLadder)
+        if (dead || (sliding && !IsNearLadder))
         {
             //donothing
         }
+        else if (!IsNearLadder && !sliding)
+        {
+            rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+        }
+        //else if(sliding && !IsNearLadder)
+        //{
+        //    //donothing
+        //}
         else
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, m_vertical * m_climbing_speed);
@@ -206,5 +211,22 @@ public class PlayerController : MonoBehaviour
         rb.isKinematic = false;
         circleColl.enabled = true;
         boxColl.enabled = true;
+    }
+
+    public void DieWithFade()
+    {
+        dead = true;
+        StopAnimation();
+        CameraFade.StartAlphaFade(Color.black, false, timeToDie*2f, 0f); // Fades out the screen to black   
+        StartCoroutine(ResetScene());
+    }
+
+    private IEnumerator ResetScene()
+    {
+        yield return new WaitForSeconds(timeToDie);
+        transform.position = checkPointPosition;
+        yield return new WaitForSeconds(1f);
+        CameraFade.instance.Die();
+        dead = false;
     }
 }

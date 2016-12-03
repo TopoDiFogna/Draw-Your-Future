@@ -8,7 +8,6 @@ public class StopPlayerControlsX : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            print("ZUPPA");
             coll.gameObject.GetComponent<PlayerController>().sliding = true;
             coll.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, coll.gameObject.GetComponent<Rigidbody2D>().velocity.y);
         }
@@ -18,7 +17,6 @@ public class StopPlayerControlsX : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            print("ZUPPA");
             coll.gameObject.GetComponent<PlayerController>().sliding = true;
         }
     }
@@ -26,7 +24,6 @@ public class StopPlayerControlsX : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            print("COBRA");
             coll.gameObject.GetComponent<PlayerController>().sliding = false;
         }
     }
