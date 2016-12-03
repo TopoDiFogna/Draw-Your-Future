@@ -110,10 +110,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
         }
-        //else if(sliding && !IsNearLadder)
-        //{
-        //    //donothing
-        //}
         else
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, m_vertical * m_climbing_speed);
@@ -175,43 +171,43 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Die11()
-    {
-        StartCoroutine(Die1());
-    }
+    //public void Die11()
+    //{
+    //    StartCoroutine(Die1());
+    //}
 
-    //Versione di morte con scomparsa dello schermo e ritorno immediato
-    public IEnumerator Die1()
-    {
-        blackCamera.enabled = true;
-        //Camera.main.enabled = false;
-        yield return new WaitForSeconds(timeToDie);
-        transform.position = checkPointPosition;
-        Camera.main.enabled = true;
-        blackCamera.enabled = false;
-    }
+    ////Versione di morte con scomparsa dello schermo e ritorno immediato
+    //public IEnumerator Die1()
+    //{
+    //    blackCamera.enabled = true;
+    //    //Camera.main.enabled = false;
+    //    yield return new WaitForSeconds(timeToDie);
+    //    transform.position = checkPointPosition;
+    //    Camera.main.enabled = true;
+    //    blackCamera.enabled = false;
+    //}
 
 
-    //Versione di morte con ritorno graduale
-    public void Die2()
-    {
-        rb.isKinematic = true;
-        circleColl.enabled = false;
-        boxColl.enabled = false;
-        Vector3 startingPoint = new Vector3(transform.position.x, transform.position.y, 0);
-        Vector3 endingPoint;
-        float time = 0;
-        endingPoint = checkPointPosition;
+    ////Versione di morte con ritorno graduale
+    //public void Die2()
+    //{
+    //    rb.isKinematic = true;
+    //    circleColl.enabled = false;
+    //    boxColl.enabled = false;
+    //    Vector3 startingPoint = new Vector3(transform.position.x, transform.position.y, 0);
+    //    Vector3 endingPoint;
+    //    float time = 0;
+    //    endingPoint = checkPointPosition;
 
-        while (time <= timeToDie)
-        {
-            transform.position = Vector3.Lerp(startingPoint, endingPoint, time / timeToDie);
-            time += timeJump;
-        }
-        rb.isKinematic = false;
-        circleColl.enabled = true;
-        boxColl.enabled = true;
-    }
+    //    while (time <= timeToDie)
+    //    {
+    //        transform.position = Vector3.Lerp(startingPoint, endingPoint, time / timeToDie);
+    //        time += timeJump;
+    //    }
+    //    rb.isKinematic = false;
+    //    circleColl.enabled = true;
+    //    boxColl.enabled = true;
+    //}
 
     public void DieWithFade()
     {
