@@ -12,9 +12,7 @@ public class FishController : MonoBehaviour {
     public float m_timeToJump;
     [Range(0.5f, 10.0f)]
     public float m_timeToWait;
-    //public Vector2 m_jumpDirection;
     [Range(0.0f, 20.0f)]
-    //public float m_jumpForce;
     FishController script;
     SpriteRenderer rend;
 
@@ -45,6 +43,7 @@ public class FishController : MonoBehaviour {
 
         float v0x = (endingPoint.x- startingPosition.x) / m_timeToJump;
         float v0y = (endingPoint.y + 0.5f*rb.gravityScale*10 * m_timeToJump*m_timeToJump - startingPosition.y) / m_timeToJump;
+        rb.isKinematic = false;
         rb.AddForce(new Vector2(v0x, v0y), ForceMode2D.Impulse);
         //rb.AddForce(m_jumpDirection * m_jumpForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(m_timeToJump);
@@ -52,6 +51,7 @@ public class FishController : MonoBehaviour {
         rb.velocity = new Vector2();
         rend.enabled = false;
         yield return new WaitForSeconds(m_timeToWait);
+        rb.isKinematic = true;
         tr.position = startingPosition;
         script.enabled = true;
 
