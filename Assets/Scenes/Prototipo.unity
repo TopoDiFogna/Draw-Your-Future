@@ -653,7 +653,7 @@ Transform:
   m_Children:
   - {fileID: 1769001474}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1001 &272135742
 Prefab:
   m_ObjectHideFlags: 0
@@ -807,7 +807,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011082753784, guid: f58defe8ac4c5a34391f76527894387c, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1000012404603562, guid: f58defe8ac4c5a34391f76527894387c, type: 2}
       propertyPath: m_IsActive
@@ -2598,7 +2598,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 58000010291890770, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
         type: 2}
@@ -5138,7 +5138,7 @@ Transform:
   - {fileID: 1090817196}
   - {fileID: 486992971}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &1881914028
 GameObject:
   m_ObjectHideFlags: 0

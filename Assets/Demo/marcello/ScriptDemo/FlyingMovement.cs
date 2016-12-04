@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FlyingMovement : MonoBehaviour {
+public class FlyingMovement : MonoBehaviour
+{
 
     public GameObject Target;
     public GameObject carry;
@@ -12,15 +13,17 @@ public class FlyingMovement : MonoBehaviour {
     public float m_reset_time = 3f;
     public bool can_grab = true;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         //tr = gameObject.GetComponentInParent<Transform>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        tr.position += (Target.transform.position - tr.position).normalized * speed*Time.deltaTime;
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        tr.position += (Target.transform.position - tr.position).normalized * speed * Time.deltaTime;
+    }
 
     void OnTriggerStay2D(Collider2D coll)
     {
@@ -38,29 +41,41 @@ public class FlyingMovement : MonoBehaviour {
         {
             Target = coll.gameObject.GetComponent<FlyingBoundaries>().OtherSide;
         }
-        else if (coll.tag == "Player" && can_grab && !coll.GetComponent<PlayerController>().dead)
+        else if (coll.tag == "Player" && can_grab)
         {
-            seek = false;
-            hasplayer = true;
-            Target = carry;
-            coll.gameObject.transform.parent = gameObject.transform;
-            coll.gameObject.GetComponent<PlayerController>().StopAnimation();
-            coll.gameObject.GetComponent<PlayerController>().enabled = false;
-            coll.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            if (!coll.GetComponent<PlayerController>().dead)
+            {
+                seek = false;
+                hasplayer = true;
+                Target = carry;
+                coll.gameObject.transform.parent = gameObject.transform;
+                coll.gameObject.GetComponent<PlayerController>().StopAnimation();
+                coll.gameObject.GetComponent<PlayerController>().enabled = false;
+                coll.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            }
+            else
+            {
+                DropPlayer();
+            }
         }
         else if (coll.tag == "FlyingEnd" && hasplayer)
         {
-            hasplayer = false;
-            GameObject p = gameObject.transform.GetChild(0).gameObject;
-            p.GetComponent<PlayerController>().enabled = true;
-            p.GetComponent<PlayerController>().jumping = true;
-            p.GetComponent<Rigidbody2D>().isKinematic = false;
-            p.transform.parent = null;
-            can_grab = false;
-            transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
-            StartCoroutine(ResetGrab());
-            print("YUNODODIS");
+            DropPlayer();
         }
+    }
+
+    public void DropPlayer()
+    {
+        hasplayer = false;
+        GameObject p = gameObject.transform.GetChild(0).gameObject;
+        p.GetComponent<PlayerController>().enabled = true;
+        p.GetComponent<PlayerController>().jumping = true;
+        p.GetComponent<Rigidbody2D>().isKinematic = false;
+        p.transform.parent = null;
+        can_grab = false;
+        transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
+        StartCoroutine(ResetGrab());
+        print("YUNODODIS");
     }
 
     IEnumerator ResetGrab()
