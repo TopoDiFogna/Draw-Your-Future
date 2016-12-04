@@ -15,6 +15,21 @@ public class FlyingEnemySight : MonoBehaviour
             monster.GetComponentInParent<FlyingMovement>().seek = true;
             monster.GetComponentInParent<FlyingMovement>().Target = coll.gameObject;
         }
+        
+    }
+
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        if (coll.tag == "Player" && monster.GetComponentInParent<FlyingMovement>().seek && coll.GetComponent<PlayerController>().dead)
+        {
+            LeavePlayer();
+        }
+        /*else if (coll.tag == "Player" && !monster.GetComponentInParent<FlyingMovement>().seek && !coll.GetComponent<PlayerController>().dead)
+        {
+            old = monster.GetComponentInParent<FlyingMovement>().Target;
+            monster.GetComponentInParent<FlyingMovement>().seek = true;
+            monster.GetComponentInParent<FlyingMovement>().Target = coll.gameObject;
+        }*/
     }
 
     public void LeavePlayer()

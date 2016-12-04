@@ -38,7 +38,7 @@ public class FlyingMovement : MonoBehaviour {
         {
             Target = coll.gameObject.GetComponent<FlyingBoundaries>().OtherSide;
         }
-        else if (coll.tag == "Player" && can_grab && coll.GetComponent<PlayerController>().dead)
+        else if (coll.tag == "Player" && can_grab && !coll.GetComponent<PlayerController>().dead)
         {
             seek = false;
             hasplayer = true;

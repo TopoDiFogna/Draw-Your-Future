@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_time_to_despawn: 5
 --- !u!1001 &118078814
 Prefab:
   m_ObjectHideFlags: 0
@@ -2569,11 +2570,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 63
+      value: -7.85
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: -2.76
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2597,7 +2598,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 58000010291890770, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
         type: 2}
@@ -2627,12 +2628,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1094782314 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000012424212714, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
-    type: 2}
-  m_PrefabInternal: {fileID: 1094782313}
-  m_Script: {fileID: 11500000, guid: 55e4c8c471ec9d34d94d42f731319e3b, type: 3}
 --- !u!4 &1102600163 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013588643494, guid: c531c20d944d6f540b49684e2b52dc42,
@@ -2712,6 +2707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_time_to_despawn: 5
 --- !u!61 &1134510715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4026,9 +4022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4feab3cb06205324cbe686610a5caad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_levels:
-  - {fileID: 11400000, guid: 1cfac48449472bf4d84bbd949ba3f263, type: 2}
-  script: {fileID: 1094782314}
 --- !u!1001 &1575377336
 Prefab:
   m_ObjectHideFlags: 0
@@ -5145,7 +5138,7 @@ Transform:
   - {fileID: 1090817196}
   - {fileID: 486992971}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &1881914028
 GameObject:
   m_ObjectHideFlags: 0
