@@ -23,7 +23,7 @@ GameObject:
   - 50: {fileID: 50000012821697008}
   - 233: {fileID: 233000011401138246}
   - 114: {fileID: 114000010581358408}
-  - 60: {fileID: 60000013014937506}
+  - 60: {fileID: 60000011242341350}
   m_Layer: 0
   m_Name: SwingingObject
   m_TagString: Untagged
@@ -37,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010674846516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8897398, y: -0.22012979, z: 0}
-  m_LocalScale: {x: 9.997414, y: 9.99741, z: 9.99741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 57.599945, y: -3, z: 0}
+  m_LocalScale: {x: 25, y: 25, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60000013014937506
+--- !u!60 &60000011242341350
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -69,21 +69,21 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1000010674846516}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 396e66cf811480d46860395ee208a1b4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: 0.195, y: 0.265}
-      - {x: -0.185, y: 0.074999996}
-      - {x: -0.265, y: -0.015}
-      - {x: -0.265, y: -0.225}
-      - {x: -0.185, y: -0.265}
-      - {x: 0.035, y: -0.265}
-      - {x: 0.085, y: -0.185}
-      - {x: 0.265, y: 0.175}
-      - {x: 0.265, y: 0.265}
+    - - {x: -0.40602112, y: 0.14920779}
+      - {x: -0.4276123, y: 0.10808343}
+      - {x: -0.49658203, y: 0.04565302}
+      - {x: -0.25948486, y: -0.13677722}
+      - {x: -0.12434692, y: -0.24845813}
+      - {x: 0.12322387, y: -0.43593153}
+      - {x: 0.21733703, y: -0.32284802}
+      - {x: 0.2374298, y: -0.32676673}
+      - {x: -0.08237915, y: -0.08237709}
 --- !u!114 &114000010581358408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300016, guid: de804ceeb9536da4bb57cd17b52e2d7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +144,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.27, y: 0.27}
-  m_ConnectedAnchor: {x: -0.19043803, y: 2.479171}
+  m_ConnectedAnchor: {x: 161.6, y: 0.6999998}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: -50
