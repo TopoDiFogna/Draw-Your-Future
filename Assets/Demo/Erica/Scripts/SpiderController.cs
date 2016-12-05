@@ -44,4 +44,5 @@ public class SpiderController : MonoBehaviour {
 
         time += Time.deltaTime;
 	}
+
 }
