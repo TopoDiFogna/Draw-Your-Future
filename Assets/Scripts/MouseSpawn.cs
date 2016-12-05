@@ -5,10 +5,11 @@ public class MouseSpawn : MonoBehaviour {
 
     public GameObject m_scratch;
     Vector3 mouse_position;
+    public int number_of_scratches = 200;
 
 	// Use this for initialization
 	void Start () {
-        ObjectPoolingManager.Instance.CreatePool(m_scratch, 200, 200);
+        ObjectPoolingManager.Instance.CreatePool(m_scratch, number_of_scratches, number_of_scratches);
     }
 	
 	// Update is called once per frame

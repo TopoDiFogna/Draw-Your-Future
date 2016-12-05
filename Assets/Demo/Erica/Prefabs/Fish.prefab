@@ -23,6 +23,7 @@ GameObject:
   - 50: {fileID: 50000013531153666}
   - 61: {fileID: 61000014172083622}
   - 114: {fileID: 114000014189373212}
+  - 114: {fileID: 114000010064830470}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -74,6 +75,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 6.78, y: 7.76}
+--- !u!114 &114000010064830470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012060963922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanDisable: 0
+  m_time_to_despawn: 1
 --- !u!114 &114000014189373212
 MonoBehaviour:
   m_ObjectHideFlags: 1
