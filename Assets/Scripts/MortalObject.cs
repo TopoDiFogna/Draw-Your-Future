@@ -4,6 +4,8 @@ using System.Collections;
 public class MortalObject : MonoBehaviour {
 
 
+    public bool CanDisable = true;
+
     [Range(1f, 10f)]
     public float m_time_to_despawn = 5f;
 
@@ -14,12 +16,14 @@ public class MortalObject : MonoBehaviour {
         if (coll.tag == "Player" && deadly)
         {
             coll.GetComponent<PlayerController>().DieWithFade();
-            gameObject.SetActive(false);
+            if(CanDisable)
+                gameObject.SetActive(false);
         }
         if (coll.tag == "Terrain")
         {
             deadly = false;
-            StartCoroutine(DisableObject());
+            if(CanDisable)
+                StartCoroutine(DisableObject());
         }
     }
 

@@ -550,7 +550,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 114819349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.71, z: 0}
+  m_LocalPosition: {x: 0.27, y: -1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -567,9 +567,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -1.9136829, y: 0}
+  m_Offset: {x: -2.735292, y: -1.9888183}
   serializedVersion: 2
-  m_Size: {x: 9.061893, y: 1}
+  m_Size: {x: 15.415661, y: 4.9776363}
 --- !u!114 &114819352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDisable: 0
   m_time_to_despawn: 5
 --- !u!1001 &118078814
 Prefab:
@@ -2950,6 +2951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDisable: 0
   m_time_to_despawn: 5
 --- !u!61 &1134510715
 BoxCollider2D:
@@ -2962,9 +2964,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 3.3647995, y: 0}
+  m_Offset: {x: 3.2028885, y: -2.0236692}
   serializedVersion: 2
-  m_Size: {x: 21.7503, y: 1}
+  m_Size: {x: 29.326889, y: 5.0473385}
 --- !u!1001 &1138050263
 Prefab:
   m_ObjectHideFlags: 0
@@ -5967,6 +5969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDisable: 0
   m_time_to_despawn: 5
 --- !u!61 &1925792040
 BoxCollider2D:
@@ -5979,9 +5982,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 2.0038643, y: 0}
+  m_Offset: {x: 2.741291, y: -2.837977}
   serializedVersion: 2
-  m_Size: {x: 14.832403, y: 1}
+  m_Size: {x: 23.636831, y: 6.675953}
 --- !u!4 &1929613642 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000010309558850, guid: 171d029d0083864408f1525f46b32c99,
@@ -6028,6 +6031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDisable: 0
   m_time_to_despawn: 5
 --- !u!61 &1936778249
 BoxCollider2D:
@@ -6040,9 +6044,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 3.070221, y: 0}
+  m_Offset: {x: 2.399826, y: -2.3463638}
   serializedVersion: 2
-  m_Size: {x: 21.825794, y: 1}
+  m_Size: {x: 30.674938, y: 5.692709}
 --- !u!4 &1937070349 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013606040070, guid: 4a623b0ace51426499316807eb2645e5,
