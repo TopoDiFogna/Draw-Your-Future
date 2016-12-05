@@ -8,6 +8,7 @@ public class Paint : MonoBehaviour {
     float timer = 0f;
     bool vanishing = false;
     Vector3 scale;
+    ScratchBarController scratchBar;
 
 	// Use this for initialization
 	
@@ -15,6 +16,7 @@ public class Paint : MonoBehaviour {
     {
         tr = transform;
         scale = tr.localScale;
+        scratchBar = GameObject.FindObjectOfType<ScratchBarController>();
     }
 
 	void OnEnable()
@@ -49,5 +51,6 @@ public class Paint : MonoBehaviour {
         tr.position = new Vector2(1000,1000);
         yield return new WaitForSeconds(0.2f);
         gameObject.SetActive(false);
+        scratchBar.ChangeSize(+1);
     }
 }

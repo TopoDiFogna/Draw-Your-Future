@@ -6,6 +6,7 @@ public class MouseSpawn : MonoBehaviour {
     public GameObject m_scratch;
     Vector3 mouse_position;
     public int number_of_scratches = 200;
+    public ScratchBarController scratchBar;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class MouseSpawn : MonoBehaviour {
             {
                 go.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
                 go.transform.rotation = Quaternion.identity;
+                scratchBar.ChangeSize(-1);
             }
         }
 	}

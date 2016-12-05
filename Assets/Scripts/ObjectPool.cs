@@ -10,6 +10,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using UnityEngine.UI;
 
 /// <summary>
 /// The object pool is a list of already instantiated game objects of the same type.
@@ -26,8 +27,8 @@ public class ObjectPool
 	//maximum number of objects to have in the list.
 	private int maxPoolSize;
 
-	//initial and default number of objects to have in the list.
-	//private int initialPoolSize;
+    //initial and default number of objects to have in the list.
+    //private int initialPoolSize;
 
 	/// <summary>
 	/// Constructor for creating a new Object Pool.
