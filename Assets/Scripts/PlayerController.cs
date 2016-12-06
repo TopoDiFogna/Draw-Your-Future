@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void onCollisionExit2D(Collision2D coll)
+    void OnCollisionExit2D(Collision2D coll)
     {
         Debug.Log("exiting collision");
         if (jumping == false && coll.gameObject.tag == "Terrain")
