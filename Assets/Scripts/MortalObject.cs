@@ -9,7 +9,7 @@ public class MortalObject : MonoBehaviour {
     [Range(1f, 10f)]
     public float m_time_to_despawn = 5f;
 
-    bool deadly = true;
+    public bool deadly = true;
 
     private void OnEnable()
     {

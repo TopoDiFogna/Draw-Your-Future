@@ -208,36 +208,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013747141096, guid: 40de1ed4d3a92f246a487ae3b493f70c,
     type: 2}
   m_PrefabInternal: {fileID: 538882875}
---- !u!1 &31445515
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 31445516}
-  m_Layer: 0
-  m_Name: Fish (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &31445516
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 31445515}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.23, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1056393732}
-  - {fileID: 1859433584}
-  m_Father: {fileID: 1534228977}
-  m_RootOrder: 5
 --- !u!1 &58295701
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +579,7 @@ GameObject:
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -653,6 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanDisable: 0
   m_time_to_despawn: 5
+  deadly: 1
 --- !u!1001 &118078814
 Prefab:
   m_ObjectHideFlags: 0
@@ -1081,6 +1052,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 171d029d0083864408f1525f46b32c99, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &300101218 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000011515091266, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
+    type: 2}
+  m_PrefabInternal: {fileID: 1688979072}
 --- !u!4 &302390598 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011752669940, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
@@ -1673,34 +1649,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013751460042, guid: 1994892b745123949a473cdd22c0010c,
     type: 2}
   m_PrefabInternal: {fileID: 486992970}
---- !u!1 &504273810
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 504273811}
-  m_Layer: 0
-  m_Name: EndingPos
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &504273811
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504273810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.34, y: -3.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 798168750}
-  m_RootOrder: 1
 --- !u!1001 &508269458
 Prefab:
   m_ObjectHideFlags: 0
@@ -2711,36 +2659,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012602534610, guid: be2ceb9dc413b894bac1ee1a9f39f1ba,
     type: 2}
   m_PrefabInternal: {fileID: 1644039596}
---- !u!1 &798168749
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 798168750}
-  m_Layer: 0
-  m_Name: Fish
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &798168750
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 798168749}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 302390598}
-  - {fileID: 504273811}
-  m_Father: {fileID: 1534228977}
-  m_RootOrder: 3
 --- !u!1001 &800541874
 Prefab:
   m_ObjectHideFlags: 0
@@ -3263,7 +3181,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 798168750}
+    m_TransformParent: {fileID: 1534228977}
     m_Modifications:
     - target: {fileID: 4000011752669940, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3295,22 +3213,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011752669940, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014189373212, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
-        type: 2}
-      propertyPath: endingGameObject
-      value: 
-      objectReference: {fileID: 504273811}
-    - target: {fileID: 50000013531153666, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 61000014172083622, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13, type: 2}
@@ -3469,11 +3372,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.07
+      value: -8.13
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.03
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3553,7 +3456,7 @@ GameObject:
   m_Layer: 0
   m_Name: DeathZone (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3583,6 +3486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanDisable: 0
   m_time_to_despawn: 5
+  deadly: 1
 --- !u!61 &1134510715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4926,9 +4830,9 @@ Transform:
   - {fileID: 1134510713}
   - {fileID: 334932339}
   - {fileID: 616683770}
-  - {fileID: 798168750}
+  - {fileID: 302390598}
   - {fileID: 1818109259}
-  - {fileID: 31445516}
+  - {fileID: 1056393732}
   - {fileID: 1970471922}
   - {fileID: 1649506128}
   - {fileID: 1982172299}
@@ -4998,6 +4902,10 @@ Prefab:
     - target: {fileID: 4000012037126308, guid: 0edaee26bb910f34a9c29f7b6ad6b690, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010044738722, guid: 0edaee26bb910f34a9c29f7b6ad6b690, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0edaee26bb910f34a9c29f7b6ad6b690, type: 2}
@@ -5900,11 +5808,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 31445516}
+    m_TransformParent: {fileID: 1534228977}
     m_Modifications:
     - target: {fileID: 4000011752669940, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 109.28
+      value: 118.50999
       objectReference: {fileID: 0}
     - target: {fileID: 4000011752669940, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5932,13 +5840,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011752669940, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114000014189373212, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
         type: 2}
       propertyPath: endingGameObject
       value: 
-      objectReference: {fileID: 1859433584}
+      objectReference: {fileID: 300101218}
     - target: {fileID: 50000013531153666, guid: b3d1c6389ba6c9a4e91b6f00b9e0bb13,
         type: 2}
       propertyPath: m_Constraints
@@ -6077,6 +5985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanDisable: 0
   m_time_to_despawn: 5
+  deadly: 1
 --- !u!1 &1750875479
 GameObject:
   m_ObjectHideFlags: 0
@@ -6541,34 +6450,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4e649f9be6e75c499969f05dc342ea0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1859433583
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1859433584}
-  m_Layer: 0
-  m_Name: EndingPos
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1859433584
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1859433583}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.34, y: -3.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 31445516}
-  m_RootOrder: 1
 --- !u!1 &1878222561
 GameObject:
   m_ObjectHideFlags: 0
@@ -6742,7 +6623,7 @@ GameObject:
   m_Layer: 0
   m_Name: DeathZone (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6772,6 +6653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanDisable: 0
   m_time_to_despawn: 5
+  deadly: 1
 --- !u!61 &1925792040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6804,7 +6686,7 @@ GameObject:
   m_Layer: 0
   m_Name: DeathZone (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6834,6 +6716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanDisable: 0
   m_time_to_despawn: 5
+  deadly: 1
 --- !u!61 &1936778249
 BoxCollider2D:
   m_ObjectHideFlags: 0
