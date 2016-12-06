@@ -4,7 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-    public bool paused = false;
+    bool paused = false;
+    public bool Pause
+    {
+        get { return paused; }
+    }
     public GameObject PauseMenu;
     PlayerController player;
 
@@ -30,14 +34,14 @@ public class GameController : MonoBehaviour {
         }
 	}
 
-    public void UnPause()
+    private void UnPause()
     {
         PauseMenu.SetActive(false);
         paused = false;
         Time.timeScale = 1;
     }
 
-    public void BackToMenu()
+    private void BackToMenu()
     {
         UnPause();
         SceneManager.LoadScene("MainMenu");

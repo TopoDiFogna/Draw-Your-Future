@@ -13,7 +13,6 @@ public class Paint : MonoBehaviour
     ScratchBarController scratchBar;
 
     // Use this for initialization
-
     void Start()
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -32,14 +31,13 @@ public class Paint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gc.paused)
+        if (!gc.Pause)
         {
             timer += Time.deltaTime;
             if (timer >= timetolive && !vanishing)
             {
                 timer = 0f;
                 vanishing = true;
-                //gameObject.SetActive(false);
             }
             if (vanishing)
             {
@@ -56,7 +54,7 @@ public class Paint : MonoBehaviour
     IEnumerator DisablePaint()
     {
         tr.position = new Vector2(1000, 1000);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
         scratchBar.ChangeSize(+1);
     }
