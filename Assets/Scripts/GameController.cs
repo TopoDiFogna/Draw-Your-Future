@@ -41,4 +41,10 @@ public class GameController : MonoBehaviour {
         UnPause();
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void Restart()
+    {
+        UnPause();
+        SceneManager.LoadScene("Prototipo");
+    }
 }

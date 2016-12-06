@@ -26,6 +26,7 @@ public class Paint : MonoBehaviour
     {
         timer = 0f;
         vanishing = false;
+        scratchBar = GameObject.FindObjectOfType<ScratchBarController>();
     }
 
     // Update is called once per frame

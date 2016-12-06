@@ -18,6 +18,8 @@ public class ThrowingEnemy : MonoBehaviour
         tr = transform;
     }
 
+
+
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "Player" && !shooting)
