@@ -12,12 +12,4 @@ public class LevelObjSpawner : MonoBehaviour {
             ObjectPoolingManager.Instance.CreatePool(obj, 5, 200);
         }
     }
-
-    public void Restart()
-    {
-        foreach(GameObject g in m_objects_To_Spawn)
-        {
-            
-        }
-    }
 }
