@@ -6,15 +6,16 @@ public class GameController : MonoBehaviour {
 
     public bool paused = false;
     public GameObject PauseMenu;
+    PlayerController player;
 
 	// Use this for initialization
 	void Start () {
-	
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.dead)
         {
             if (!paused)
             {
