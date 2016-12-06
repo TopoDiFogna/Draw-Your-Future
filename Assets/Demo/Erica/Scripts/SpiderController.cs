@@ -17,8 +17,8 @@ public class SpiderController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         tr = GetComponent<Transform>();
-        m_startingPoint = new Vector3(m_startingPosition.position.x, m_startingPosition.position.y, 0);
-        m_endingPoint = new Vector3(m_startingPosition.position.x, m_endingPosition.position.y, 0);
+        m_startingPoint = new Vector3(m_startingPosition.position.x, m_startingPosition.position.y, m_startingPosition.position.z);
+        m_endingPoint = new Vector3(m_startingPosition.position.x, m_endingPosition.position.y, m_startingPosition.position.z);
         goingDown = true;
         goingUp = false;
     }

@@ -25,7 +25,8 @@ GameObject:
   - 114: {fileID: 114000013011406378}
   - 114: {fileID: 114000011553862534}
   - 58: {fileID: 58000010751769680}
-  m_Layer: 0
+  - 114: {fileID: 114000012289286552}
+  m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,6 +102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDisable: 1
+  m_time_to_despawn: 5
+--- !u!114 &114000012289286552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011696488616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c776cd7290dbb6048b50f20d96ce0a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scratch_layer: 8
 --- !u!114 &114000013011406378
 MonoBehaviour:
   m_ObjectHideFlags: 1

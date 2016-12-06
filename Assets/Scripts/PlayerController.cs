@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-    public int m_scratch_layer = 9;
+    public int m_scratch_layer = 8;
     GameController gc;
     public GameObject m_paint;
 
@@ -133,7 +133,11 @@ public class PlayerController : MonoBehaviour
 
     void onCollisionExit2D(Collision2D coll)
     {
-
+        Debug.Log("exiting collision");
+        if (jumping == false && coll.gameObject.tag == "Terrain")
+        {
+            jumping = true;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)

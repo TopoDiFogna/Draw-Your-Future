@@ -35,10 +35,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012637968542}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.47718412, y: 0.47718415, z: 0.4771842}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.70710677}
+  m_LocalPosition: {x: -2.06, y: 0.02, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,9 +53,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.12347983, y: 0.06565668}
+  m_Offset: {x: 0.029858572, y: 0.017337319}
   serializedVersion: 2
-  m_Size: {x: 3.9529476, y: 6.17473}
+  m_Size: {x: 1.5234995, y: 1.6805832}
 --- !u!114 &114000011848920594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,10 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397422c6683a2164192bbbdcbcced713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitudeX: 0
-  amplitudeY: 0
-  omegaX: 0
-  omegaY: 0
+  amplitudeX: 4
+  amplitudeY: 0.5
+  omegaX: 0.25
+  omegaY: 0.5
 --- !u!212 &212000012938079280
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 731ab27b356091341a3efb1bb2c56f79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcc890a8f31d445428a4a15716ebf798, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
