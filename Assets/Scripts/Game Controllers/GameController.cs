@@ -50,6 +50,10 @@ public class GameController : MonoBehaviour {
     public void Restart()
     {
         UnPause();
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Scratch"))
+        {
+            g.SetActive(false);
+        }
         SceneManager.LoadScene("Prototipo");
     }
 }

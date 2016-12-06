@@ -22,6 +22,10 @@ public class FlyingMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tr.localScale.x == 1 && (Target.transform.position - tr.position).x < 0)
+            tr.localScale = new Vector3(-1, 1, 1);
+        else if (tr.localScale.x == -1 && (Target.transform.position - tr.position).x > 0)
+            tr.localScale = new Vector3(1, 1, 1);
         tr.position += (Target.transform.position - tr.position).normalized * speed * Time.deltaTime;
     }
 

@@ -17,8 +17,9 @@ public class CannonOn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-	}
+        CBSPosition = CBSpawn.transform.position;
+        BallDir = (Direction.transform.position - CBSpawn.transform.position).normalized;
+    }
 
     private void OnEnable()
     {
@@ -58,7 +59,8 @@ public class CannonOn : MonoBehaviour {
 
     private IEnumerator CannonShoot()
     {
-        GameObject g = ObjectPoolingManager.Instance.GetObject(Spark.name.ToString());
+        //GameObject g = ObjectPoolingManager.Instance.GetObject(Spark.name.ToString());
+        GameObject g = Instantiate(Spark);
         g.transform.position = transform.position;
         g.transform.localScale = new Vector3(1, 1, 1);
         yield return new WaitForSeconds(2);
