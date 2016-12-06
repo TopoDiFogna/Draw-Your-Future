@@ -11,6 +11,11 @@ public class MortalObject : MonoBehaviour {
 
     bool deadly = true;
 
+    private void OnEnable()
+    {
+        deadly = true;
+    }
+
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "Player" && deadly)
