@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sr;
 
     // Status variables
+    public bool climbing = false;
     public bool jumping = false;
     public bool sliding = false;
     public bool dead = false;
@@ -78,12 +79,24 @@ public class PlayerController : MonoBehaviour
                 facing_right = true;
             }
 
-            if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder && !dead)
+            if (Input.GetKeyDown(KeyCode.W) && !jumping && !dead)
             {
-                rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
-                jumping = true;
-                animator.SetBool("Jumping", true);
-                StartCoroutine(StopJumpAnimation());
+                if (!IsNearLadder)
+                {
+                    rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                    jumping = true;
+                    animator.SetBool("Jumping", true);
+                    StartCoroutine(StopJumpAnimation());
+                }
+                else
+                {
+                    climbing = true;
+                    rb.isKinematic = true;
+                }
+            }
+            if(!IsNearLadder && rb.isKinematic)
+            {
+                rb.isKinematic = false;
             }
         }
     }
@@ -106,13 +119,21 @@ public class PlayerController : MonoBehaviour
         {
             //donothing
         }
-        else if (!IsNearLadder && !sliding)
+        else if (!climbing && !sliding)
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
         }
-        else
+        else if(climbing)
         {
-            rb.velocity = new Vector2(m_horizontal * m_speed, m_vertical * m_climbing_speed);
+            
+            if (m_horizontal != 0)
+            {
+                climbing = false;
+                rb.isKinematic = false;
+                rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+            }
+            else
+                rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);
         }
 
     }
@@ -145,9 +166,9 @@ public class PlayerController : MonoBehaviour
 
         if (coll.gameObject.tag == "Climbable")
         {
-            jumping = false;
+            //jumping = false;
             IsNearLadder = true;
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
         }
 
 
@@ -159,6 +180,15 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.layer = m_scratch_layer;
         }
+        if (coll.gameObject.tag == "Climbable")
+        {
+            //jumping = false;
+            IsNearLadder = true;
+            if(climbing)
+                rb.isKinematic = true;
+            //rb.isKinematic = true;
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D coll)
@@ -171,7 +201,8 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = false;
-            rb.isKinematic = false;
+            //climbing = false;
+            //rb.isKinematic = false;
         }
     }
 
