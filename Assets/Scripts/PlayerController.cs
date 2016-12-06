@@ -156,6 +156,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D coll)
+    {
+        if (jumping == true && coll.gameObject.tag == "Terrain")
+        {
+            jumping = false;
+        }
+
+    }
+
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch")
