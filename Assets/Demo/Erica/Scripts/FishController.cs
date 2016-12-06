@@ -19,8 +19,8 @@ public class FishController : MonoBehaviour {
     void Awake()
     {
         tr = transform;
-        startingPosition = new Vector3(tr.position.x, tr.position.y, 0);
-        endingPoint = new Vector3(endingGameObject.position.x, endingGameObject.position.y, 0);
+        startingPosition = new Vector3(tr.position.x, tr.position.y, tr.position.z);
+        endingPoint = new Vector3(endingGameObject.position.x, endingGameObject.position.y, endingGameObject.position.z);
         script = GetComponent<FishController>();
         rend = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +35,7 @@ public class FishController : MonoBehaviour {
     {
         rend.enabled = true;
         tr.position = startingPosition;
-        StartCoroutine("FishJump");
+        StartCoroutine(FishJump());
     }
 
     IEnumerator FishJump()
@@ -45,7 +45,6 @@ public class FishController : MonoBehaviour {
         float v0y = (endingPoint.y + 0.5f*rb.gravityScale*10 * m_timeToJump*m_timeToJump - startingPosition.y) / m_timeToJump;
         rb.isKinematic = false;
         rb.AddForce(new Vector2(v0x, v0y), ForceMode2D.Impulse);
-        //rb.AddForce(m_jumpDirection * m_jumpForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(m_timeToJump);
         script.enabled = false;
         rb.velocity = new Vector2();

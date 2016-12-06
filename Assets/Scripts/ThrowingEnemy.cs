@@ -40,7 +40,6 @@ public class ThrowingEnemy : MonoBehaviour
             g.GetComponent<Rigidbody2D>().AddForce(new Vector2(v0x, v0y), ForceMode2D.Impulse);
             yield return new WaitForSeconds(3f);
         }
-        print(Vector2.Distance(tr.position, player.transform.position));
         shooting = false;
         yield break;
 

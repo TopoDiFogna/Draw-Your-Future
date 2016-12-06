@@ -9,7 +9,7 @@ public class MortalObject : MonoBehaviour {
     [Range(1f, 10f)]
     public float m_time_to_despawn = 5f;
 
-    bool deadly = true;
+    public bool deadly = true;
 
     private void OnEnable()
     {
@@ -18,6 +18,7 @@ public class MortalObject : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
+        // print(gameObject.name + " collided with " + coll.gameObject.name + " with tag " + coll.gameObject.tag + " and it was deadly " + deadly);
         if (coll.tag == "Player" && deadly)
         {
             coll.GetComponent<PlayerController>().DieWithFade();
