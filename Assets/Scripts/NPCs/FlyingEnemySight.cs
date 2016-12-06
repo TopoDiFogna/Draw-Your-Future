@@ -5,22 +5,30 @@ public class FlyingEnemySight : MonoBehaviour
 {
 
     public GameObject m_monster;
+    public float m_time_to_get_player = 10f;
     private GameObject old;
+    private FlyingMovement monster_script;
+
+    private void Start()
+    {
+        monster_script = m_monster.GetComponent<FlyingMovement>();
+    }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && !m_monster.GetComponentInParent<FlyingMovement>().seek && m_monster.GetComponentInParent<FlyingMovement>().can_grab && !coll.GetComponent<PlayerController>().Dead)
+        if (coll.tag == "Player" && !monster_script.seek && monster_script.CanGrab && !coll.GetComponent<PlayerController>().Dead)
         {
-            old = m_monster.GetComponentInParent<FlyingMovement>().Target;
-            m_monster.GetComponentInParent<FlyingMovement>().seek = true;
-            m_monster.GetComponentInParent<FlyingMovement>().Target = coll.gameObject;
+            old = monster_script.Target;
+            monster_script.seek = true;
+            monster_script.Target = coll.gameObject;
+            StartCoroutine(SearchPlayer());
         }
         
     }
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && m_monster.GetComponentInParent<FlyingMovement>().seek && coll.GetComponent<PlayerController>().Dead)
+        if (coll.tag == "Player" && monster_script.seek && coll.GetComponent<PlayerController>().Dead)
         {
             LeavePlayer();
         }
@@ -28,7 +36,16 @@ public class FlyingEnemySight : MonoBehaviour
 
     public void LeavePlayer()
     {
-        m_monster.GetComponentInParent<FlyingMovement>().seek = false;
-        m_monster.GetComponentInParent<FlyingMovement>().Target = old;
+        monster_script.seek = false;
+        monster_script.Target = old;
+    }
+
+    IEnumerator SearchPlayer()
+    {
+        yield return new WaitForSeconds(m_time_to_get_player);
+        if (!monster_script.hasplayer)
+        {
+            LeavePlayer();
+        }
     }
 }
