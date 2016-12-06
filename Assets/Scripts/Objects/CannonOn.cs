@@ -16,7 +16,7 @@ public class CannonOn : MonoBehaviour {
     public bool activated = false;
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
         CBSPosition = CBSpawn.transform.position;
         BallDir = (Direction.transform.position - CBSpawn.transform.position).normalized;
     }
@@ -27,12 +27,7 @@ public class CannonOn : MonoBehaviour {
         BallDir = (Direction.transform.position - CBSpawn.transform.position).normalized;
     }
 
-    // Update is called once per frame
-    void Update () {
-	
-	}
-
-    void OnTriggerEnter2D(Collider2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch" && !activated)
         {
@@ -41,7 +36,7 @@ public class CannonOn : MonoBehaviour {
         }
     }
 
-    void OnTriggerStay2D(Collider2D coll)
+    private void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch")
         {
@@ -49,7 +44,7 @@ public class CannonOn : MonoBehaviour {
         }
     }
 
-    void OnTriggerExit2D(Collider2D coll)
+    private void OnTriggerExit2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch")
         {
@@ -59,7 +54,6 @@ public class CannonOn : MonoBehaviour {
 
     private IEnumerator CannonShoot()
     {
-        //GameObject g = ObjectPoolingManager.Instance.GetObject(Spark.name.ToString());
         GameObject g = Instantiate(Spark);
         g.transform.position = transform.position;
         g.transform.localScale = new Vector3(1, 1, 1);

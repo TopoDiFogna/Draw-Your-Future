@@ -3,21 +3,19 @@ using System.Collections;
 
 public class CheckPoint : MonoBehaviour {
 
-    public GameObject spawnPosition;
-    Transform tr;
+    private Vector3 spawnPosition;
+
 
     void Start()
     {
-        tr = spawnPosition.transform;
+        spawnPosition = gameObject.GetComponentInChildren<Transform>().position;
     }
-
-	// Use this for initialization
 	
 	void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.tag == "Player")
         {
-            coll.gameObject.GetComponent<PlayerController>().checkPointPosition = tr.position;
+            coll.gameObject.GetComponent<PlayerController>().CheckPointPosition = spawnPosition;
         }
     }
 }

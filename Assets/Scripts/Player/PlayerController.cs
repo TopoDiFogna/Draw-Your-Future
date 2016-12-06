@@ -26,28 +26,36 @@ public class PlayerController : MonoBehaviour
     public bool climbing = false;
     public bool jumping = false;
     public bool sliding = false;
-    public bool dead = false;
+    private bool dead = false;
+
+    public bool Dead
+    {
+        get { return dead; }
+    }
 
     public bool IsNearLadder = false;
 
-    bool facing_right = true;
+    private bool facing_right = true;
 
     //Controls variables
-    float m_horizontal = 0f;
-    float m_vertical = 0f;
+    private float m_horizontal = 0f;
+    private float m_vertical = 0f;
 
-    public Vector3 checkPointPosition;
+    private Vector3 checkPointPosition;
+    public Vector3 CheckPointPosition
+    {
+        get { return checkPointPosition; }
+        set { checkPointPosition = value; }
+    }
 
 
     //Death variables
     [Range(0.5f, 5.0f)]
     public float timeToDie = 1.0f;
-    public float timeJump = 0.1f;
-    public Camera blackCamera;
 
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         lay = gameObject.layer;
@@ -57,7 +65,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!gc.Pause)
         {
@@ -101,9 +109,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator StopJumpAnimation()
+    private IEnumerator StopJumpAnimation()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         animator.SetBool("Jumping", false);
     }
 
@@ -113,7 +121,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Jumping", false);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (dead || (sliding && !IsNearLadder))
         {
@@ -138,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
@@ -148,7 +156,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnCollisionExit2D(Collision2D coll)
+    private void OnCollisionExit2D(Collision2D coll)
     {
         if (jumping == false && coll.gameObject.tag == "Terrain")
         {
@@ -165,7 +173,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch")
         {
@@ -174,15 +182,13 @@ public class PlayerController : MonoBehaviour
 
         if (coll.gameObject.tag == "Climbable")
         {
-            //jumping = false;
             IsNearLadder = true;
-            //rb.isKinematic = true;
         }
 
 
     }
 
-    void OnTriggerStay2D(Collider2D coll)
+    private void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch")
         {
@@ -190,16 +196,15 @@ public class PlayerController : MonoBehaviour
         }
         if (coll.gameObject.tag == "Climbable")
         {
-            //jumping = false;
             IsNearLadder = true;
-            if(climbing)
+            if (climbing)
+            {
                 rb.isKinematic = true;
-            //rb.isKinematic = true;
+            }
         }
-
     }
 
-    void OnTriggerExit2D(Collider2D coll)
+    private void OnTriggerExit2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch")
         {
@@ -209,48 +214,8 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = false;
-            //climbing = false;
-            //rb.isKinematic = false;
         }
     }
-
-    //public void Die11()
-    //{
-    //    StartCoroutine(Die1());
-    //}
-
-    ////Versione di morte con scomparsa dello schermo e ritorno immediato
-    //public IEnumerator Die1()
-    //{
-    //    blackCamera.enabled = true;
-    //    //Camera.main.enabled = false;
-    //    yield return new WaitForSeconds(timeToDie);
-    //    transform.position = checkPointPosition;
-    //    Camera.main.enabled = true;
-    //    blackCamera.enabled = false;
-    //}
-
-
-    ////Versione di morte con ritorno graduale
-    //public void Die2()
-    //{
-    //    rb.isKinematic = true;
-    //    circleColl.enabled = false;
-    //    boxColl.enabled = false;
-    //    Vector3 startingPoint = new Vector3(transform.position.x, transform.position.y, 0);
-    //    Vector3 endingPoint;
-    //    float time = 0;
-    //    endingPoint = checkPointPosition;
-
-    //    while (time <= timeToDie)
-    //    {
-    //        transform.position = Vector3.Lerp(startingPoint, endingPoint, time / timeToDie);
-    //        time += timeJump;
-    //    }
-    //    rb.isKinematic = false;
-    //    circleColl.enabled = true;
-    //    boxColl.enabled = true;
-    //}
 
     public void DieWithFade()
     {

@@ -4,38 +4,31 @@ using System.Collections;
 public class FlyingEnemySight : MonoBehaviour
 {
 
-    public GameObject monster;
-    GameObject old;
+    public GameObject m_monster;
+    private GameObject old;
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && !monster.GetComponentInParent<FlyingMovement>().seek && monster.GetComponentInParent<FlyingMovement>().can_grab && !coll.GetComponent<PlayerController>().dead)
+        if (coll.tag == "Player" && !m_monster.GetComponentInParent<FlyingMovement>().seek && m_monster.GetComponentInParent<FlyingMovement>().can_grab && !coll.GetComponent<PlayerController>().Dead)
         {
-            old = monster.GetComponentInParent<FlyingMovement>().Target;
-            monster.GetComponentInParent<FlyingMovement>().seek = true;
-            monster.GetComponentInParent<FlyingMovement>().Target = coll.gameObject;
+            old = m_monster.GetComponentInParent<FlyingMovement>().Target;
+            m_monster.GetComponentInParent<FlyingMovement>().seek = true;
+            m_monster.GetComponentInParent<FlyingMovement>().Target = coll.gameObject;
         }
         
     }
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && monster.GetComponentInParent<FlyingMovement>().seek && coll.GetComponent<PlayerController>().dead)
+        if (coll.tag == "Player" && m_monster.GetComponentInParent<FlyingMovement>().seek && coll.GetComponent<PlayerController>().Dead)
         {
             LeavePlayer();
         }
-        /*else if (coll.tag == "Player" && !monster.GetComponentInParent<FlyingMovement>().seek && !coll.GetComponent<PlayerController>().dead)
-        {
-            old = monster.GetComponentInParent<FlyingMovement>().Target;
-            monster.GetComponentInParent<FlyingMovement>().seek = true;
-            monster.GetComponentInParent<FlyingMovement>().Target = coll.gameObject;
-        }*/
     }
 
     public void LeavePlayer()
     {
-
-        monster.GetComponentInParent<FlyingMovement>().seek = false;
-        monster.GetComponentInParent<FlyingMovement>().Target = old;
+        m_monster.GetComponentInParent<FlyingMovement>().seek = false;
+        m_monster.GetComponentInParent<FlyingMovement>().Target = old;
     }
 }

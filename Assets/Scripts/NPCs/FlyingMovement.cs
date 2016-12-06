@@ -47,7 +47,7 @@ public class FlyingMovement : MonoBehaviour
         }
         else if (coll.tag == "Player" && can_grab)
         {
-            if (!coll.GetComponent<PlayerController>().dead)
+            if (!coll.GetComponent<PlayerController>().Dead)
             {
                 seek = false;
                 hasplayer = true;
