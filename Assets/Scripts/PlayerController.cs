@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public int m_scratch_layer = 9;
-
+    GameController gc;
     public GameObject m_paint;
 
     [Range(0, 100)]
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         lay = gameObject.layer;
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
@@ -61,30 +62,33 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_horizontal = Input.GetAxisRaw("Horizontal");
-        m_vertical = Input.GetAxisRaw("Vertical");
-        if (!sliding && !dead)
+        if (!gc.paused)
         {
-            animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
-        }
+            m_horizontal = Input.GetAxisRaw("Horizontal");
+            m_vertical = Input.GetAxisRaw("Vertical");
+            if (!sliding && !dead)
+            {
+                animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
+            }
 
-        if (facing_right && rb.velocity.x < 0)
-        {
-            sr.flipX = true;
-            facing_right = false;
-        }
-        else if (!facing_right && rb.velocity.x > 0)
-        {
-            sr.flipX = false;
-            facing_right = true;
-        }
+            if (facing_right && rb.velocity.x < 0)
+            {
+                sr.flipX = true;
+                facing_right = false;
+            }
+            else if (!facing_right && rb.velocity.x > 0)
+            {
+                sr.flipX = false;
+                facing_right = true;
+            }
 
-        if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder && !dead)
-        {
-            rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
-            jumping = true;
-            animator.SetBool("Jumping", true);
-            StartCoroutine(StopJumpAnimation());
+            if (Input.GetKeyDown(KeyCode.W) && !jumping && !IsNearLadder && !dead)
+            {
+                rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                jumping = true;
+                animator.SetBool("Jumping", true);
+                StartCoroutine(StopJumpAnimation());
+            }
         }
     }
 

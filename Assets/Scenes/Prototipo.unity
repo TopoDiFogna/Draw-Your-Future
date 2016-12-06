@@ -4547,11 +4547,11 @@ GameObject:
   - 4: {fileID: 1556123758}
   - 114: {fileID: 1556123757}
   - 114: {fileID: 1556123759}
-  - 114: {fileID: 1556123760}
   - 114: {fileID: 1556123761}
+  - 114: {fileID: 1556123760}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4570,6 +4570,7 @@ MonoBehaviour:
   m_scratch: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
   number_of_scratches: 200
   scratchBar: {fileID: 1556123761}
+  gc: {fileID: 0}
 --- !u!4 &1556123758
 Transform:
   m_ObjectHideFlags: 0
@@ -4607,9 +4608,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1556123756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4feab3cb06205324cbe686610a5caad9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0eca60b9ea5c1a6449e586684f1c537e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
 --- !u!114 &1556123761
 MonoBehaviour:
   m_ObjectHideFlags: 0

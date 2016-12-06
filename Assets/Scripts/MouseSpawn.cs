@@ -7,16 +7,18 @@ public class MouseSpawn : MonoBehaviour {
     Vector3 mouse_position;
     public int number_of_scratches = 200;
     public ScratchBarController scratchBar;
+    public GameController gc;
 
 	// Use this for initialization
 	void Start () {
         ObjectPoolingManager.Instance.CreatePool(m_scratch, number_of_scratches, number_of_scratches);
+        gc = GetComponent<GameController>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetMouseButton(0)) 
+        if (Input.GetMouseButton(0) && !gc.paused) 
         {
             mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
