@@ -16,7 +16,6 @@ public class ScratchBarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(fullBar);
 	    if(fullBar==null)
             fullBar = GameObject.Find("FullBar");
     }
