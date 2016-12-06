@@ -21,8 +21,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer sr;
-    BoxCollider2D boxColl;
-    CircleCollider2D circleColl;
 
     // Status variables
     public bool jumping = false;
@@ -55,8 +53,6 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        boxColl = gameObject.GetComponent<BoxCollider2D>();
-        circleColl = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame

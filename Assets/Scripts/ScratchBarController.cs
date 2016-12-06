@@ -5,13 +5,11 @@ using UnityEngine.UI;
 public class ScratchBarController : MonoBehaviour {
 
     public Image fullBar;
-    private float basic_width;
     public float max_pool_size = 200;
     private float current_pool_size;
 
 	// Use this for initialization
 	void Start () {
-        basic_width = fullBar.rectTransform.rect.height;
         current_pool_size = max_pool_size;
 	}
 	

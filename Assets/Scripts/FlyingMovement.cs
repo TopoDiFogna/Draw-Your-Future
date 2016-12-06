@@ -75,7 +75,6 @@ public class FlyingMovement : MonoBehaviour
         can_grab = false;
         transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
         StartCoroutine(ResetGrab());
-        print("YUNODODIS");
     }
 
     IEnumerator ResetGrab()
