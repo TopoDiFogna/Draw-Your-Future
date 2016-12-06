@@ -25,7 +25,6 @@ public class RockSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log("hitted");
         if (coll.gameObject.tag == "Scratch" && !activated && (spawned_objects < objects_to_spawn))
         {
             activated = true;
