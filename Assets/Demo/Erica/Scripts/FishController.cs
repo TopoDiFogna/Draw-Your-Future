@@ -3,20 +3,20 @@ using System.Collections;
 
 public class FishController : MonoBehaviour {
 
-    Rigidbody2D rb;
-    Transform tr;
-    Vector3 startingPosition;
+    private Rigidbody2D rb;
+    private Transform tr;
+    private Vector3 startingPosition;
     public Transform endingGameObject;
-    Vector3 endingPoint;
+    private Vector3 endingPoint;
     [Range(0.0f, 10.0f)]
     public float m_timeToJump;
     [Range(0.5f, 10.0f)]
     public float m_timeToWait;
     [Range(0.0f, 20.0f)]
-    FishController script;
-    SpriteRenderer rend;
+    private FishController script;
+    private SpriteRenderer rend;
 
-    void Awake()
+    private void Awake()
     {
         tr = transform;
         startingPosition = new Vector3(tr.position.x, tr.position.y, tr.position.z);
@@ -25,11 +25,6 @@ public class FishController : MonoBehaviour {
         rend = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
-
-	// Update is called once per frame
-	void Update () {
-
-	}
 
     void OnEnable()
     {
@@ -40,7 +35,6 @@ public class FishController : MonoBehaviour {
 
     IEnumerator FishJump()
     {
-
         float v0x = (endingPoint.x- startingPosition.x) / m_timeToJump;
         float v0y = (endingPoint.y + 0.5f*rb.gravityScale*10 * m_timeToJump*m_timeToJump - startingPosition.y) / m_timeToJump;
         rb.isKinematic = false;
@@ -53,7 +47,5 @@ public class FishController : MonoBehaviour {
         rb.isKinematic = true;
         tr.position = startingPosition;
         script.enabled = true;
-
-
     }
 }
