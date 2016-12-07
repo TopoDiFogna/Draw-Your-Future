@@ -55,6 +55,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013555720046}
+  - 61: {fileID: 61000011082348064}
+  - 61: {fileID: 61000011396825856}
   m_Layer: 0
   m_Name: SmallPlatformFG
   m_TagString: Untagged
@@ -95,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013850339760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.359222, y: -3.026315, z: -1}
+  m_LocalPosition: {x: 184.93651, y: -2.105649, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -137,6 +139,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61000011082348064
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013850339760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.88127136, y: -0.29527402}
+  serializedVersion: 2
+  m_Size: {x: 0.12780452, y: 0.35493994}
+--- !u!61 &61000011396825856
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013850339760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 1.92, y: -0.29527402}
+  serializedVersion: 2
+  m_Size: {x: 0.12780452, y: 0.35493994}
 --- !u!61 &61000012676441710
 BoxCollider2D:
   m_ObjectHideFlags: 1
