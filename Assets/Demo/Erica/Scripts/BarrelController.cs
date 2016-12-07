@@ -7,13 +7,14 @@ public class BarrelController : MonoBehaviour {
     public float amplitudeY;
     public float omegaX;
     public float omegaY;
-    float index = 0;
+
+    private float index = 0;
     Vector3 start_position;
     Transform tr;
 
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
         tr = GetComponent<Transform>();
         start_position = tr.position;
 	}
@@ -26,7 +27,7 @@ public class BarrelController : MonoBehaviour {
         tr.position = start_position + new Vector3(x, y, 0);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         collision.transform.parent = tr;
     }
