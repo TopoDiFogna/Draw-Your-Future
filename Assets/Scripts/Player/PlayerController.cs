@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
                     rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
                     jumping = true;
                     animator.SetBool("Jumping", true);
-                    StartCoroutine(StopJumpAnimation());
                 }
                 else
                 {

@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013828586744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3, y: -2.3, z: -1}
+  m_LocalPosition: {x: -7.897941, y: -3.4659588, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 1000013828586744}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d414d2d292eb6dc4ca6d0179ba70420b, type: 2}
+  m_Controller: {fileID: 9100000, guid: ec46b39cff40f8d40b95e680452167ee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -123,14 +123,11 @@ MonoBehaviour:
   m_speed: 10
   m_climbing_speed: 5
   m_Jump_force: 10
+  climbing: 0
   jumping: 0
   sliding: 0
-  dead: 0
   IsNearLadder: 0
-  checkPointPosition: {x: 0, y: 0, z: 0}
   timeToDie: 1
-  timeJump: 0.1
-  blackCamera: {fileID: 0}
 --- !u!212 &212000012265379028
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -160,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -557025915
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 44fc62bd2e5e1004dafccdce6ef4ca9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d412e0a893ce3e445be4a9a7d92421ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
