@@ -949,6 +949,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013828586744, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
     type: 2}
   m_PrefabInternal: {fileID: 916683132}
+--- !u!4 &191029881 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
+    type: 2}
+  m_PrefabInternal: {fileID: 916683132}
 --- !u!4 &192016127 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011915484928, guid: def474620e0f5df46917e03a154742c1,
@@ -4471,7 +4476,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.9
+      value: -7.16
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4702,7 +4707,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012255787908, guid: 37b5a8205bfe22849b0ef8fdc958bf38, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.421165
+      value: 12.03
       objectReference: {fileID: 0}
     - target: {fileID: 4000012255787908, guid: 37b5a8205bfe22849b0ef8fdc958bf38, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5704,7 +5709,7 @@ Prefab:
     - target: {fileID: 58000013217727740, guid: 830c028e939f5d94b8442b21d6cb7500,
         type: 2}
       propertyPath: m_Radius
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 830c028e939f5d94b8442b21d6cb7500, type: 2}
@@ -6134,6 +6139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scratch: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
+  player_position: {fileID: 191029881}
+  min_distance: 5
 --- !u!114 &1152918508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6327,7 +6334,7 @@ Prefab:
     - target: {fileID: 58000013217727740, guid: 830c028e939f5d94b8442b21d6cb7500,
         type: 2}
       propertyPath: m_Radius
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 830c028e939f5d94b8442b21d6cb7500, type: 2}
@@ -9931,7 +9938,7 @@ Prefab:
     - target: {fileID: 58000013217727740, guid: 830c028e939f5d94b8442b21d6cb7500,
         type: 2}
       propertyPath: m_Radius
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 830c028e939f5d94b8442b21d6cb7500, type: 2}
