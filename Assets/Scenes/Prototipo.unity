@@ -4476,7 +4476,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.16
+      value: 218.4
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6140,7 +6140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_scratch: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
   player_position: {fileID: 191029881}
-  min_distance: 5
+  min_distance: 1.5
 --- !u!114 &1152918508
 MonoBehaviour:
   m_ObjectHideFlags: 0
