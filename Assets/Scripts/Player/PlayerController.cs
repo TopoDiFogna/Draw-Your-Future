@@ -147,6 +147,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
+        if(coll.gameObject.tag == "Terrain")
+        {
+            print(GetComponent<CircleCollider2D>().bounds.Intersects(coll.gameObject.GetComponent<BoxCollider2D>().bounds));
+        }
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
             jumping = false;

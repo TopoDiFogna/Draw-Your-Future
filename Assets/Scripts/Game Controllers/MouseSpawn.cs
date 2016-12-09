@@ -26,7 +26,7 @@ public class MouseSpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetMouseButton(0) && !gc.Pause) 
+        if (Input.GetMouseButton(0) && !gc.Pause && !gc.ended) 
         {
             mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
