@@ -172,6 +172,7 @@ public class PlayerController : MonoBehaviour
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
             jumping = false;
+            animator.SetBool("Jumping", false);
         }
 
     }
