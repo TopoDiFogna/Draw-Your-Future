@@ -50,7 +50,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1000013374600578}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d796f08f2c536b647a77bfb6c199f081, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51fd6d9930f4c644bec552e44cac5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  force: 15
 --- !u!212 &212000010895256188
 SpriteRenderer:
   m_ObjectHideFlags: 1
