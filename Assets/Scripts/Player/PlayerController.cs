@@ -76,12 +76,12 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
             }
 
-            if (facing_right && rb.velocity.x < 0)
+            if (facing_right && m_horizontal < 0)
             {
                 sr.flipX = true;
                 facing_right = false;
             }
-            else if (!facing_right && rb.velocity.x > 0)
+            else if (!facing_right && m_horizontal > 0)
             {
                 sr.flipX = false;
                 facing_right = true;

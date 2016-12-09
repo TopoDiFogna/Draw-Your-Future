@@ -5,6 +5,8 @@ public class MouseSpawn : MonoBehaviour {
 
     public GameObject m_scratch;
     Vector3 mouse_position;
+    public Transform player_position;
+    public float min_distance = 5.0f;
 
     int number_of_scratches = 200;
     public int NumberOfScratches
@@ -29,12 +31,14 @@ public class MouseSpawn : MonoBehaviour {
         if (Input.GetMouseButton(0) && !gc.Pause && !gc.ended) 
         {
             mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
-            if (go != null)
-            {
-                go.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
-                go.transform.rotation = Quaternion.identity;
-                scratchBar.ChangeSize(-1);
+            if (Vector2.Distance(new Vector2(player_position.position.x, player_position.position.y), new Vector2(mouse_position.x, mouse_position.y)) > min_distance) {
+                GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
+                if (go != null)
+                {
+                    go.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
+                    go.transform.rotation = Quaternion.identity;
+                    scratchBar.ChangeSize(-1);
+                }
             }
         }
 	}
