@@ -28,7 +28,7 @@ public class MouseSpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetMouseButton(0) && !gc.Pause) 
+        if (Input.GetMouseButton(0) && !gc.Pause && !gc.ended) 
         {
             mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (Vector2.Distance(new Vector2(player_position.position.x, player_position.position.y), new Vector2(mouse_position.x, mouse_position.y)) > min_distance) {

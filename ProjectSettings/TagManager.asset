@@ -11,6 +11,7 @@ TagManager:
   - FlyingBoundary
   - Projectile
   - Checkpoint
+  - Ending
   layers:
   - Default
   - TransparentFX

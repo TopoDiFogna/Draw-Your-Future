@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-    bool paused = false;
+    public bool ended = false;
+    public bool paused = false;
     public bool Pause
     {
         get { return paused; }
@@ -19,7 +20,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape) && !player.Dead)
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.Dead && !ended)
         {
             if (!paused)
             {
