@@ -5918,11 +5918,6 @@ Prefab:
       propertyPath: m_Radius
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013607806146, guid: 830c028e939f5d94b8442b21d6cb7500,
-        type: 2}
-      propertyPath: maxDist
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 830c028e939f5d94b8442b21d6cb7500, type: 2}
   m_IsPrefabParent: 0
