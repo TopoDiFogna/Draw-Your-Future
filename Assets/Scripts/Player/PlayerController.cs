@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    /*private void OnCollisionExit2D(Collision2D coll)
+    private void OnCollisionExit2D(Collision2D coll)
     {
         if (jumping == false && coll.gameObject.tag == "Terrain")
         {
@@ -164,15 +164,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionStay2D(Collision2D coll)
+    private void OnCollisionStay2D(Collision2D coll)
     {
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
             jumping = false;
-            animator.SetBool("Jumping", false);
+            //animator.SetBool("Jumping", false);
         }
 
-    }*/
+    }
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
