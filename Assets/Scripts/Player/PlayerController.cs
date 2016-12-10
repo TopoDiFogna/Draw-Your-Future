@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private float m_horizontal = 0f;
     private float m_vertical = 0f;
 
-    private Vector3 checkPointPosition;
+    private Vector3 checkPointPosition = new Vector3((-26.84f+19.5f), -2.106468f, -1);
     public Vector3 CheckPointPosition
     {
         get { return checkPointPosition; }

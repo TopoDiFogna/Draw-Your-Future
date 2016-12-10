@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013552545594}
   - 61: {fileID: 61000012676240234}
-  - 114: {fileID: 114000013867543116}
+  - 114: {fileID: 114000011897648694}
   m_Layer: 0
   m_Name: DeathZone
   m_TagString: Untagged
@@ -34,8 +34,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013412297216}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.94, y: -4.54, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.74, y: -3.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -55,7 +55,7 @@ BoxCollider2D:
   m_Offset: {x: -0.1518879, y: 0}
   serializedVersion: 2
   m_Size: {x: 13.940529, y: 1}
---- !u!114 &114000013867543116
+--- !u!114 &114000011897648694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -63,9 +63,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013412297216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
+  m_Script: {fileID: 11500000, guid: de9f1186c6a0475499fe46679064a575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_can_Be_Disabled: 0
-  m_time_to_despawn: 5
-  deadly: 1
