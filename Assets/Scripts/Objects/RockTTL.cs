@@ -31,6 +31,7 @@ public class RockTTL : MonoBehaviour {
         if(collision.tag == "Player" && !played)
         {
             m_rock_effects.PlayOneShot(m_player_impact);
+            Debug.Log("Ho suonato");
             played = true;
         }
         if(!played)

@@ -15,10 +15,14 @@ public class CannonOn : MonoBehaviour {
 
     public bool activated = false;
 
+    private AudioSource source;
+    public AudioClip explosion;
+
 	// Use this for initialization
 	private void Start () {
         CBSPosition = CBSpawn.transform.position;
         BallDir = (Direction.transform.position - CBSpawn.transform.position).normalized;
+        source = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -59,6 +63,7 @@ public class CannonOn : MonoBehaviour {
         g.transform.localScale = new Vector3(1, 1, 1);
         yield return new WaitForSeconds(2);
         g.SetActive(false);
+        source.PlayOneShot(explosion);
         GameObject cb = ObjectPoolingManager.Instance.GetObject(CannonBall.name.ToString());
         cb.transform.position = CBSPosition;
         cb.GetComponent<Rigidbody2D>().AddForce(BallDir * BallPower, ForceMode2D.Impulse);

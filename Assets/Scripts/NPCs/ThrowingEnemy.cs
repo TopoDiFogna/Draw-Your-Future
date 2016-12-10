@@ -21,7 +21,7 @@ public class ThrowingEnemy : MonoBehaviour
 
 
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.tag == "Player" && !shooting)
         {
@@ -34,13 +34,14 @@ public class ThrowingEnemy : MonoBehaviour
         if (coll.tag == "Player" && shooting)
         {
             shooting = false;
-            StopCoroutine(Shot());
+            //StopCoroutine(Shot());
         }
     }
 
     private IEnumerator Shot()
     {
-        while (Vector2.Distance(tr.position, player.transform.position) < radius/2)
+        //while (Vector2.Distance(tr.position, player.transform.position) < radius/2)
+        while(Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius/2)
         {
             GameObject g = ObjectPoolingManager.Instance.GetObject(rock.name.ToString());
             g.transform.position = transform.position;

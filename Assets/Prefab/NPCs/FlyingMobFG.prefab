@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013557398262}
   - 50: {fileID: 50000010746548008}
-  - 82: {fileID: 82000013209125068}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -38,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000012275702560}
   - 114: {fileID: 114000012434312358}
   - 60: {fileID: 60000014181979734}
+  - 82: {fileID: 82000012273971256}
   m_Layer: 0
   m_Name: MonsterSight
   m_TagString: Untagged
@@ -422,12 +422,12 @@ BoxCollider2D:
   m_Offset: {x: -0.17212677, y: -0.40967607}
   serializedVersion: 2
   m_Size: {x: 0.5543075, y: 0.91852725}
---- !u!82 &82000013209125068
+--- !u!82 &82000012273971256
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010044738722}
+  m_GameObject: {fileID: 1000010060379378}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
