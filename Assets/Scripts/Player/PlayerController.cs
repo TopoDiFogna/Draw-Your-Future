@@ -108,11 +108,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator StopJumpAnimation()
+    /*private IEnumerator StopJumpAnimation()
     {
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("Jumping", false);
-    }
+    }*/
 
     public void StopAnimation()
     {
@@ -159,15 +159,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionExit2D(Collision2D coll)
+    /*private void OnCollisionExit2D(Collision2D coll)
     {
         if (jumping == false && coll.gameObject.tag == "Terrain")
         {
             jumping = true;
+            //animator.SetBool("Jumping", true);
         }
     }
 
-    private void OnCollisionStay2D(Collision2D coll)
+    /*private void OnCollisionStay2D(Collision2D coll)
     {
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
@@ -175,7 +176,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Jumping", false);
         }
 
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
