@@ -22,7 +22,7 @@ public class FlyingMovement : MonoBehaviour
     private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        tr = gameObject.GetComponent<Transform>();
+        tr = transform.parent.GetComponent<Transform>();
     }
 
 
@@ -68,6 +68,8 @@ public class FlyingMovement : MonoBehaviour
                 coll.gameObject.GetComponent<PlayerController>().StopAnimation();
                 coll.gameObject.GetComponent<PlayerController>().enabled = false;
                 coll.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                coll.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                coll.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
             else
             {
@@ -83,10 +85,12 @@ public class FlyingMovement : MonoBehaviour
     private void DropPlayer()
     {
         hasplayer = false;
-        GameObject p = gameObject.transform.GetChild(1).gameObject;
+        GameObject p = gameObject.transform.GetChild(0).gameObject;
         p.GetComponent<PlayerController>().enabled = true;
         p.GetComponent<PlayerController>().jumping = true;
         p.GetComponent<Rigidbody2D>().isKinematic = false;
+        p.gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        p.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         p.transform.parent = null;
         can_grab = false;
         transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
