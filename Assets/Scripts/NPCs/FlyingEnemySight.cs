@@ -23,12 +23,28 @@ public class FlyingEnemySight : MonoBehaviour
             monster_script.Target = coll.gameObject;
             StartCoroutine(SearchPlayer());
         }
-        
+
     }
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && monster_script.seek && coll.GetComponent<PlayerController>().Dead)
+        if (coll.tag == "Player" && monster_script.seek)
+        {
+            if (coll.GetComponent<PlayerController>().Dead)
+            {
+                LeavePlayer();
+            }
+            else
+            {
+                monster_script.seek = true;
+                monster_script.Target = coll.gameObject;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.tag == "Player" && monster_script.seek)
         {
             LeavePlayer();
         }
