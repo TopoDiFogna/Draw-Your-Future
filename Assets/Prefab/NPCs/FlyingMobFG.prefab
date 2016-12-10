@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000012275702560}
   - 114: {fileID: 114000012434312358}
   - 60: {fileID: 60000014181979734}
+  - 82: {fileID: 82000012273971256}
   m_Layer: 0
   m_Name: MonsterSight
   m_TagString: Untagged
@@ -89,7 +90,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014073308390}
-  - 82: {fileID: 82000012651528218}
   m_Layer: 0
   m_Name: FlyingMobFG
   m_TagString: Untagged
@@ -422,12 +422,12 @@ BoxCollider2D:
   m_Offset: {x: -0.17212677, y: -0.40967607}
   serializedVersion: 2
   m_Size: {x: 0.5543075, y: 0.91852725}
---- !u!82 &82000012651528218
+--- !u!82 &82000012273971256
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010406977504}
+  m_GameObject: {fileID: 1000010060379378}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -441,28 +441,48 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 1.7
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: 0.05
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -20.007967
+      outSlope: -20.007967
+      tangentMode: 0
+    - time: 0.1
+      value: 0.5
+      inSlope: -5.0019917
+      outSlope: -5.0019917
+      tangentMode: 0
+    - time: 0.2
+      value: 0.25
+      inSlope: -1.2504979
+      outSlope: -1.2504979
+      tangentMode: 0
+    - time: 0.4
+      value: 0.125
+      inSlope: -0.31262448
+      outSlope: -0.31262448
+      tangentMode: 0
+    - time: 0.8310881
+      value: 0.024305558
+      inSlope: -0.07815612
+      outSlope: -0.07815612
       tangentMode: 0
     - time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.05001994
+      outSlope: -0.05001994
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
