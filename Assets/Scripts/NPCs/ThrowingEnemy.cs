@@ -9,11 +9,12 @@ public class ThrowingEnemy : MonoBehaviour
     bool shooting = false;
     Transform player;
     Transform tr;
-    public float maxDist;
     public float time = 1f;
+    float radius;
 
     void Start()
     {
+        radius = GetComponent<CircleCollider2D>().radius;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         tr = transform;
     }
@@ -28,10 +29,18 @@ public class ThrowingEnemy : MonoBehaviour
             StartCoroutine(Shot());
         }
     }
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.tag == "Player" && shooting)
+        {
+            shooting = false;
+            StopCoroutine(Shot());
+        }
+    }
 
     private IEnumerator Shot()
     {
-        while (Vector2.Distance(tr.position, player.transform.position) < maxDist)
+        while (Vector2.Distance(tr.position, player.transform.position) < radius/2)
         {
             GameObject g = ObjectPoolingManager.Instance.GetObject(rock.name.ToString());
             g.transform.position = transform.position;
