@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         else if(climbing)
         {
             
-            if (m_horizontal != 0)
+            if (m_horizontal != 0 || !IsNearLadder)
             {
                 climbing = false;
                 rb.isKinematic = false;
