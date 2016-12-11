@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsNearLadder = false;
 
-    private bool facing_right = true;
+    private bool facing_right = false;
 
     //Controls variables
     private float m_horizontal = 0f;
