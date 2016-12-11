@@ -1173,7 +1173,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children: []
   m_Father: {fileID: 1800376241}
-  m_RootOrder: 23
+  m_RootOrder: 17
 --- !u!61 &242668413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1362,7 +1362,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children: []
   m_Father: {fileID: 1604842758}
-  m_RootOrder: 16
+  m_RootOrder: 11
 --- !u!212 &265764712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2227,7 +2227,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children: []
   m_Father: {fileID: 1625298797}
-  m_RootOrder: 6
+  m_RootOrder: 2
 --- !u!61 &415349748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5966,7 +5966,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1604842758}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &1079086547
 Prefab:
   m_ObjectHideFlags: 0
@@ -7134,7 +7134,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_Children: []
   m_Father: {fileID: 1727698308}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!61 &1210503300
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8063,13 +8063,13 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 974291516}
+  - {fileID: 1833228998}
   - {fileID: 1259121793}
   - {fileID: 401365812}
   - {fileID: 844380769}
   - {fileID: 71182992}
   - {fileID: 130933945}
   - {fileID: 1214706693}
-  - {fileID: 1833228998}
   - {fileID: 1610572712}
   - {fileID: 1016945100}
   - {fileID: 820758774}
@@ -9233,20 +9233,20 @@ Transform:
   - {fileID: 786257230}
   - {fileID: 904463725}
   - {fileID: 1882733492}
-  - {fileID: 841485967}
   - {fileID: 1071165905}
+  - {fileID: 841485967}
   - {fileID: 7138593}
   - {fileID: 1427306900}
   - {fileID: 366188911}
   - {fileID: 1443676618}
   - {fileID: 667395090}
   - {fileID: 1794880007}
+  - {fileID: 265764711}
   - {fileID: 287649062}
   - {fileID: 234300897}
   - {fileID: 192016127}
   - {fileID: 1708682910}
   - {fileID: 1709713695}
-  - {fileID: 265764711}
   - {fileID: 561668649}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -9470,11 +9470,11 @@ Transform:
   m_Children:
   - {fileID: 1089484661}
   - {fileID: 414778002}
+  - {fileID: 415349747}
   - {fileID: 314171753}
   - {fileID: 43651697}
   - {fileID: 729626187}
   - {fileID: 74979442}
-  - {fileID: 415349747}
   - {fileID: 2002039934}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -10148,8 +10148,8 @@ Transform:
   - {fileID: 435720304}
   - {fileID: 1280092080}
   - {fileID: 1525574863}
-  - {fileID: 1718840731}
   - {fileID: 1210503299}
+  - {fileID: 1718840731}
   m_Father: {fileID: 0}
   m_RootOrder: 14
 --- !u!1 &1728411326
@@ -10616,13 +10616,13 @@ Transform:
   - {fileID: 2135063842}
   - {fileID: 455587403}
   - {fileID: 1293683757}
+  - {fileID: 242668412}
   - {fileID: 902862822}
   - {fileID: 1031717053}
   - {fileID: 1392885381}
   - {fileID: 2118034140}
   - {fileID: 1232310651}
   - {fileID: 73094592}
-  - {fileID: 242668412}
   m_Father: {fileID: 0}
   m_RootOrder: 16
 --- !u!1001 &1804903203
@@ -10876,7 +10876,7 @@ Transform:
   - {fileID: 2021006344}
   - {fileID: 889374366}
   m_Father: {fileID: 1320079179}
-  m_RootOrder: 7
+  m_RootOrder: 1
 --- !u!4 &1837921134 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011915484928, guid: def474620e0f5df46917e03a154742c1,
