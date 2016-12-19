@@ -4,8 +4,8 @@ using System.Collections;
 public class SpiderController : MonoBehaviour {
 
     Transform tr;
-    bool goingDown;
-    bool goingUp;
+    public bool goingDown;
+    public bool goingUp;
     float time = 0.0f;
     float max_time = 2.0f;
     public Transform m_endingPosition;
@@ -16,10 +16,9 @@ public class SpiderController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         tr = GetComponent<Transform>();
-        m_startingPoint = gameObject.transform.position;
+        m_startingPoint = tr.position;
         m_endingPoint = new Vector3(m_startingPoint.x, m_endingPosition.position.y, m_startingPoint.z);
-        goingDown = true;
-        goingUp = false;
+
     }
 	
 	// Update is called once per frame
