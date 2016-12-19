@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Coconut : MonoBehaviour {
 
+    bool active = true;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,10 +15,16 @@ public class Coconut : MonoBehaviour {
 	
 	}
 
+    private void OnEnable()
+    {
+        active = true;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Crab")
+        if(collision.gameObject.tag == "Crab" && active)
         {
+            active = false;
             collision.gameObject.SetActive(false);
         }
     }
