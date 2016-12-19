@@ -44,7 +44,8 @@ public class ThrowingEnemy : MonoBehaviour
         while(Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius/2)
         {
             GameObject g = ObjectPoolingManager.Instance.GetObject(rock.name.ToString());
-            g.transform.position = transform.position;
+            //if(g != null) { } TODO 
+            g.transform.position = tr.position;
             float v0x = (player.position.x - tr.position.x) / time;
             float v0y = (player.position.y + 0.5f * g.GetComponent<Rigidbody2D>().gravityScale*10 * time*time - tr.position.y) / time;
             g.GetComponent<Rigidbody2D>().AddForce(new Vector2(v0x, v0y), ForceMode2D.Impulse);
