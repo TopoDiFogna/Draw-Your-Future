@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - Checkpoint
   - Ending
+  - Crab
   layers:
   - Default
   - TransparentFX
