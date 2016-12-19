@@ -4,8 +4,8 @@ using System.Collections;
 public class CrabController : MonoBehaviour {
 
     Transform tr;
-    bool goingLeft;
-    bool goingRight;
+    public bool goingLeft = false;
+    public bool goingRight = true;
     float time = 0.0f;
     public float max_time = 2.0f;
     public Transform m_endingPosition;
@@ -18,8 +18,10 @@ public class CrabController : MonoBehaviour {
         tr = GetComponent<Transform>();
         m_startingPoint = tr.position;
         m_endingPoint = new Vector3(m_endingPosition.position.x, m_startingPoint.y, m_startingPoint.z);
-        goingRight = true;
-        goingLeft = false;
+        if(goingLeft == true && goingRight == false)
+        {
+            tr.position = m_endingPoint;
+        }
     }
 	
 	// Update is called once per frame
