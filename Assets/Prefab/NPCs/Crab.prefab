@@ -16,9 +16,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010694533888}
+  - component: {fileID: 4000010694533888}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -31,9 +31,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000014002231324}
+  - component: {fileID: 4000014002231324}
   m_Layer: 0
   m_Name: EndingPosition
   m_TagString: Untagged
@@ -46,12 +46,13 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013200332392}
-  - 212: {fileID: 212000012926095418}
-  - 61: {fileID: 61000010493953720}
-  - 114: {fileID: 114000011336433760}
+  - component: {fileID: 4000013200332392}
+  - component: {fileID: 212000012926095418}
+  - component: {fileID: 61000010493953720}
+  - component: {fileID: 114000011336433760}
+  - component: {fileID: 114063713827018940}
   m_Layer: 0
   m_Name: krabby
   m_TagString: Crab
@@ -66,14 +67,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012022537948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -294.9083, y: -168.8223, z: 0}
+  m_LocalPosition: {x: -2.845232, y: -2.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013200332392}
   - {fileID: 4000014002231324}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013200332392
 Transform:
   m_ObjectHideFlags: 1
@@ -83,10 +84,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.0317082, y: -1.9077072, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010694533888}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000014002231324
 Transform:
   m_ObjectHideFlags: 1
@@ -96,10 +97,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.81, y: -1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010694533888}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61000010493953720
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -129,6 +130,17 @@ MonoBehaviour:
   goingRight: 1
   max_time: 2
   m_endingPosition: {fileID: 4000014002231324}
+--- !u!114 &114063713827018940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013581958692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9f1186c6a0475499fe46679064a575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000012926095418
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -143,7 +155,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -151,7 +165,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
