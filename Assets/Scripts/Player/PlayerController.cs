@@ -231,6 +231,7 @@ public class PlayerController : MonoBehaviour
         {
             jumping = true;
             m_Jump_force = normal_jump_force;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 
