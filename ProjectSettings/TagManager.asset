@@ -13,6 +13,7 @@ TagManager:
   - Checkpoint
   - Ending
   - Crab
+  - Quicksand
   layers:
   - Default
   - TransparentFX

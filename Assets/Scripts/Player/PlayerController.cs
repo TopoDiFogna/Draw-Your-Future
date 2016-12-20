@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [Range(0, 200)]
     public float m_Jump_force = 10f;
+    float normal_jump_force;
+    public float quicksand_jump_force = 5f;
 
     // Player Properties
     int lay;
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
+        normal_jump_force = m_Jump_force;
     }
 
     // Update is called once per frame
@@ -185,7 +188,11 @@ public class PlayerController : MonoBehaviour
         {
             IsNearLadder = true;
         }
-
+        if(coll.gameObject.tag == "Quicksand")
+        {
+            m_Jump_force = quicksand_jump_force;
+            jumping = false;
+        }
 
     }
 
@@ -203,6 +210,10 @@ public class PlayerController : MonoBehaviour
                 rb.isKinematic = true;
             }
         }
+        if (coll.gameObject.tag == "Quicksand")
+        {
+            jumping = false;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D coll)
@@ -215,6 +226,11 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = false;
+        }
+        if (coll.gameObject.tag == "Quicksand")
+        {
+            jumping = true;
+            m_Jump_force = normal_jump_force;
         }
     }
 
