@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1424596607982896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68.840004, y: 3.5700047, z: 0}
+  m_LocalPosition: {x: 58.65, y: 5.67, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,15 +55,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 3
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &58038236233847712
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -131,6 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbc1988e6929224e883156974b2cfe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_scratch_layer: 8
+  m_paint: {fileID: 0}
+  m_speed: 20
+  m_Jump_force: 17
+  diving_jump_force: 5
+  jumping: 0
 --- !u!212 &212959356944279736
 SpriteRenderer:
   m_ObjectHideFlags: 1
