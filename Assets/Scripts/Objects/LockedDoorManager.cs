@@ -6,6 +6,7 @@ using System.Linq;
 
 public class LockedDoorManager : MonoBehaviour {
 
+    public SpearTrap speartrap;
     public GameObject Door;
     List<int> combination;
     public List<int> Solution;
@@ -33,6 +34,7 @@ public class LockedDoorManager : MonoBehaviour {
                 {
                     tc.Reset();
                 }
+                speartrap.enabled = true;
             }
         }
     }
