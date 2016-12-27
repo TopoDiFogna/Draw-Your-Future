@@ -38,22 +38,17 @@ public class Zattera : MonoBehaviour {
             joint.connectedBody = null;
             transform.position = starting_position;
             playerController.enabled = true;
+            playerController = null;
             with_player = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.tag == "Player")
         {
-            player = collision.gameObject;
-            playerController = collision.gameObject.GetComponent<PlayerController>();
-            player.GetComponent<Animator>().SetFloat("Horizontal", 0f);           
-            joint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
-            playerController.jumping = false;
-            player.GetComponent<Animator>().SetBool("Jumping", false);
-            playerController.enabled = false;
-            with_player = true;
+            SetUpPlayerVariables(collision);
         }
     }
 
@@ -63,5 +58,25 @@ public class Zattera : MonoBehaviour {
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, 0f);
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            SetUpPlayerVariables(collision);
+        }
+    }
+
+    private void SetUpPlayerVariables(Collision2D collision)
+    {
+        player = collision.gameObject;
+        playerController = collision.gameObject.GetComponent<PlayerController>();
+        player.GetComponent<Animator>().SetFloat("Horizontal", 0f);
+        joint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
+        playerController.jumping = false;
+        player.GetComponent<Animator>().SetBool("Jumping", false);
+        playerController.enabled = false;
+        with_player = true;
     }
 }
