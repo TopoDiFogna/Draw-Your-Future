@@ -28,6 +28,7 @@ public class Zattera : MonoBehaviour {
             joint.connectedBody = null;
             playerController.enabled = true;
             player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerController.m_Jump_force, ForceMode2D.Impulse);
+            playerController.jumping = true;
             player.GetComponent<Animator>().SetBool("Jumping", true);
             with_player = false;
         }
@@ -41,14 +42,16 @@ public class Zattera : MonoBehaviour {
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             player = collision.gameObject;
-            player.GetComponent<Animator>().SetFloat("Horizontal", 0f);
-            joint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
             playerController = collision.gameObject.GetComponent<PlayerController>();
+            player.GetComponent<Animator>().SetFloat("Horizontal", 0f);           
+            joint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
+            playerController.jumping = false;
+            player.GetComponent<Animator>().SetBool("Jumping", false);
             playerController.enabled = false;
             with_player = true;
         }
