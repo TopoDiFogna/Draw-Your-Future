@@ -4051,8 +4051,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 967675878}
     m_Modifications:
-    - target: {fileID: 111388484627832704, guid: fdc614ed916b6aa42bfefe7c3a2845f7,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Animations.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4092,11 +4091,10 @@ Prefab:
       propertyPath: m_Name
       value: Crab (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 111388484627832704, guid: fdc614ed916b6aa42bfefe7c3a2845f7,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_Animations.Array.data[0]
       value: 
-      objectReference: {fileID: 7400000, guid: 877c0c259a632a749bc7df67c131c812, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdc614ed916b6aa42bfefe7c3a2845f7, type: 2}
   m_IsPrefabParent: 0
