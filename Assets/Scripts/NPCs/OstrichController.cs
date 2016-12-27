@@ -25,7 +25,6 @@ public class OstrichController : MonoBehaviour
     private bool dead = false;
 
     private float m_horizontal = 0f;
-    private float m_vertical = 0f;
     private float m_axis_jump = 0f;
 
     private bool facing_right = true;
@@ -54,7 +53,6 @@ public class OstrichController : MonoBehaviour
         if (!gc.Pause && with_player)
         {
             m_horizontal = Input.GetAxisRaw("Horizontal");
-            m_vertical = Input.GetAxisRaw("Vertical");
             m_axis_jump = Input.GetAxisRaw("Jump");
 
             if (facing_right && m_horizontal < 0)

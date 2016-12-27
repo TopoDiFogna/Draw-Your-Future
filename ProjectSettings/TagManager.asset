@@ -15,6 +15,7 @@ TagManager:
   - Crab
   - Quicksand
   - Ant
+  - Hyppo
   layers:
   - Default
   - TransparentFX

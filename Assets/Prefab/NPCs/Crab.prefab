@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 61000010493953720}
   - component: {fileID: 114000011336433760}
   - component: {fileID: 114063713827018940}
+  - component: {fileID: 111388484627832704}
   m_Layer: 0
   m_Name: krabby
   m_TagString: Crab
@@ -67,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012022537948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.845232, y: -2.17, z: 0}
+  m_LocalPosition: {x: -296.4, y: -168.8223, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013200332392}
@@ -115,6 +116,20 @@ BoxCollider2D:
   m_Offset: {x: -0.056494653, y: -0.037662506}
   serializedVersion: 2
   m_Size: {x: 1.9727156, y: 1.2571149}
+--- !u!111 &111388484627832704
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013581958692}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 877c0c259a632a749bc7df67c131c812, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114000011336433760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,7 +187,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 265b824259baacc499bf6b687bea370f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8e9dd9e7a64e4b43aa0e8902b38ee16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
