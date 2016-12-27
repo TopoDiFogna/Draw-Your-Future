@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 61000010493953720}
   - component: {fileID: 114000011336433760}
   - component: {fileID: 114063713827018940}
-  - component: {fileID: 111388484627832704}
+  - component: {fileID: 95593140052078660}
   m_Layer: 0
   m_Name: krabby
   m_TagString: Crab
@@ -116,20 +116,23 @@ BoxCollider2D:
   m_Offset: {x: -0.056494653, y: -0.037662506}
   serializedVersion: 2
   m_Size: {x: 1.9727156, y: 1.2571149}
---- !u!111 &111388484627832704
-Animation:
+--- !u!95 &95593140052078660
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013581958692}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 877c0c259a632a749bc7df67c131c812, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 678eda5b5265ab446a1bfa4266e91163, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000011336433760
 MonoBehaviour:
   m_ObjectHideFlags: 1
