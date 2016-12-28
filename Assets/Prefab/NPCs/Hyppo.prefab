@@ -51,8 +51,8 @@ GameObject:
   - component: {fileID: 4000011771678944}
   - component: {fileID: 212000011967271196}
   - component: {fileID: 114000012561721492}
-  - component: {fileID: 61000010989765610}
   - component: {fileID: 114854840170502222}
+  - component: {fileID: 61507876550021146}
   m_Layer: 0
   m_Name: hyppo-head
   m_TagString: Hyppo
@@ -79,8 +79,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012050724530}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 83.5, y: 4.010005, z: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011771678944}
@@ -95,13 +95,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011475540698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.87, y: 0, z: 0}
+  m_LocalPosition: {x: 21.87, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000011953476688}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61000010989765610
+--- !u!61 &61507876550021146
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,11 +110,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.21151352}
+  m_Offset: {x: -0.008464813, y: 0.1269722}
   serializedVersion: 2
-  m_Size: {x: 2.4269667, y: 2.144948}
+  m_Size: {x: 2.1220274, y: 2.1897373}
 --- !u!114 &114000012561721492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,8 +173,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c23ef830c0830fb4f8855aaa819a8bbe, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: ea3371992e543084fb8558763d75ac2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
