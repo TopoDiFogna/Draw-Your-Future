@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 114000012561721492}
   - component: {fileID: 114854840170502222}
   - component: {fileID: 61507876550021146}
+  - component: {fileID: 95523041234930826}
   m_Layer: 0
   m_Name: hyppo-head
   m_TagString: Hyppo
@@ -79,8 +80,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012050724530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 87.85999, y: 4.010005, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011771678944}
@@ -115,6 +116,23 @@ BoxCollider2D:
   m_Offset: {x: -0.008464813, y: 0.1269722}
   serializedVersion: 2
   m_Size: {x: 2.1220274, y: 2.1897373}
+--- !u!95 &95523041234930826
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013027856388}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23ce4aeaae3718d41bfa04e6cf03b1dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000012561721492
 MonoBehaviour:
   m_ObjectHideFlags: 1
