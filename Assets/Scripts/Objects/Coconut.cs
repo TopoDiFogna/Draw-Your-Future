@@ -22,6 +22,10 @@ public class Coconut : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.tag == "Terrain")
+        {
+            active = false;
+        }
         if(collision.gameObject.tag == "Crab" && active)
         {
             active = false;
