@@ -16,6 +16,7 @@ TagManager:
   - Quicksand
   - Ant
   - Hyppo
+  - Water
   layers:
   - Default
   - TransparentFX
