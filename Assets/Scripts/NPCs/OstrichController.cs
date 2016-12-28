@@ -12,6 +12,7 @@ public class OstrichController : MonoBehaviour
 
     [Range(0, 100)]
     public float m_speed = 20f;
+    public float m_underwater_speed = 10f;
 
     [Range(0, 200)]
     public float m_Jump_force = 10f;
@@ -25,15 +26,18 @@ public class OstrichController : MonoBehaviour
     private bool dead = false;
 
     private float m_horizontal = 0f;
+    private float m_vertical = 0f;
     private float m_axis_jump = 0f;
 
     private bool facing_right = true;
 
     bool active = false;
     bool with_player = false;
+    bool in_water = false;
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
     PolygonCollider2D polycoll;
+    GameObject player;
 
 
     // Use this for initialization
@@ -53,6 +57,7 @@ public class OstrichController : MonoBehaviour
         if (!gc.Pause && with_player)
         {
             m_horizontal = Input.GetAxisRaw("Horizontal");
+            m_vertical = Input.GetAxisRaw("Vertical");
             m_axis_jump = Input.GetAxisRaw("Jump");
 
             if (facing_right && m_horizontal < 0)
@@ -78,11 +83,19 @@ public class OstrichController : MonoBehaviour
         {
             if (with_player)
             {
-                rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
-                if (m_axis_jump > 0 && !jumping)
+                if (!in_water)
                 {
-                    rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
-                    jumping = true;
+                    rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+                    if (m_axis_jump > 0 && !jumping)
+                    {
+                        rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                        jumping = true;
+                    }
+                }
+                if (in_water)
+                {
+                    rb.velocity = new Vector2(m_horizontal * m_underwater_speed, m_vertical * m_underwater_speed);
+              
                 }
             }
         }
@@ -97,8 +110,9 @@ public class OstrichController : MonoBehaviour
         }
         if(coll.gameObject.tag == "Player" && active)
         {
-            coll.gameObject.SetActive(false);
-            coll.gameObject.transform.parent = gameObject.transform;
+            player = coll.gameObject;
+            player.SetActive(false);
+            //coll.gameObject.transform.parent = gameObject.transform;
             //TODO start coroutine che fa animazione del player che sale sullo struzzo e poi fa enable dei comandi
             with_player = true;
         }
@@ -131,12 +145,17 @@ public class OstrichController : MonoBehaviour
             polycoll.enabled = true;
             rb.isKinematic = false;
             gameObject.layer = m_player_layer;
-            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
             active = true;
         }
         if (coll.gameObject.tag == "Scratch" && active)
         {
             gameObject.layer = m_player_layer;
+        }
+        if(coll.gameObject.tag == "Water")
+        {
+            in_water = true;
+            jumping = true;
         }
     }
 
@@ -153,6 +172,10 @@ public class OstrichController : MonoBehaviour
         if (coll.gameObject.tag == "Scratch" && active)
         {
             gameObject.layer = m_player_layer;
+        }
+        if(coll.gameObject.tag == "Water")
+        {
+            in_water = false;
         }
     }
 }
