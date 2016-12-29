@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a02b368794bf40b31819bcfd6fd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToHit: 1
+  timeToHit: 3
   max_length: 10
 --- !u!114 &114230202983825654
 MonoBehaviour:
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921779203389892}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
