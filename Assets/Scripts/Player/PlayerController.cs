@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     [Range(0, 100)]
     public float m_speed = 20f;
-
     [Range(0, 100)]
     public float m_climbing_speed = 15f;
 
@@ -248,6 +248,10 @@ public class PlayerController : MonoBehaviour
             StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
             StartCoroutine(ResetScene());
+            if (SceneManager.GetActiveScene().name == "Level3_Maya")
+            {
+                GameObject.FindGameObjectWithTag("Boulder").GetComponent<BoulderManager>().Set_Reset_Boulder(false);
+            }
         }
     }
 

@@ -17,4 +17,13 @@ public class CrateBreak : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Scratch")
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        }
+    }
 }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212000014258089900}
   - component: {fileID: 114000013607806146}
   - component: {fileID: 58000013217727740}
+  - component: {fileID: 95511741314862124}
   m_Layer: 0
   m_Name: ThrowingFG
   m_TagString: Untagged
@@ -56,6 +57,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 14
+--- !u!95 &95511741314862124
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012090337414}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000013607806146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606479cf9c7904542a27fc49190b87fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: {fileID: 1000011400383596, guid: 04ff5025140d4c8449acca0cfef1771e, type: 2}
+  rock: {fileID: 1000011696488616, guid: 50ba9cdf8bafcaf4995840620ded5f9e, type: 2}
   time: 0.8
 --- !u!212 &212000014258089900
 SpriteRenderer:
@@ -100,7 +118,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5a31f664d3ac4b34cae0ae96d7bb1dbc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eaadf6c6a01a96b43b4ed2f6f79ebf59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

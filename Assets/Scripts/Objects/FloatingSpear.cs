@@ -23,7 +23,6 @@ public class FloatingSpear : MonoBehaviour {
     {
         if (coll.tag == "Finish")
         {
-            print("COSO");
             tr.position = spawn.transform.position;
         }
     }
