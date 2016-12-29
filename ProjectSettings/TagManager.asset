@@ -17,6 +17,7 @@ TagManager:
   - Ant
   - Hyppo
   - Water
+  - Boulder
   layers:
   - Default
   - TransparentFX
