@@ -257,6 +257,10 @@ public class PlayerController : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Level3_Maya")
             {
                 GameObject.FindGameObjectWithTag("Boulder").GetComponent<BoulderManager>().Set_Reset_Boulder(false);
+                foreach(GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
+                {
+                    g.SetActive(false);
+                }
             }
         }
     }
