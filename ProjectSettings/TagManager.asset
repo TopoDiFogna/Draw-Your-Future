@@ -18,6 +18,7 @@ TagManager:
   - Hyppo
   - Water
   - Boulder
+  - Ostrich
   layers:
   - Default
   - TransparentFX

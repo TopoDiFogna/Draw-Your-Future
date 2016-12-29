@@ -2,28 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartingFish : MonoBehaviour {
+public class MovingNPC : MonoBehaviour {
 
     public float m_amplitude = 1;
     public float m_speed = 1;
 
     private SpriteRenderer sr;
+    private bool flippedX;
+    private Vector3 startingPos;
 
 
 	// Use this for initialization
 	void Start () {
         sr = GetComponent<SpriteRenderer>();
+        flippedX = sr.flipX;
+        startingPos = transform.localPosition;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float x = Mathf.Sin(Time.time * m_speed);
-        transform.localPosition = new Vector3(m_amplitude * x, transform.localPosition.y, transform.localPosition.z);
+        transform.localPosition = startingPos + new Vector3(m_amplitude * x, 0, 0);
         if (x >= 0.95)
         {
-            sr.flipX = false;
+            sr.flipX = !flippedX;
+            
         }
-        else if (x <= -0.95)
-            sr.flipX = true;
+        else if (x <= -0.95) {
+            sr.flipX = flippedX;
+           
+        }
     }
 }
