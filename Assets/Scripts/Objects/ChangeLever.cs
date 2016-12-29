@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class ChangeLever : MonoBehaviour {
     private bool activated = false;
     public GameObject trapdoor1;
     public GameObject trapdoor2;
+    public GameObject platform;
+    public Vector3 platformlimit;
 
     // Use this for initialization
     void Start () {
@@ -28,6 +31,21 @@ public class ChangeLever : MonoBehaviour {
                 trapdoor1.SetActive(false);
                 trapdoor2.SetActive(false);
             }
+            else if (platform != null)
+            {
+                StartCoroutine(MovePlatformDown());
+            }
+        }
+    }
+
+    private IEnumerator MovePlatformDown()
+    {
+        float speed = 3;
+        while (platform.transform.position.y > platformlimit.y)
+        {
+            platform.transform.position += new Vector3(0,-speed*Time.deltaTime,0);
+            print(platform.transform.position.y);
+            yield return new WaitForEndOfFrame();
         }
     }
 }
