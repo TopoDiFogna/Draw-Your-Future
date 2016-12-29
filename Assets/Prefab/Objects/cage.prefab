@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 212459103417601510}
   - component: {fileID: 50713220502940762}
   m_Layer: 0
-  m_Name: cage (1)
+  m_Name: cage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

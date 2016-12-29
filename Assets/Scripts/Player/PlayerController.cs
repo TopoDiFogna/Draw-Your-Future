@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
 
     public bool IsNearLadder = false;
 
+    public bool IsNearLever = false;
+
     private bool facing_right = false;
 
     //Controls variables
@@ -104,12 +106,16 @@ public class PlayerController : MonoBehaviour
                     rb.isKinematic = true;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && IsNearLadder)
+            if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && IsNearLadder && !IsNearLever)
             {
                 climbing = true;
                 rb.isKinematic = true;
             }
-            if(!IsNearLadder && rb.isKinematic)
+            else if(Input.GetKeyDown(KeyCode.S) && !jumping && !dead && !IsNearLadder && IsNearLever)
+            {
+
+            }
+            if (!IsNearLadder && rb.isKinematic)
             {
                 rb.isKinematic = false;
             }
