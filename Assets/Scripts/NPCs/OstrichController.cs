@@ -24,6 +24,8 @@ public class OstrichController : MonoBehaviour
 
     public bool jumping = false;
     private bool dead = false;
+    public float timeToDismount = 0.5f;
+    public int cycles_to_dismount = 50;
 
     private float m_horizontal = 0f;
     private float m_vertical = 0f;
@@ -34,11 +36,12 @@ public class OstrichController : MonoBehaviour
     bool active = false;
     bool with_player = false;
     bool in_water = false;
+    bool dismounting = false;
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
     PolygonCollider2D polycoll;
     GameObject player;
-
+    
 
     // Use this for initialization
     void Start()
@@ -54,7 +57,7 @@ public class OstrichController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gc.Pause && with_player)
+        if (!gc.Pause && with_player && !dismounting)
         {
             m_horizontal = Input.GetAxisRaw("Horizontal");
             m_vertical = Input.GetAxisRaw("Vertical");
@@ -81,7 +84,7 @@ public class OstrichController : MonoBehaviour
         }
         else
         {
-            if (with_player)
+            if (with_player && !dismounting)
             {
                 if (!in_water)
                 {
@@ -110,9 +113,9 @@ public class OstrichController : MonoBehaviour
         }
         if(coll.gameObject.tag == "Player" && active)
         {
+            Debug.Log("salgo sullo struzzo");
             player = coll.gameObject;
             player.SetActive(false);
-            //coll.gameObject.transform.parent = gameObject.transform;
             //TODO start coroutine che fa animazione del player che sale sullo struzzo e poi fa enable dei comandi
             with_player = true;
         }
@@ -176,6 +179,30 @@ public class OstrichController : MonoBehaviour
         if(coll.gameObject.tag == "Water")
         {
             in_water = false;
+        }
+    }
+
+    public IEnumerator DismountFromOstrich(Vector3 position, Vector3 ostrich)
+    {
+        if (with_player)
+        {
+            Debug.Log("dismounting");
+            dismounting = true;
+            with_player = false;
+            rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
+            float time = 0;
+            for(int i= 0; i<cycles_to_dismount; i++)
+            {
+                yield return new WaitForSeconds(timeToDismount / cycles_to_dismount);
+                time += timeToDismount / cycles_to_dismount;
+                transform.position = Vector3.Lerp(transform.position, ostrich, time);
+            }
+            rb.isKinematic = false;
+            //TODO far partire animazione player di dismount e aspettare che finisca 
+            player.transform.position = position;
+            player.SetActive(true);
+            dismounting = false;
         }
     }
 }
