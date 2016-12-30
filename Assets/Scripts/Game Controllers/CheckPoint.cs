@@ -17,5 +17,9 @@ public class CheckPoint : MonoBehaviour {
         {
             coll.gameObject.GetComponent<PlayerController>().CheckPointPosition = spawnPosition;
         }
+        if(coll.tag == "Ostrich")
+        {
+            coll.gameObject.GetComponent<OstrichController>().checkPointPosition = spawnPosition;
+        }
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114230202983825654}
   - component: {fileID: 114014815928929820}
   - component: {fileID: 58430094600426346}
+  - component: {fileID: 50260878161428140}
   m_Layer: 0
   m_Name: Yoyo
   m_TagString: Projectile
@@ -38,12 +39,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921779203389892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 138.51, y: 1.79, z: -1}
+  m_LocalPosition: {x: 133.85078, y: 1.9379869, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50260878161428140
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921779203389892}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58430094600426346
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -83,15 +104,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a02b368794bf40b31819bcfd6fd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToHit: 3
-  max_length: 10
+  timeToHit: 5
+  max_length: 15
+  m_player_layer: 9
 --- !u!114 &114230202983825654
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921779203389892}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70ebd1c059113b4699fa2e44273b95a, type: 3}
   m_Name: 
