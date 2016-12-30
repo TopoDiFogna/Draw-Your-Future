@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SummonedSkeleton : MonoBehaviour
 {
-
+    public GameObject Shaman;
     GameObject player;
     public bool Chase;
     float plPos = 0;
@@ -39,6 +39,7 @@ public class SummonedSkeleton : MonoBehaviour
     {
         if (coll.tag == "Player")
         {
+            Shaman.GetComponent<Shaman>().Activate(false);
             coll.gameObject.GetComponent<PlayerController>().DieWithFade();
         }
     }

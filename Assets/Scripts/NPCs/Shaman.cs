@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Shaman : MonoBehaviour {
 
-    public GameObject[] Skeletons; 
+    public GameObject[] Skeletons;
+    bool activated;
 
 	// Use this for initialization
 	void Start () {
-		
+        activated = false;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +22,7 @@ public class Shaman : MonoBehaviour {
     {
         if (coll.tag == "Player")
         {
+            Activate(true);
             StartCoroutine(SpawnSkeletons(5f));
         }
     }
@@ -29,8 +31,23 @@ public class Shaman : MonoBehaviour {
     {
         foreach (GameObject g in Skeletons)
         {
+            if (!activated)
+                break;
             g.SetActive(true);
             yield return new WaitForSeconds(delay);
         }
     }
+
+    public void Activate(bool status)
+    {
+        activated = status;
+        if (!status)
+        {
+            foreach (GameObject g in Skeletons)
+            {
+                g.SetActive(false);
+            }
+        }
+    }
+
 }
