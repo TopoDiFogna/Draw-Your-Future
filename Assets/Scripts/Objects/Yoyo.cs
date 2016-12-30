@@ -14,6 +14,7 @@ public class Yoyo : MonoBehaviour {
     float time = 0;
     public float timeToHit = 1f;
     public float max_length = 10f;
+    public int m_player_layer = 9;
 
     private void Awake()
     {
@@ -26,42 +27,37 @@ public class Yoyo : MonoBehaviour {
     {
         if (active)
         {
-            if(goingForward)
-            {
                 time += Time.deltaTime;
                 if (time > timeToHit)
                 {
-                    time = 0;
-                    goingForward = !goingForward;
+                    gameObject.SetActive(false);
                 }
                 else
                 {
                     tr.position = Vector3.Lerp(startingPosition, endingPoint, time);
                 }
 
-            }
-            if (!goingForward)
-            {
-                time += Time.deltaTime;
-                if(time > timeToHit)
-                {
-                    active = false;
-                    gameObject.SetActive(false);
-                }else
-                {
-                    tr.position = Vector3.Lerp(endingPoint, startingPosition, time);
-                }
-            }
         }
     }
 
     private void OnEnable()
     {
+        gameObject.layer = m_player_layer;
         tr.position = startingPosition;
         direction = (player_transform.position - startingPosition).normalized;
         endingPoint = startingPosition + max_length * direction;
         goingForward = true;
         time = 0;
         active = true;
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Scratch")
+        {
+            Debug.Log("on collision enter");
+            //TODO animazione rottura
+            gameObject.SetActive(false);
+        }
     }
 }
