@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61000012706156480}
   - component: {fileID: 114000012446873292}
   - component: {fileID: 95056515323496720}
+  - component: {fileID: 114104293956516540}
   m_Layer: 0
   m_Name: crocodile
   m_TagString: Terrain
@@ -147,6 +148,17 @@ MonoBehaviour:
   goingRight: 1
   max_time: 3
   m_endingPosition: {fileID: 4000010442617784}
+--- !u!114 &114104293956516540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010796675462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 668abf6cf1f30c04d81cce9f87f0fa79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000012838074620
 SpriteRenderer:
   m_ObjectHideFlags: 1

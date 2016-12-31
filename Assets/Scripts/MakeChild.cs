@@ -5,13 +5,20 @@ public class MakeChild : MonoBehaviour {
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        collision.transform.rotation = gameObject.GetComponentInParent<Transform>().rotation;
-        collision.transform.parent = transform;
+        if(collision.gameObject.tag == "Player") {
+
+            collision.transform.rotation = gameObject.GetComponentInParent<Transform>().rotation;
+            collision.transform.parent = transform;
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        collision.transform.rotation = Quaternion.identity;
-        collision.transform.parent = null;
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.rotation = Quaternion.identity;
+            collision.transform.parent = null;
+        }
     }
 }
