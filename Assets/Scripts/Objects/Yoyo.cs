@@ -15,6 +15,7 @@ public class Yoyo : MonoBehaviour {
     public float timeToHit = 1f;
     public float max_length = 10f;
     public int m_player_layer = 9;
+    public string active_tag = "Projectile";
 
     private void Awake()
     {
@@ -27,22 +28,39 @@ public class Yoyo : MonoBehaviour {
     {
         if (active)
         {
+            if (goingForward)
+            {
                 time += Time.deltaTime;
-                if (time > timeToHit)
+                if (time >= timeToHit)
+                {
+                    time = 0;
+                    goingForward = !goingForward;
+                    gameObject.tag = "Untagged";
+                }
+                else
+                {
+                    tr.position = Vector3.Lerp(startingPosition, endingPoint, time/timeToHit);
+                }
+            }
+            if (!goingForward)
+            {
+                time += Time.deltaTime;
+                if (time >= timeToHit)
                 {
                     gameObject.SetActive(false);
                 }
                 else
                 {
-                    tr.position = Vector3.Lerp(startingPosition, endingPoint, time);
+                    tr.position = Vector3.Lerp(endingPoint, startingPosition, time/timeToHit);
                 }
-
+            }
         }
     }
 
     private void OnEnable()
     {
         gameObject.layer = m_player_layer;
+        gameObject.tag = active_tag;
         tr.position = startingPosition;
         direction = (player_transform.position - startingPosition).normalized;
         endingPoint = startingPosition + max_length * direction;
@@ -51,13 +69,4 @@ public class Yoyo : MonoBehaviour {
         active = true;
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag != "Scratch")
-        {
-            Debug.Log("on collision enter");
-            //TODO animazione rottura
-            gameObject.SetActive(false);
-        }
-    }
 }
