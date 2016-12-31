@@ -21,6 +21,7 @@ TagManager:
   - Ostrich
   - SpawnedSkeleton
   - Flamingo
+  - Geyser
   layers:
   - Default
   - TransparentFX
