@@ -4106,7 +4106,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 123.49
+      value: 151.45
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5864,12 +5864,17 @@ Prefab:
     - target: {fileID: 114265307204465426, guid: 68890346ede40984ea8dd1533745b272,
         type: 2}
       propertyPath: m_speed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114265307204465426, guid: 68890346ede40984ea8dd1533745b272,
         type: 2}
       propertyPath: m_Jump_force
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114265307204465426, guid: 68890346ede40984ea8dd1533745b272,
+        type: 2}
+      propertyPath: m_underwater_speed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68890346ede40984ea8dd1533745b272, type: 2}
