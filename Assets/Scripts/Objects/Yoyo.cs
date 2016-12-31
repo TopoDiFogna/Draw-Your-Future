@@ -16,6 +16,8 @@ public class Yoyo : MonoBehaviour {
     public float max_length = 10f;
     public int m_player_layer = 9;
     public string active_tag = "Projectile";
+    public Animator flamingo_animator;
+    private int first_activation = 0;
 
     private void Awake()
     {
@@ -66,6 +68,14 @@ public class Yoyo : MonoBehaviour {
         endingPoint = startingPosition + max_length * direction;
         goingForward = true;
         time = 0;
+        if (first_activation > 0)
+        {
+            flamingo_animator.SetTrigger("Throw");
+        }
+        if(first_activation == 0)
+        {
+            first_activation++;
+        }
         active = true;
     }
     

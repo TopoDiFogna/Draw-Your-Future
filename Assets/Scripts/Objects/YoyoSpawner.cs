@@ -11,6 +11,10 @@ public class YoyoSpawner : MonoBehaviour {
     {
         m_spawned_object = Instantiate(m_spawned_object);
         m_spawned_object.SetActive(false);
+        if(m_spawned_object.GetComponent<Yoyo>() != null)
+        {
+            m_spawned_object.GetComponent<Yoyo>().flamingo_animator = GameObject.FindGameObjectWithTag("Flamingo").GetComponent<Animator>();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)

@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 18922257}
   m_Layer: 0
   m_Name: flamingo_rest
-  m_TagString: Untagged
+  m_TagString: Flamingo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

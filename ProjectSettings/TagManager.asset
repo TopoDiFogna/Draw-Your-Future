@@ -20,6 +20,7 @@ TagManager:
   - Boulder
   - Ostrich
   - SpawnedSkeleton
+  - Flamingo
   layers:
   - Default
   - TransparentFX
