@@ -13,7 +13,7 @@ public class Trunk : MonoBehaviour {
         active = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Terrain"){
             active = false;

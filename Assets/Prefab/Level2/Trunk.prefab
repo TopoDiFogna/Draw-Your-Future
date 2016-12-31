@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50503119569579844}
   - component: {fileID: 61660923031125040}
   - component: {fileID: 114090173283396756}
+  - component: {fileID: 61809297480315420}
   m_Layer: 0
   m_Name: Trunk
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891287733191124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 204.123, y: 0.96830225, z: 0}
+  m_LocalPosition: {x: 194.78638, y: -14.506423, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,6 +78,20 @@ BoxCollider2D:
   m_Offset: {x: 0.009780884, y: -0.019577026}
   serializedVersion: 2
   m_Size: {x: 9.414775, y: 0.64026546}
+--- !u!61 &61809297480315420
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891287733191124}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.018707275, y: -0.017199516}
+  serializedVersion: 2
+  m_Size: {x: 9.41281, y: 0.6300535}
 --- !u!114 &114090173283396756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104854ce3a5186e4ab2c5f55ced642e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDeactivate: 0.7
 --- !u!212 &212161897700598138
 SpriteRenderer:
   m_ObjectHideFlags: 1
