@@ -24,11 +24,19 @@ public class MortalObject : MonoBehaviour {
             if(m_can_Be_Disabled)
                 gameObject.SetActive(false);
         }
+        if(coll.tag == "Ostrich" && deadly)
+        {
+            coll.GetComponent<OstrichController>().DieWithFade();
+            if (m_can_Be_Disabled)
+                gameObject.SetActive(false);
+        }
         if (coll.tag == "Terrain")
         {
-            deadly = false;
-            if(m_can_Be_Disabled)
+            if (m_can_Be_Disabled)
+            {
+                deadly = false;
                 StartCoroutine(DisableObject());
+            }
         }
     }
 

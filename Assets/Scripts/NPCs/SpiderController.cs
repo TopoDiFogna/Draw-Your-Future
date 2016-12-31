@@ -7,7 +7,7 @@ public class SpiderController : MonoBehaviour {
     public bool goingDown;
     public bool goingUp;
     float time = 0.0f;
-    float max_time = 2.0f;
+    public float max_time = 2.0f;
     public Transform m_endingPosition;
     Vector3 m_startingPoint;
     Vector3 m_endingPoint;

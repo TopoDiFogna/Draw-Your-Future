@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OstrichController : MonoBehaviour
 {
@@ -21,11 +22,15 @@ public class OstrichController : MonoBehaviour
 
     int lay;
     Rigidbody2D rb;
+    public Vector3 checkPointPosition;
 
     public bool jumping = false;
     private bool dead = false;
     public float timeToDismount = 0.5f;
     public int cycles_to_dismount = 50;
+
+    [Range(0.5f, 5.0f)]
+    public float timeToDie = 1.0f;
 
     private float m_horizontal = 0f;
     private float m_vertical = 0f;
@@ -116,7 +121,8 @@ public class OstrichController : MonoBehaviour
             Debug.Log("salgo sullo struzzo");
             player = coll.gameObject;
             player.SetActive(false);
-            //TODO start coroutine che fa animazione del player che sale sullo struzzo e poi fa enable dei comandi
+            checkPointPosition = transform.position;
+            //TODO animazione del player che sale sullo struzzo e poi fa enable dei comandi
             with_player = true;
         }
     }
@@ -201,8 +207,37 @@ public class OstrichController : MonoBehaviour
             rb.isKinematic = false;
             //TODO far partire animazione player di dismount e aspettare che finisca 
             player.transform.position = position;
+            player.layer = m_player_layer;
             player.SetActive(true);
             dismounting = false;
         }
+    }
+
+    public void DieWithFade()
+    {
+        if (!dead)
+        {
+            dead = true;
+            //StopAnimation();
+            CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
+            StartCoroutine(ResetScene());
+            if (SceneManager.GetActiveScene().name == "Level3_Maya")
+            {
+                GameObject.FindGameObjectWithTag("Boulder").GetComponent<BoulderManager>().Set_Reset_Boulder(false);
+                foreach (GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
+                {
+                    g.SetActive(false);
+                }
+            }
+        }
+    }
+
+    private IEnumerator ResetScene()
+    {
+        yield return new WaitForSeconds(timeToDie);
+        transform.position = checkPointPosition;
+        yield return new WaitForSeconds(1f);
+        CameraFade.instance.Die();
+        dead = false;
     }
 }
