@@ -122,6 +122,7 @@ public class OstrichController : MonoBehaviour
             player = coll.gameObject;
             player.SetActive(false);
             checkPointPosition = transform.position;
+            GameObject.FindObjectOfType<CameraController>().m_target = gameObject;
             //TODO animazione del player che sale sullo struzzo e poi fa enable dei comandi
             with_player = true;
         }
@@ -209,6 +210,8 @@ public class OstrichController : MonoBehaviour
             player.transform.position = position;
             player.layer = m_player_layer;
             player.SetActive(true);
+            GameObject.FindObjectOfType<CameraController>().m_target = player;
+
             dismounting = false;
         }
     }

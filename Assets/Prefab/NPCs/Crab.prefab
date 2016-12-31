@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114000011336433760}
   - component: {fileID: 114063713827018940}
   - component: {fileID: 95593140052078660}
+  - component: {fileID: 61727290513924462}
   m_Layer: 0
   m_Name: krabby
   m_TagString: Crab
@@ -111,11 +112,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: -0.056494653, y: -0.037662506}
   serializedVersion: 2
   m_Size: {x: 1.9727156, y: 1.2571149}
+--- !u!61 &61727290513924462
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013581958692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.060576916, y: -0.024269104}
+  serializedVersion: 2
+  m_Size: {x: 1.9876984, y: 1.2590444}
 --- !u!95 &95593140052078660
 Animator:
   serializedVersion: 3
