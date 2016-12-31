@@ -636,13 +636,14 @@ GameObject:
   m_Component:
   - component: {fileID: 90547208}
   - component: {fileID: 90547209}
+  - component: {fileID: 90547210}
   m_Layer: 0
   m_Name: MoveCameraBounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &90547208
 Transform:
   m_ObjectHideFlags: 0
@@ -667,9 +668,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 1.5589447, y: -4.9513907}
+  m_Offset: {x: 1.5589447, y: -5.3471713}
   serializedVersion: 2
-  m_Size: {x: 10.733899, y: 11.562553}
+  m_Size: {x: 10.733899, y: 10.770992}
+--- !u!114 &90547210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90547207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37fcdf538c06749907bb41001aedbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &93855787
 Prefab:
   m_ObjectHideFlags: 0
@@ -4107,7 +4119,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 154.11
+      value: 272.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
