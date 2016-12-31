@@ -35,6 +35,14 @@ public class PlayerController : MonoBehaviour
         get { return dead; }
     }
 
+    private bool has_key = false;
+
+    public bool hasKey
+    {
+        get { return has_key; }
+        set { has_key = value; }
+    }
+
     public bool IsNearLadder = false;
 
     public bool IsNearLever = false;

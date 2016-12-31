@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114919012797171470}
   - component: {fileID: 61855677882416456}
   - component: {fileID: 50150522832370738}
+  - component: {fileID: 95685308164926678}
   m_Layer: 8
   m_Name: ThrowingBG (1)
   m_TagString: Untagged
@@ -197,13 +198,30 @@ BoxCollider2D:
   m_Offset: {x: -0.0371418, y: 0.83567905}
   serializedVersion: 2
   m_Size: {x: 0.50308156, y: 1.1744404}
+--- !u!95 &95685308164926678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114122123664422}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114080537171049712
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114122123664422}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 606479cf9c7904542a27fc49190b87fe, type: 3}
   m_Name: 

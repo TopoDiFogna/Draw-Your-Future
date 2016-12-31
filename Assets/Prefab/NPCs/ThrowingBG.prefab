@@ -16,15 +16,16 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010309558850}
-  - 212: {fileID: 212000011008853534}
-  - 114: {fileID: 114000013855176572}
-  - 58: {fileID: 58000011612949168}
-  - 114: {fileID: 114000012925758224}
-  - 61: {fileID: 61000011887251236}
-  - 50: {fileID: 50000010930741306}
+  - component: {fileID: 4000010309558850}
+  - component: {fileID: 212000011008853534}
+  - component: {fileID: 114000013855176572}
+  - component: {fileID: 58000011612949168}
+  - component: {fileID: 114000012925758224}
+  - component: {fileID: 61000011887251236}
+  - component: {fileID: 50000010930741306}
+  - component: {fileID: 95611086353217306}
   m_Layer: 8
   m_Name: ThrowingBG
   m_TagString: Untagged
@@ -41,23 +42,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8426926, y: 0.32000875, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50000010930741306
 Rigidbody2D:
-  serializedVersion: 2
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010666079682}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 1
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -90,6 +94,23 @@ BoxCollider2D:
   m_Offset: {x: -0.0371418, y: 0.83567905}
   serializedVersion: 2
   m_Size: {x: 0.50308156, y: 1.1744404}
+--- !u!95 &95611086353217306
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010666079682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000012925758224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,7 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rock: {fileID: 1000011696488616, guid: 50ba9cdf8bafcaf4995840620ded5f9e, type: 2}
-  maxDist: 6
   time: 0.8
 --- !u!212 &212000011008853534
 SpriteRenderer:
@@ -132,7 +152,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -140,7 +162,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89

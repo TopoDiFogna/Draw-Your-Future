@@ -32,9 +32,11 @@ public class MortalObject : MonoBehaviour {
         }
         if (coll.tag == "Terrain")
         {
-            deadly = false;
-            if(m_can_Be_Disabled)
+            if (m_can_Be_Disabled)
+            {
+                deadly = false;
                 StartCoroutine(DisableObject());
+            }
         }
     }
 
