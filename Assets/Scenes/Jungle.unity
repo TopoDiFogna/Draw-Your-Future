@@ -7838,6 +7838,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1009563176}
     m_Modifications:
+    - target: {fileID: 114000011763585038, guid: 5d7cf65cb452e3349ba21665e037abd8,
+        type: 2}
+      propertyPath: breaking_sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013394709414, guid: 5d7cf65cb452e3349ba21665e037abd8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 40.147583
@@ -7870,6 +7875,35 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 212000014016652820, guid: 5d7cf65cb452e3349ba21665e037abd8,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5952b9c8cb7d67f428cf4bf43cff8e60,
+        type: 3}
+    - target: {fileID: 114000011763585038, guid: 5d7cf65cb452e3349ba21665e037abd8,
+        type: 2}
+      propertyPath: m_hitlimit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011763585038, guid: 5d7cf65cb452e3349ba21665e037abd8,
+        type: 2}
+      propertyPath: breaking_sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c8a7df6298468947999734f773b9551,
+        type: 3}
+    - target: {fileID: 114000011763585038, guid: 5d7cf65cb452e3349ba21665e037abd8,
+        type: 2}
+      propertyPath: breaking_sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: cd50793ebdeaac342a324e85122e65dd,
+        type: 3}
+    - target: {fileID: 114000011763585038, guid: 5d7cf65cb452e3349ba21665e037abd8,
+        type: 2}
+      propertyPath: breaking_sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 55d347bd848527046b6d17fba33243c2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d7cf65cb452e3349ba21665e037abd8, type: 2}
   m_IsPrefabParent: 0
