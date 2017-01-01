@@ -206,6 +206,7 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = true;
+            rb.velocity = Vector2.zero;
         }
         if(coll.gameObject.tag == "Quicksand")
         {
