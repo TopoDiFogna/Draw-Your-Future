@@ -5,7 +5,8 @@ using UnityEngine;
 public class CameraUnderWater : MonoBehaviour {
 
     BoxCollider2D coll;
-    public GameObject wallToActivate;
+    public float min_bound_delta_y = 10.8f;
+    public float max_bound_delta_y = 10.8f;
     bool activated = false;
 
 
@@ -16,12 +17,11 @@ public class CameraUnderWater : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Ostrich" && !activated)
+        if((collision.tag == "Ostrich" || collision.tag == "Player") && !activated)
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
-            camControl.M_minBounds = camControl.M_minBounds - new Vector2(0, 10.8f);
-            camControl.M_maxBounds = camControl.M_maxBounds - new Vector2(0, 10.8f);
-            wallToActivate.SetActive(true);
+            camControl.M_minBounds = camControl.M_minBounds - new Vector2(0, min_bound_delta_y);
+            camControl.M_maxBounds = camControl.M_maxBounds - new Vector2(0, max_bound_delta_y);
             activated = true;
         }
 
