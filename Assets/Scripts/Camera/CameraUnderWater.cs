@@ -17,9 +17,8 @@ public class CameraUnderWater : MonoBehaviour {
         if(collision.tag == "Ostrich")
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
-            Debug.Log(camControl.m_minBounds.ToString());
-            Debug.Log(coll.size.y.ToString());
-            camControl.m_minBounds -= new Vector2(0, coll.size.y);
+            camControl.M_minBounds = camControl.M_minBounds - new Vector2(0, 5.4f);
+            camControl.M_maxBounds = camControl.M_maxBounds - new Vector2(0, 5.4f);
         }
 
     }

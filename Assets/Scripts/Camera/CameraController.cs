@@ -19,7 +19,36 @@ public class CameraController : MonoBehaviour {
     float camY;
 
     public Vector2 m_minBounds = new Vector2(-9.3f,-5.4f);
+    public Vector2 M_minBounds
+    {
+        get
+        {
+            return m_minBounds;
+        }
+        set
+        {
+            m_minBounds = value;
+            leftBound = m_minBounds.x + camHorzExtent;
+            bottomBound = m_minBounds.y + camVertExtent;
+        }
+    }
     public Vector2 m_maxBounds = new Vector2(336.3f,5.4f);
+    public Vector2 M_maxBounds
+    {
+        get
+        {
+            return m_maxBounds;
+        }
+        set
+        {
+            m_maxBounds = value;
+            rightBound = m_maxBounds.x - camHorzExtent;
+            topBound = m_maxBounds.y - camVertExtent;
+        }
+    }
+
+
+
 
     Vector3 target_position;
     Transform tr;
