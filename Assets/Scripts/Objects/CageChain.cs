@@ -6,10 +6,12 @@ public class CageChain : MonoBehaviour {
 
     private Rigidbody2D rb;
     public GameObject chain;
+    private float original_mass;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        original_mass = rb.mass;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,7 +25,19 @@ public class CageChain : MonoBehaviour {
                     j.connectedBody = rb;
             }
             rb.isKinematic = false;
-
+            StartCoroutine(RestoreStatus());
         }
+    }
+
+    IEnumerator RestoreStatus()
+    {
+        yield return new WaitForSeconds(10);
+        rb.mass = 10;
+        yield return new WaitForSeconds(10);
+        rb.isKinematic = true;
+        rb.velocity = new Vector3();
+        rb.angularVelocity = 0;
+        transform.rotation = Quaternion.identity;
+        rb.mass = original_mass;
     }
 }
