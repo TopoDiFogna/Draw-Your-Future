@@ -22,6 +22,11 @@ TagManager:
   - SpawnedSkeleton
   - Flamingo
   - Geyser
+  - Boss
+  - Swarm
+  - Lens
+  - Light
+  - Sun
   layers:
   - Default
   - TransparentFX
