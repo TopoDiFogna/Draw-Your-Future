@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cheese : MonoBehaviour {
+public class ActivateChild : MonoBehaviour {
 
-    public GameObject m_cheese;
+    public GameObject m_object;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Scratch")
         {
-            m_cheese.gameObject.SetActive(true);
+            m_object.gameObject.SetActive(true);
         }
     }
 
@@ -18,7 +18,7 @@ public class Cheese : MonoBehaviour {
     {
         if(collision.tag == "Scratch")
         {
-            m_cheese.gameObject.SetActive(false);
+            m_object.gameObject.SetActive(false);
         }
     }
 }
