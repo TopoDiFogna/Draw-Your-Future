@@ -4,7 +4,7 @@ using System.Collections;
 public class SpiderController : MonoBehaviour {
 
     Transform tr;
-    public bool goingDown;
+    public bool goingDown = true;
     public bool goingUp;
     float time = 0.0f;
     public float max_time = 2.0f;
