@@ -28,6 +28,7 @@ TagManager:
   - Lens
   - Light
   - Sun
+  - ResetCamera
   layers:
   - Default
   - TransparentFX
