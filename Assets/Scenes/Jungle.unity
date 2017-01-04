@@ -374,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_can_Be_Disabled: 0
+  m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 1
   deadly: 1
 --- !u!1001 &17658528
@@ -5593,8 +5594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 641232415}
   m_move_speed: 10
-  m_minBounds: {x: -9.3, y: 5.4}
-  m_maxBounds: {x: 500, y: 16.2}
+  m_minBounds: {x: -9.3, y: -5.4}
+  m_maxBounds: {x: 500, y: 5.4}
 --- !u!81 &762354477
 AudioListener:
   m_ObjectHideFlags: 0
