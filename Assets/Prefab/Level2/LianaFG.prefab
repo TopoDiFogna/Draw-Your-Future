@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4826819275900782}
   - component: {fileID: 212517073572486012}
   - component: {fileID: 61980316470089576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LianaFG
   m_TagString: Climbable
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1603344801476618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.662933, y: 7.100005, z: -1}
+  m_LocalPosition: {x: 16.01, y: 5.25, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,9 +52,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.070884705, y: 0.42528486}
+  m_Offset: {x: 0.07088661, y: -0.015488148}
   serializedVersion: 2
-  m_Size: {x: 0.8973253, y: 9.63943}
+  m_Size: {x: 0.8973253, y: 8.118716}
 --- !u!212 &212517073572486012
 SpriteRenderer:
   m_ObjectHideFlags: 1

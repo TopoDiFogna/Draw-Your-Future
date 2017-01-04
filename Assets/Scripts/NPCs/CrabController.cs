@@ -12,6 +12,7 @@ public class CrabController : MonoBehaviour {
     Vector3 m_startingPoint;
     Vector3 m_endingPoint;
     GameController gc;
+    SpriteRenderer sr;
 
 
     // Use this for initialization
@@ -20,9 +21,11 @@ public class CrabController : MonoBehaviour {
         tr = GetComponent<Transform>();
         m_startingPoint = tr.position;
         m_endingPoint = new Vector3(m_endingPosition.position.x, m_startingPoint.y, m_startingPoint.z);
-        if(goingLeft == true && goingRight == false)
+        sr = GetComponent<SpriteRenderer>();
+        if (goingLeft == true && goingRight == false)
         {
             tr.position = m_endingPoint;
+            sr.flipX = !sr.flipX;
         }
     }
 	
@@ -35,6 +38,7 @@ public class CrabController : MonoBehaviour {
                 time = 0.0f;
                 goingRight = !goingRight;
                 goingLeft = !goingLeft;
+                sr.flipX = !sr.flipX;
             }
 
             if (goingRight)
