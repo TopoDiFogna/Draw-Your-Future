@@ -7450,7 +7450,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 243678848}
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -11607,7 +11607,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 243678848}
         m_MethodName: UnPause
         m_Mode: 1
         m_Arguments:
@@ -12820,7 +12820,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 243678848}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -14554,6 +14554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_can_Be_Disabled: 0
+  m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 5
   deadly: 1
 --- !u!61 &2063135873
