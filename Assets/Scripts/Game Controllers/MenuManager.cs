@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour {
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Prototipo");
+        SceneManager.LoadScene("Level1");
     }
 
     public void CreditsOn()

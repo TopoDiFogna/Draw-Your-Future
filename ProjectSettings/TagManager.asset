@@ -23,6 +23,11 @@ TagManager:
   - Flamingo
   - Geyser
   - Tiger
+  - Boss
+  - Swarm
+  - Lens
+  - Light
+  - Sun
   layers:
   - Default
   - TransparentFX

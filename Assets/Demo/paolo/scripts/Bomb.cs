@@ -4,6 +4,7 @@ using System.Collections;
 public class Bomb : MonoBehaviour {
 
     public Sprite m_bomb_active;
+    private Sprite bomb_normal;
     public AudioClip m_explosion_sound;
 
     SpriteRenderer sr;
@@ -11,11 +12,7 @@ public class Bomb : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         sr = gameObject.GetComponent<SpriteRenderer>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+        bomb_normal = sr.sprite;
 	}
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -24,7 +21,6 @@ public class Bomb : MonoBehaviour {
         {
             sr.sprite = m_bomb_active;
             StartCoroutine(explode_bomb());
-            
         }
     }
 
@@ -33,7 +29,22 @@ public class Bomb : MonoBehaviour {
         yield return new WaitForSeconds(5f);
         // Missing audio effect
         ExplodeBomb();
-        gameObject.SetActive(false);
+        sr.sprite = null;
+        foreach(CircleCollider2D collider in GetComponents<CircleCollider2D>())
+        {
+            collider.enabled = false;
+        }
+        StartCoroutine(RestoreStatus());
+    }
+
+    IEnumerator RestoreStatus()
+    {
+        yield return new WaitForSeconds(10);
+        sr.sprite = bomb_normal;
+        foreach (CircleCollider2D collider in GetComponents<CircleCollider2D>())
+        {
+            collider.enabled = true;
+        }
     }
 
     void ExplodeBomb()

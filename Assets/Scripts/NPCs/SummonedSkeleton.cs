@@ -10,6 +10,7 @@ public class SummonedSkeleton : MonoBehaviour
     float plPos = 0;
     float dir;
     public float speed;
+    public bool bossfight = false;
 
     // Use this for initialization
     void Start()
@@ -39,7 +40,8 @@ public class SummonedSkeleton : MonoBehaviour
     {
         if (coll.tag == "Player")
         {
-            Shaman.GetComponent<Shaman>().Activate(false);
+            if(!bossfight)
+                Shaman.GetComponent<Shaman>().Activate(false);
             coll.gameObject.GetComponent<PlayerController>().DieWithFade();
         }
     }
