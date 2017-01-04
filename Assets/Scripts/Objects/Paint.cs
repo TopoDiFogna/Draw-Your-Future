@@ -51,6 +51,11 @@ public class Paint : MonoBehaviour
         }
     }
 
+    public void DisablePaintRoutine()
+    {
+        StartCoroutine("DisablePaint");
+    }
+
     IEnumerator DisablePaint()
     {
         tr.position = new Vector2(1000, 1000);

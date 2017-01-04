@@ -193,7 +193,6 @@ public class OstrichController : MonoBehaviour
     {
         if (with_player)
         {
-            Debug.Log("dismounting");
             dismounting = true;
             with_player = false;
             rb.isKinematic = true;
