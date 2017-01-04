@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossFightShaman : MonoBehaviour {
+public class BossFightShaman : MonoBehaviour
+{
 
+    GameController gc;
     public DoorSpawnEvent dse;
     GameObject player;
     public GameObject phase1, phase2, phase3;
-    public GameObject wasp,waspSpawn;
+    public GameObject wasp, waspSpawn;
     public bool FightStarted;
     public int phase;
     public bool wasp_spawned;
@@ -21,8 +23,10 @@ public class BossFightShaman : MonoBehaviour {
 
     public GameObject Attack;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         SunNumber = 0;
         ObjectPoolingManager.Instance.CreatePool(Attack, 10, 10);
         ObjectPoolingManager.Instance.CreatePool(Skeleton, 10, 10);
@@ -30,49 +34,53 @@ public class BossFightShaman : MonoBehaviour {
         FightStarted = false;
         phase = 0;
         wasp_spawned = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (FightStarted)
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!gc.paused)
         {
-            if (phase == 0)
+            if (FightStarted)
             {
-                if (!wasp_spawned)
+                if (phase == 0)
                 {
-                    //animation
-                    wasp.SetActive(true);
-                }
-            }
-            else if (phase == 1)
-            {
-                timer += Time.deltaTime;
-                if (timer > fire_rate)
-                {
-                    timer = 0f;
-                    Fire();
-                }
-            }
-            else if (phase == 2)
-            {
-                timer += Time.deltaTime;
-                if (timer >= spawn_rate)
-                {
-                    timer = 0;
-                    SpawnSkeleton();
-                }
-                if (SunNumber == 7)
-                {
-                    foreach (GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
+                    if (!wasp_spawned)
                     {
-                        g.SetActive(false);
+                        //animation
+                        wasp.SetActive(true);
                     }
-                    dse.Open();
-                    gameObject.SetActive(false);
+                }
+                else if (phase == 1)
+                {
+                    timer += Time.deltaTime;
+                    if (timer > fire_rate)
+                    {
+                        timer = 0f;
+                        Fire();
+                    }
+                }
+                else if (phase == 2)
+                {
+                    timer += Time.deltaTime;
+                    if (timer >= spawn_rate)
+                    {
+                        timer = 0;
+                        SpawnSkeleton();
+                    }
+                    if (SunNumber == 7)
+                    {
+                        foreach (GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
+                        {
+                            g.SetActive(false);
+                        }
+                        dse.Open();
+                        gameObject.SetActive(false);
+                    }
                 }
             }
         }
-	}
+    }
 
     public void AddSun()
     {
@@ -83,7 +91,7 @@ public class BossFightShaman : MonoBehaviour {
     {
         GameObject go = ObjectPoolingManager.Instance.GetObject("ChasingScheletro");
         go.GetComponent<SummonedSkeleton>().bossfight = true;
-        go.transform.position = new Vector3(UnityEngine.Random.Range(MinSpawn.transform.position.x,MaxSpawn.transform.position.x),MinSpawn.transform.position.y,-1);
+        go.transform.position = new Vector3(UnityEngine.Random.Range(MinSpawn.transform.position.x, MaxSpawn.transform.position.x), MinSpawn.transform.position.y, -1);
     }
 
     private void Fire()
@@ -100,7 +108,7 @@ public class BossFightShaman : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.tag == "Player")
+        if (coll.tag == "Player")
         {
             if (!FightStarted)
             {
@@ -109,14 +117,14 @@ public class BossFightShaman : MonoBehaviour {
                 GetComponent<EdgeCollider2D>().enabled = false;
             }
         }
-        if(coll.tag == "Swarm" && phase==0)
+        if (coll.tag == "Swarm" && phase == 0)
         {
             phase++;
             phase1.SetActive(false);
             phase2.SetActive(true);
             timer = 0;
         }
-        if(coll.tag == "Light" && coll.GetComponent<Attack>().canhitshaman && phase == 1)
+        if (coll.tag == "Light" && coll.GetComponent<Attack>().canhitshaman && phase == 1)
         {
             phase++;
             phase2.SetActive(false);

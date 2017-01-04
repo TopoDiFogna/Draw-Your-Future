@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ChangeLever : MonoBehaviour {
 
+    GameController gc;
     public SpriteRenderer left;
     public SpriteRenderer right;
     private bool activated = false;
@@ -12,6 +13,11 @@ public class ChangeLever : MonoBehaviour {
     public GameObject trapdoor2;
     public GameObject platform;
     public Vector3 platformlimit;
+
+    void Start()
+    {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,8 +44,11 @@ public class ChangeLever : MonoBehaviour {
         float speed = 3;
         while (platform.transform.position.y > platformlimit.y)
         {
-            platform.transform.position += new Vector3(0,-speed*Time.deltaTime,0);
-            print(platform.transform.position.y);
+            if (!gc.paused)
+            {
+                platform.transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
+                print(platform.transform.position.y);
+            }
             yield return new WaitForEndOfFrame();
         }
     }

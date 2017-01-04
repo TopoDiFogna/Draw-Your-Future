@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoulderManager : MonoBehaviour {
 
+    GameController gc;
     Vector3 spawnPos;
     public GameObject rock;
     CircleCollider2D cc;
@@ -14,6 +15,7 @@ public class BoulderManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         cc = GetComponent<CircleCollider2D>();
         ec = GetComponent<EdgeCollider2D>();
         spawned = false;
@@ -25,7 +27,7 @@ public class BoulderManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(spawned)
+        if(spawned && !gc.paused)
             tr.position += new Vector3(speed * Time.deltaTime, 0, 0);
 	}
 

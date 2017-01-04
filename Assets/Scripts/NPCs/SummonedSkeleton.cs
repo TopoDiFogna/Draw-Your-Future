@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SummonedSkeleton : MonoBehaviour
 {
+    GameController gc;
     public GameObject Shaman;
     GameObject player;
     public bool Chase;
@@ -15,6 +16,7 @@ public class SummonedSkeleton : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         player = GameObject.FindGameObjectWithTag("Player");
         //Chase = false;
     }
@@ -22,7 +24,7 @@ public class SummonedSkeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null)
+        if (player != null && !gc.paused)
         {
             plPos = player.transform.position.x;
             dir = (transform.position.x - plPos) / Mathf.Abs(transform.position.x - plPos);
