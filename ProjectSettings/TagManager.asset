@@ -27,6 +27,7 @@ TagManager:
   - Lens
   - Light
   - Sun
+  - DoorSpawner
   layers:
   - Default
   - TransparentFX

@@ -39,7 +39,8 @@ public class ParrotTakeShaman : MonoBehaviour {
             transform.position += dir * speed * Time.deltaTime;
             if (Vector2.Distance(transform.position, fleepoint.transform.position) <= TakeDistance)
             {
-                Destroy(parent);
+                shaman.GetComponent<Shaman>().dse.Open();
+                parent.SetActive(false);
             }
         }
 	}
