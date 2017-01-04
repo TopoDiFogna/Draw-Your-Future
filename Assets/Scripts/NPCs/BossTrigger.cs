@@ -26,5 +26,8 @@ public class BossTrigger : MonoBehaviour {
             obj.SetActive(false);
             activated = false;
         }
+
+        GameObject.FindObjectOfType<Level2Boss>().ResetVariables();
+
     }
 }

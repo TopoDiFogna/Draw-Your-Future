@@ -98,7 +98,6 @@ public class Level2Boss : MonoBehaviour {
             yield return new WaitForSeconds(time_to_wait_in_landing);
             is_jumping = false;
             hit = false;
-            is_jumping = false;
         }else
         {
             //TODO morte boss e fine livello
@@ -113,6 +112,13 @@ public class Level2Boss : MonoBehaviour {
             collision.gameObject.GetComponent<PlayerController>().DieWithFade();
             GameObject.FindObjectOfType<BossTrigger>().ResetBoss();
         }
+    }
+
+    public void ResetVariables()
+    {
+        is_jumping = false;
+        hit = false;
+        landed = false;
     }
 
 }
