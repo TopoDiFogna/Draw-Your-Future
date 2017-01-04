@@ -55,6 +55,6 @@ public class GameController : MonoBehaviour {
         {
             g.SetActive(false);
         }
-        SceneManager.LoadScene("Prototipo");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
