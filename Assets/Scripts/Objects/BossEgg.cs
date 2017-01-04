@@ -50,9 +50,13 @@ public class BossEgg : MonoBehaviour {
             if(tag == "Tiger")
             {
                 Level2Boss tiger = collision.gameObject.GetComponent<Level2Boss>();
-                tiger.hit = true;
-                tiger.StopCoroutine("Jump");
-                tiger.StartCoroutine("Hit");
+                if (tiger.landed)
+                {
+                    tiger.hit = true;
+                    tiger.StopCoroutine("Jump");
+                    tiger.StartCoroutine("Hit");
+                }
+
             }
             //TODO animazione rottura
             gameObject.SetActive(false);

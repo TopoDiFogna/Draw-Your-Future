@@ -21,7 +21,7 @@ public class Level2Boss : MonoBehaviour {
 
     bool is_jumping = false;
     public bool hit = false;
-    bool landed = false;
+    public bool landed = false;
 
 
 	// Use this for initialization
@@ -51,7 +51,6 @@ public class Level2Boss : MonoBehaviour {
             {
                 current_position = 0;
             }
-
             is_jumping = true;
             StartCoroutine("Jump");
         }
@@ -64,6 +63,7 @@ public class Level2Boss : MonoBehaviour {
         time_multipliers[1] = 2.3f; // 1 -> 2
         time_multipliers[2] = 2f; // 2-> 3
         time_multipliers[3] = 1.5f; // 3-> 4
+        tr.position = landing_vectors[0];
     }
 
     IEnumerator Jump()
@@ -73,14 +73,13 @@ public class Level2Boss : MonoBehaviour {
         float multiplier = time_multipliers[current_position];
         float v0x = (endingPoint.x - startingPosition.x) / multiplier * time_to_jump;
         float v0y = (endingPoint.y + 0.5f * rb.gravityScale * 10 * time_to_jump * time_to_jump * multiplier * multiplier - startingPosition.y) / multiplier * time_to_jump;
-        landed = false;
         rb.AddForce(new Vector2(v0x, v0y), ForceMode2D.Impulse);
         yield return new WaitForSeconds(time_to_jump * multiplier);
         rb.velocity = Vector2.zero;
         landed = true;
         yield return new WaitForSeconds(time_to_wait_in_landing);
         is_jumping = false;
-
+        landed = false;
     }
 
     IEnumerator Hit()
@@ -99,7 +98,7 @@ public class Level2Boss : MonoBehaviour {
             yield return new WaitForSeconds(time_to_wait_in_landing);
             is_jumping = false;
             hit = false;
-
+            is_jumping = false;
         }else
         {
             //TODO morte boss e fine livello

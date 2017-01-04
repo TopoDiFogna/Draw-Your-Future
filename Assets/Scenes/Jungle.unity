@@ -1532,6 +1532,9 @@ MonoBehaviour:
   - {fileID: 1706321220}
   - {fileID: 1656933101}
   - {fileID: 1072142135}
+  - {fileID: 1218848018}
+  - {fileID: 1255723867}
+  - {fileID: 1994244581}
 --- !u!61 &154958902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4608,11 +4611,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.4
+      value: 389.9
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5260,6 +5263,7 @@ MonoBehaviour:
   - {fileID: 1994244581}
   - {fileID: 1218848018}
   hit: 0
+  landed: 0
 --- !u!1 &726630002
 GameObject:
   m_ObjectHideFlags: 0
@@ -5576,8 +5580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 641232415}
   m_move_speed: 10
-  m_minBounds: {x: -9.3, y: -5.4}
-  m_maxBounds: {x: 500, y: 5.4}
+  m_minBounds: {x: -9.3, y: 5.4}
+  m_maxBounds: {x: 500, y: 16.2}
 --- !u!81 &762354477
 AudioListener:
   m_ObjectHideFlags: 0
