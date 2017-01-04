@@ -23,7 +23,20 @@ public class ActiveThrowing : MonoBehaviour {
             cc.enabled = true;
             gameObject.GetComponent<ActiveThrowing>().enabled = false;
             gameObject.layer = 0;
-            sr.sortingOrder = 2;
+            //sr.sortingOrder = 2;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.tag == "Scratch")
+        {
+            bc.enabled = true;
+            script.enabled = false;
+            cc.enabled = false;
+            gameObject.GetComponent<ActiveThrowing>().enabled = true;
+            gameObject.layer = 8;
+            //sr.sortingOrder = 0;
         }
     }
 }

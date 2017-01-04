@@ -56,9 +56,12 @@ public class AntEater : MonoBehaviour {
         }
         else if(coll.tag == "Ant")
         {
-            Destroy(coll.transform.parent.gameObject);
-            Tongue.transform.localScale = new Vector3(0, Tongue.transform.localScale.y, Tongue.transform.localScale.z);
-            counter++;
+            if (coll.gameObject == ants[counter])
+            {
+                Destroy(coll.transform.parent.gameObject);
+                Tongue.transform.localScale = new Vector3(0, Tongue.transform.localScale.y, Tongue.transform.localScale.z);
+                counter++;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Shaman : MonoBehaviour {
 
     public GameObject[] Skeletons;
+    public DoorSpawnEvent dse;
     bool activated;
 
 	// Use this for initialization
@@ -24,6 +25,7 @@ public class Shaman : MonoBehaviour {
         {
             Activate(true);
             StartCoroutine(SpawnSkeletons(5f));
+            dse.Close();
         }
     }
 

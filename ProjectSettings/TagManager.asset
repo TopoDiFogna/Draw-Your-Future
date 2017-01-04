@@ -28,6 +28,7 @@ TagManager:
   - Lens
   - Light
   - Sun
+  - DoorSpawner
   - ResetCamera
   layers:
   - Default

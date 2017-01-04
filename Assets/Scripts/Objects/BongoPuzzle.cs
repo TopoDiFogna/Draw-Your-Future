@@ -10,7 +10,7 @@ public class BongoPuzzle : MonoBehaviour
     public GameObject[] bongos;
     public GameObject door;
     public List<int> sol1, sol2;
-    List<int> current;
+    LinkedList<int> current;
     AudioSource auso;
     public AudioClip[] bong;
     bool solved1, solved2;
@@ -20,7 +20,7 @@ public class BongoPuzzle : MonoBehaviour
     void Start()
     {
         active = false;
-        current = new List<int>();
+        current = new LinkedList<int>();
         solved1 = solved2 = false;
         auso = GetComponent<AudioSource>();
         //StartCoroutine(PlayBongos());
@@ -50,28 +50,32 @@ public class BongoPuzzle : MonoBehaviour
 
     public void AddElement(int e)
     {
-        current.Add(e);
+        current.AddLast(e);
         if (!solved1)
         {
-            if (current.Count == sol1.Count)
+            if (current.Count >= sol1.Count)
             {
+                if (current.Count > sol1.Count)
+                    current.RemoveFirst();
                 if (current.SequenceEqual(sol1))
                     solved1 = true;
-                current = new List<int>();
+                //current = new LinkedList<int>();
             }
 
         }
         else if (!solved2)
         {
-            if (current.Count == sol2.Count)
+            if (current.Count >= sol2.Count)
             {
+                if (current.Count > sol2.Count)
+                    current.RemoveFirst();
                 if (current.SequenceEqual(sol2))
                 {
                     solved2 = true;
                     door.SetActive(false);
                 }
-                else
-                    current = new List<int>();
+
+                //current = new LinkedList<int>();
             }
         }
     }

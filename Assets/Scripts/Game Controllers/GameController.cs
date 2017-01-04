@@ -35,14 +35,14 @@ public class GameController : MonoBehaviour {
         }
 	}
 
-    private void UnPause()
+    public void UnPause()
     {
         PauseMenu.SetActive(false);
         paused = false;
         Time.timeScale = 1;
     }
 
-    private void BackToMenu()
+    public void BackToMenu()
     {
         UnPause();
         SceneManager.LoadScene("MainMenu");

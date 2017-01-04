@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BossFightShaman : MonoBehaviour {
 
+    public DoorSpawnEvent dse;
     GameObject player;
     public GameObject phase1, phase2, phase3;
     public GameObject wasp,waspSpawn;
@@ -66,7 +67,7 @@ public class BossFightShaman : MonoBehaviour {
                     {
                         g.SetActive(false);
                     }
-
+                    dse.Open();
                     gameObject.SetActive(false);
                 }
             }
@@ -103,6 +104,7 @@ public class BossFightShaman : MonoBehaviour {
         {
             if (!FightStarted)
             {
+                dse.Close();
                 FightStarted = true;
                 GetComponent<EdgeCollider2D>().enabled = false;
             }

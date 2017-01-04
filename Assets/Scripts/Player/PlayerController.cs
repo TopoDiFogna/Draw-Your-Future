@@ -270,6 +270,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ResetScene());
             if (SceneManager.GetActiveScene().name == "Level3_Maya")
             {
+                foreach(GameObject d in GameObject.FindGameObjectsWithTag("DoorSpawner"))
+                {
+                    d.GetComponent<DoorSpawnEvent>().Open();
+                }
                 GameObject.FindGameObjectWithTag("Boulder").GetComponent<BoulderManager>().Set_Reset_Boulder(false);
                 foreach(GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
                 {
