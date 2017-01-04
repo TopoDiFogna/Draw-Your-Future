@@ -104,10 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a02b368794bf40b31819bcfd6fd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToHit: 1
+  timeToHit: 1.5
   max_length: 15
   m_player_layer: 9
   active_tag: Projectile
+  flamingo_animator: {fileID: 0}
 --- !u!114 &114230202983825654
 MonoBehaviour:
   m_ObjectHideFlags: 1

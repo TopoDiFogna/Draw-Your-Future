@@ -18,9 +18,11 @@ public class Yoyo : MonoBehaviour {
     public string active_tag = "Projectile";
     public Animator flamingo_animator;
     private int first_activation = 0;
+    GameController gc;
 
     private void Awake()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         player_transform = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
         tr = GetComponent<Transform>();
         startingPosition = new Vector3(tr.position.x, tr.position.y, tr.position.z);
@@ -28,7 +30,7 @@ public class Yoyo : MonoBehaviour {
 
     private void Update()
     {
-        if (active)
+        if (active && !gc.paused)
         {
             if (goingForward)
             {

@@ -22,12 +22,14 @@ TagManager:
   - SpawnedSkeleton
   - Flamingo
   - Geyser
+  - Tiger
   - Boss
   - Swarm
   - Lens
   - Light
   - Sun
   - DoorSpawner
+  - ResetCamera
   layers:
   - Default
   - TransparentFX
