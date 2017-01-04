@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 212539287417058198}
   - component: {fileID: 114052687583675414}
   - component: {fileID: 114634233600546518}
+  - component: {fileID: 114610887241510022}
+  - component: {fileID: 61589429245385168}
+  - component: {fileID: 50316202124763388}
   m_Layer: 0
   m_Name: mouse
   m_TagString: Untagged
@@ -36,12 +39,46 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356948411922724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90.12, y: 13.17, z: 0}
+  m_LocalPosition: {x: 90.12, y: 13.17, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50316202124763388
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356948411922724}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61589429245385168
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356948411922724}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.72, y: -0.05}
+  serializedVersion: 2
+  m_Size: {x: 1.36, y: 0.7}
 --- !u!114 &114052687583675414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,6 +92,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_amplitude: 1
   m_speed: 1
+--- !u!114 &114610887241510022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356948411922724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9f1186c6a0475499fe46679064a575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114634233600546518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cheese: {fileID: 0}
-  m_speed: 0
+  m_speed: 1
 --- !u!212 &212539287417058198
 SpriteRenderer:
   m_ObjectHideFlags: 1
