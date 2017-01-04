@@ -2,18 +2,30 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour {
+public class MenuManager : MonoBehaviour
+{
 
     public GameObject P_butt, P_cred;
 
-	public void Exit()
+    public void Exit()
     {
         Application.Quit();
     }
 
-    public void LoadGame()
+    public void LoadGame(int i)
     {
-        SceneManager.LoadScene("Level1");
+        switch (i)
+        {
+            case 0:
+                SceneManager.LoadScene("Level1");
+                break;
+            case 1:
+                SceneManager.LoadScene("Jungle");
+                break;
+            case 2:
+                SceneManager.LoadScene("Level3_Maya");
+                break;
+        }
     }
 
     public void CreditsOn()
