@@ -6,6 +6,7 @@ using System.Linq;
 
 public class BongoPuzzle : MonoBehaviour
 {
+    Animator anim;
     bool active;
     public GameObject[] bongos;
     public GameObject door;
@@ -14,6 +15,7 @@ public class BongoPuzzle : MonoBehaviour
     AudioSource auso;
     public AudioClip[] bong;
     bool solved1, solved2;
+    string[] triggers = { "Left", "Center", "Right" };
 
 
     // Use this for initialization
@@ -23,6 +25,7 @@ public class BongoPuzzle : MonoBehaviour
         current = new LinkedList<int>();
         solved1 = solved2 = false;
         auso = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
         //StartCoroutine(PlayBongos());
     }
 
@@ -33,6 +36,7 @@ public class BongoPuzzle : MonoBehaviour
             for (int i = 0; i < sol1.Count && !solved1; i++)
             {
                 auso.clip = bong[sol1[i]];
+                anim.SetTrigger(triggers[sol1[i]]);
                 auso.Play();
                 yield return new WaitForSeconds(1.2f);
             }
@@ -42,6 +46,7 @@ public class BongoPuzzle : MonoBehaviour
             for (int i = 0; i < sol2.Count && !solved2; i++)
             {
                 auso.clip = bong[sol2[i]];
+                anim.SetTrigger(triggers[sol2[i]]);
                 auso.Play();
                 yield return new WaitForSeconds(1.2f);
             }
