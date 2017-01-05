@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class wasp : MonoBehaviour {
 
+    Vector2 playerpos;
     GameController gc;
     public float speed;
     GameObject player;
     bool chasing = false;
     Vector2 dir;
+    bool charge;
+    public float chargeTime;
+    float timer;
 
     void Start()
     {
@@ -19,6 +23,8 @@ public class wasp : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         chasing = true;
+        charge = false;
+        timer = 0f;
     }
 
 	// Update is called once per frame
@@ -26,8 +32,23 @@ public class wasp : MonoBehaviour {
 	void Update () {
         if (chasing && !gc.paused)
         {
-            dir = (player.transform.position - transform.position).normalized;
-            transform.position += new Vector3(speed*dir.x*Time.deltaTime,speed*dir.y*Time.deltaTime,0);
+            timer += Time.deltaTime;
+            if (timer >= chargeTime)
+            {
+                timer = 0f;
+                playerpos = player.transform.position;
+                dir = (player.transform.position - transform.position).normalized;
+                charge = true;
+            }
+            if (charge)
+            {
+                transform.position += new Vector3(speed * dir.x * Time.deltaTime, speed * dir.y * Time.deltaTime, 0);
+                if (Vector2.Distance(transform.position, playerpos) <= 0.2)
+                {
+                    charge = false;
+                }
+            }
+            
         }
 	}
 }
