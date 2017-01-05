@@ -13,10 +13,12 @@ public class CrabController : MonoBehaviour {
     Vector3 m_endingPoint;
     GameController gc;
     SpriteRenderer sr;
+    bool eaten;
 
 
     // Use this for initialization
     void Start () {
+        eaten = false;
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         tr = GetComponent<Transform>();
         m_startingPoint = tr.position;
@@ -31,7 +33,7 @@ public class CrabController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!gc.paused)
+        if (!gc.paused && !eaten)
         {
             if (time >= max_time)
             {
@@ -54,6 +56,11 @@ public class CrabController : MonoBehaviour {
             time += Time.deltaTime;
         }
 
+    }
+
+    public void Eat()
+    {
+        eaten = true;
     }
 
 }

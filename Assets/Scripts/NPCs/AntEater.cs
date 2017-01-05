@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class AntEater : MonoBehaviour
 {
-
-    GameObject curant;
+    LineRenderer lr;
+    Vector3 InitialPos;
     GameController gc;
     bool is_active = false;
     int counter = 0;
@@ -15,10 +15,13 @@ public class AntEater : MonoBehaviour
     SpriteRenderer sr;
     public float speed = 0.1f;
     bool reverse = false;
+    Vector2 dir;
 
     // Use this for initialization
     void Start()
     {
+        lr = Tongue.GetComponent<LineRenderer>();
+        InitialPos = Tongue.transform.position;
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         Tongue.SetActive(false);
         sr = GetComponent<SpriteRenderer>();
@@ -30,6 +33,8 @@ public class AntEater : MonoBehaviour
         is_active = true;
         ants = GameObject.FindGameObjectsWithTag("Ant");
         Tongue.SetActive(true);
+        lr.SetPosition(0, InitialPos);
+        lr.SetPosition(1, Tongue.transform.position);
         StartCoroutine(Eat());
     }
 
@@ -37,23 +42,23 @@ public class AntEater : MonoBehaviour
     {
         while (counter < ants.Length)
         {
-            //print(ants[0].transform.position);
             if (!gc.paused)
             {
+                lr.SetPosition(1, Tongue.transform.position);
                 if (!reverse)
                 {
-                    Vector3 vectorToTarget = ants[counter].transform.position - Tongue.transform.position;
-                    float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
-                    Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-                    Tongue.transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 100);
-                    Tongue.transform.localScale = new Vector3(Tongue.transform.localScale.x + speed, Tongue.transform.localScale.y, Tongue.transform.localScale.z);
+                    dir = (ants[counter].transform.position - Tongue.transform.position).normalized;
+
                 }
                 else
-                    Tongue.transform.localScale = new Vector3(Tongue.transform.localScale.x - speed, Tongue.transform.localScale.y, Tongue.transform.localScale.z);
-                if (reverse && Tongue.transform.localScale.x <= 0)
                 {
+                    dir = (InitialPos - Tongue.transform.position).normalized;
+                }
+                Tongue.transform.position += new Vector3(dir.x * speed * Time.deltaTime, dir.y * speed * Time.deltaTime, 0);
+                if (reverse && Vector2.Distance(InitialPos, Tongue.transform.position) <= 0.3f)
+                {
+                    Destroy(ants[counter]);
                     counter++;
-                    //Destroy(curant);
                     reverse = false;
                 }
             }
@@ -74,13 +79,9 @@ public class AntEater : MonoBehaviour
         {
             if (coll.gameObject == ants[counter])
             {
-                //Destroy(coll.transform.parent.gameObject);
-                //coll.transform.parent = Tongue.transform;
-                curant = coll.gameObject;
-                Destroy(curant);
+                coll.GetComponent<CrabController>().Eat();
+                coll.transform.parent = Tongue.transform;
                 reverse = true;
-                //Tongue.transform.localScale = new Vector3(0, Tongue.transform.localScale.y, Tongue.transform.localScale.z);
-                //counter++;
             }
         }
     }
