@@ -7,7 +7,7 @@ using System.Linq;
 public class BongoPuzzle : MonoBehaviour
 {
     Animator anim;
-    bool active;
+    bool playing;
     public GameObject[] bongos;
     public GameObject door;
     public List<int> sol1, sol2;
@@ -21,7 +21,7 @@ public class BongoPuzzle : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        active = false;
+        playing = false;
         current = new LinkedList<int>();
         solved1 = solved2 = false;
         auso = GetComponent<AudioSource>();
@@ -51,6 +51,7 @@ public class BongoPuzzle : MonoBehaviour
                 yield return new WaitForSeconds(1.2f);
             }
         }
+        playing = false;
     }
 
     public void AddElement(int e)
@@ -87,22 +88,22 @@ public class BongoPuzzle : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Scratch" && !active)
+        if (coll.tag == "Scratch" && !playing)
         {
-            active = true;
+            playing = true;
             StartCoroutine(PlayBongos());
         }
     }
 
-    void OnTriggerStay2D(Collider2D coll)
+    /*void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.tag == "Scratch")
-            active = true;
+            playing = true;
     }
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.tag == "Scratch" && active)
-            active = false;
-    }
+        if (coll.tag == "Scratch" && playing)
+            playing = false;
+    }*/
 }
