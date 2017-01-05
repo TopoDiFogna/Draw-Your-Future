@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.W) && !dead && IsNearLadder)
             {
                 climbing = true;
+                rb.velocity = Vector2.zero;
                 rb.isKinematic = true;
             }
             if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && IsNearLadder && !IsNearLever)
