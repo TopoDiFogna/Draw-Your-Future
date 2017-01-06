@@ -15,11 +15,19 @@ public class CheckPoint : MonoBehaviour {
     {
         if(coll.tag == "Player")
         {
-            coll.gameObject.GetComponent<PlayerController>().CheckPointPosition = spawnPosition;
+            CameraController camControl = Camera.main.GetComponent<CameraController>();
+            PlayerController player = coll.gameObject.GetComponent<PlayerController>();
+            player.CheckPointPosition = spawnPosition;
+            player.min_cam_bounds = camControl.M_minBounds;
+            player.max_cam_bounds = camControl.M_maxBounds;
         }
         if(coll.tag == "Ostrich")
         {
-            coll.gameObject.GetComponent<OstrichController>().checkPointPosition = spawnPosition;
+            CameraController camControl = Camera.main.GetComponent<CameraController>();
+            OstrichController player = coll.gameObject.GetComponent<OstrichController>();
+            player.checkPointPosition = spawnPosition;
+            player.min_cam_bounds = camControl.M_minBounds;
+            player.max_cam_bounds = camControl.M_maxBounds;
         }
     }
 }
