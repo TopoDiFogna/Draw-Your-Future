@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 min_cam_bounds;
     public Vector2 max_cam_bounds;
+    public GameObject[] move_camera_bounds_to_reactivate;
+
 
     //Death variables
     [Range(0.5f, 5.0f)]
@@ -309,6 +311,10 @@ public class PlayerController : MonoBehaviour
         CameraController camControl = Camera.main.GetComponent<CameraController>();
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
+        foreach (GameObject go in move_camera_bounds_to_reactivate)
+        {
+            go.GetComponent<CameraWithGoingBack>().ResetForDeath();
+        }
         yield return new WaitForSeconds(1f);
         CameraFade.instance.Die();
         dead = false;

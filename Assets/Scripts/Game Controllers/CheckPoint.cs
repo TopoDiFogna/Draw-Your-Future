@@ -4,7 +4,7 @@ using System.Collections;
 public class CheckPoint : MonoBehaviour {
 
     private Vector3 spawnPosition;
-
+    public GameObject[] move_camera_bounds_to_reactivate;
 
     void Start()
     {
@@ -20,6 +20,7 @@ public class CheckPoint : MonoBehaviour {
             player.CheckPointPosition = spawnPosition;
             player.min_cam_bounds = camControl.M_minBounds;
             player.max_cam_bounds = camControl.M_maxBounds;
+            player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
         }
         if(coll.tag == "Ostrich")
         {
@@ -28,6 +29,7 @@ public class CheckPoint : MonoBehaviour {
             player.checkPointPosition = spawnPosition;
             player.min_cam_bounds = camControl.M_minBounds;
             player.max_cam_bounds = camControl.M_maxBounds;
+            player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
         }
     }
 }

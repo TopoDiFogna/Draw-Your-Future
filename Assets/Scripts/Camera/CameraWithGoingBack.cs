@@ -35,4 +35,17 @@ public class CameraWithGoingBack : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+
+    public void ResetForDeath()
+    {
+        activated = false;
+        gameObject.SetActive(true);
+        backwardCameraToActivate.GetComponent<CameraWithGoingBack>().ResetSingle();
+    }
+
+    public void ResetSingle()
+    {
+        activated = false;
+        gameObject.SetActive(false);
+    }
 }
