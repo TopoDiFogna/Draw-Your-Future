@@ -29,6 +29,17 @@ public class CameraWithGoingBack : MonoBehaviour {
 
     }
 
+    private void OnTriggerStay2D(Collider2D coll)
+    {
+        if ((coll.tag == "Ostrich" || coll.tag == "Player") && !activated)
+        {
+            CameraController camControl = Camera.main.GetComponent<CameraController>();
+            camControl.M_minBounds = new Vector2(min_bound_x, camControl.M_minBounds.y - min_bound_delta_y);
+            camControl.M_maxBounds = new Vector2(max_bound_x, camControl.M_maxBounds.y - max_bound_delta_y);
+            activated = true;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if ((collision.tag == "Ostrich" || collision.tag == "Player") && activated)
