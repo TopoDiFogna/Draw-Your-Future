@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BouncySnakeController : MonoBehaviour
 {
-
+    Animator anim;
     public float JumpImpulse = 10;
     Rigidbody2D rb;
     bool jumping;
@@ -13,21 +13,26 @@ public class BouncySnakeController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
         jumping = false;
         rb = GetComponent<Rigidbody2D>();
-        //StartCoroutine(Jump());
+        StartCoroutine(Jump());
     }
 
     private IEnumerator Jump()
     {
         yield return new WaitForSeconds(1);
+        anim.SetTrigger("Jump");
+        jumping = true;
         rb.AddForce(Vector2.up * JumpImpulse, ForceMode2D.Impulse);
     }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Terrain")
+        if (coll.gameObject.tag == "Terrain" && jumping)
         {
+            jumping = false;
+            anim.SetTrigger("Land");
             StartCoroutine(Jump());
         }
     }

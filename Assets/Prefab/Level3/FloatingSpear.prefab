@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_can_Be_Disabled: 0
+  m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 5
   deadly: 1
 --- !u!212 &212297468310277120
@@ -136,7 +137,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c4249b6631f6da14d9121d325b71c38e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5365d32d426a23c46abf99d4d2ff5371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0

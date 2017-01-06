@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114418577087685480}
   - component: {fileID: 61979487541724826}
   - component: {fileID: 50558731343357478}
+  - component: {fileID: 95010985079287426}
   m_Layer: 8
   m_Name: Level3_Throw_BG
   m_TagString: Untagged
@@ -38,8 +39,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293097445175728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5619924, y: -3.2244668, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.04, y: -1.98, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,6 +94,23 @@ BoxCollider2D:
   m_Offset: {x: -0.0371418, y: 0.83567905}
   serializedVersion: 2
   m_Size: {x: 0.50308156, y: 1.1744404}
+--- !u!95 &95010985079287426
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293097445175728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac3f86af36252b44baa7daedf2a5517e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114418577087685480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1c4c97359eecb44aa37784f152b486d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ac9bf696e2f87442bb9f39d7913e546, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

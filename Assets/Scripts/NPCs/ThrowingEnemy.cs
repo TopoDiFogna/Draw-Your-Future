@@ -4,7 +4,6 @@ using System;
 
 public class ThrowingEnemy : MonoBehaviour
 {
-
     public GameObject rock;
     bool shooting = false;
     Transform player;
@@ -42,7 +41,7 @@ public class ThrowingEnemy : MonoBehaviour
 
     private IEnumerator Shot()
     {
-        while (Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius/2)
+        while (Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius/2 && GetComponent<ThrowingEnemy>().enabled)
         {
             print(Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius / 2);
             GameObject g = ObjectPoolingManager.Instance.GetObject(rock.name.ToString());

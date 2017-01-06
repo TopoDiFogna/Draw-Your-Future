@@ -6,18 +6,21 @@ public class ActiveThrowing : MonoBehaviour {
     public SpriteRenderer sr;
     public ThrowingEnemy script;
     public CircleCollider2D cc;
+    bool activated;
 
     BoxCollider2D bc;
 
     void Start()
     {
+        activated = false;
         bc = gameObject.GetComponent<BoxCollider2D>();
     }
 
 	void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.tag == "Scratch")
+        if(coll.tag == "Scratch" && !activated)
         {
+            activated = true;
             bc.enabled = false;
             script.enabled = true;
             cc.enabled = true;
@@ -31,6 +34,7 @@ public class ActiveThrowing : MonoBehaviour {
     {
         if (coll.tag == "Scratch")
         {
+            activated = false;
             bc.enabled = true;
             script.enabled = false;
             cc.enabled = false;
