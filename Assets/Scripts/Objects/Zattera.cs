@@ -41,6 +41,14 @@ public class Zattera : MonoBehaviour {
             playerController = null;
             with_player = false;
         }
+        if (playerController != null && playerController.Dead)
+        {
+            joint.connectedBody = null;
+            transform.position = starting_position;
+            playerController.enabled = true;
+            playerController = null;
+            with_player = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

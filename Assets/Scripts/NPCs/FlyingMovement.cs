@@ -64,12 +64,12 @@ public class FlyingMovement : MonoBehaviour
                 seek = false;
                 hasplayer = true;
                 Target = carry;
+                coll.GetComponent<Rigidbody2D>().velocity = new Vector3();
                 coll.gameObject.transform.parent = gameObject.transform;
                 coll.gameObject.GetComponent<PlayerController>().StopAnimation();
                 coll.gameObject.GetComponent<PlayerController>().enabled = false;
                 coll.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-                coll.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-                coll.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                coll.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             }
             else
             {
@@ -89,8 +89,7 @@ public class FlyingMovement : MonoBehaviour
         p.GetComponent<PlayerController>().enabled = true;
         p.GetComponent<PlayerController>().jumping = true;
         p.GetComponent<Rigidbody2D>().isKinematic = false;
-        p.gameObject.GetComponent<CircleCollider2D>().enabled = true;
-        p.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        p.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         p.transform.parent = null;
         can_grab = false;
         transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
