@@ -807,6 +807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_bound_delta_y: 10.8
   max_bound_delta_y: 10.8
+  min_bound_x: 213.67
+  max_bound_x: 264.87
 --- !u!1001 &93855787
 Prefab:
   m_ObjectHideFlags: 0
@@ -2271,6 +2273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_bound_delta_y: 10.8
   max_bound_delta_y: 10.8
+  min_bound_x: 213.67
+  max_bound_x: 264.87
   backwardCameraToActivate: {fileID: 436489848}
 --- !u!61 &273128651
 BoxCollider2D:
@@ -3305,6 +3309,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_bound_delta_y: -10.8
   max_bound_delta_y: -10.8
+  min_bound_x: -9.3
+  max_bound_x: 284.49
   backwardCameraToActivate: {fileID: 273128648}
 --- !u!61 &436489851
 BoxCollider2D:
@@ -4757,7 +4763,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 271.97
+      value: 151.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5731,7 +5737,7 @@ MonoBehaviour:
   m_target: {fileID: 641232415}
   m_move_speed: 10
   m_minBounds: {x: -9.3, y: -5.4}
-  m_maxBounds: {x: 500, y: 5.4}
+  m_maxBounds: {x: 430.75, y: 5.4}
 --- !u!81 &762354477
 AudioListener:
   m_ObjectHideFlags: 0
@@ -9889,17 +9895,22 @@ Prefab:
     - target: {fileID: 61000010732750008, guid: 37b5a8205bfe22849b0ef8fdc958bf38,
         type: 2}
       propertyPath: m_Offset.x
-      value: -0.6411743
+      value: -0.12971497
       objectReference: {fileID: 0}
     - target: {fileID: 61000010732750008, guid: 37b5a8205bfe22849b0ef8fdc958bf38,
         type: 2}
       propertyPath: m_Offset.y
-      value: 2.6421523
+      value: 1.2883024
       objectReference: {fileID: 0}
     - target: {fileID: 61000010732750008, guid: 37b5a8205bfe22849b0ef8fdc958bf38,
         type: 2}
       propertyPath: m_Size.x
-      value: 8.450316
+      value: 9.473214
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000010732750008, guid: 37b5a8205bfe22849b0ef8fdc958bf38,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 8.513256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37b5a8205bfe22849b0ef8fdc958bf38, type: 2}
@@ -12118,6 +12129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_bound_delta_y: 10.8
   max_bound_delta_y: 10.8
+  min_bound_x: -9.3
+  max_bound_x: 284.49
   backwardCameraToActivate: {fileID: 1816481306}
 --- !u!61 &1711676678
 BoxCollider2D:
@@ -12562,6 +12575,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_bound_delta_y: -10.8
   max_bound_delta_y: -10.8
+  min_bound_x: 278.2
+  max_bound_x: 430.75
   backwardCameraToActivate: {fileID: 1711676676}
 --- !u!61 &1816481309
 BoxCollider2D:
@@ -12574,7 +12589,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -2.0166297, y: -0.86259174}
+  m_Offset: {x: -1.32, y: -0.86259174}
   serializedVersion: 2
   m_Size: {x: 3.582868, y: 0.23756075}
 --- !u!1 &1830810585

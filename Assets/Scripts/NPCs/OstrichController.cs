@@ -127,7 +127,10 @@ public class OstrichController : MonoBehaviour
             player = coll.gameObject;
             player.SetActive(false);
             checkPointPosition = transform.position;
-            GameObject.FindObjectOfType<CameraController>().m_target = gameObject;
+            CameraController camControl = Camera.main.GetComponent<CameraController>();
+            min_cam_bounds = camControl.M_minBounds;
+            max_cam_bounds = camControl.M_maxBounds;
+            camControl.m_target = gameObject;
             //TODO animazione del player che sale sullo struzzo e poi fa enable dei comandi
             with_player = true;
         }
