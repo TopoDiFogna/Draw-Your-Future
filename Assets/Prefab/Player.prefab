@@ -16,15 +16,15 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013955563948}
-  - 212: {fileID: 212000012265379028}
-  - 95: {fileID: 95000012398153820}
-  - 114: {fileID: 114000012424212714}
-  - 61: {fileID: 61000012562823502}
-  - 58: {fileID: 58000010291890770}
-  - 50: {fileID: 50000012430354470}
+  - component: {fileID: 4000013955563948}
+  - component: {fileID: 212000012265379028}
+  - component: {fileID: 95000012398153820}
+  - component: {fileID: 114000012424212714}
+  - component: {fileID: 50000012430354470}
+  - component: {fileID: 60179037929130646}
+  - component: {fileID: 60591028392617050}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -39,31 +39,34 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013828586744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3, y: -3.4659588, z: -1}
+  m_LocalPosition: {x: 281.14, y: -3.43, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50000012430354470
 Rigidbody2D:
-  serializedVersion: 2
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013828586744}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_IsKinematic: 0
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58000010291890770
-CircleCollider2D:
+--- !u!60 &60179037929130646
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,11 +76,30 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.67}
-  serializedVersion: 2
-  m_Radius: 0.46650457
---- !u!61 &61000012562823502
-BoxCollider2D:
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.15683651, y: 1.110708}
+      - {x: 0.052725315, y: 1.0480771}
+      - {x: 0.19461441, y: 0.7113633}
+      - {x: 0.3769679, y: 0.047684193}
+      - {x: 0.40674162, y: -0.53051996}
+      - {x: 0.40327215, y: -0.77211404}
+      - {x: 0.34165287, y: -0.84448457}
+      - {x: 0.2685609, y: -0.8928249}
+      - {x: 0.16286755, y: -0.97874284}
+      - {x: 0.039942265, y: -1.0086262}
+      - {x: -0.1338377, y: -1.006212}
+      - {x: -0.2910099, y: -0.9941251}
+      - {x: -0.43094873, y: -0.80901694}
+      - {x: -0.43569565, y: -0.55436945}
+      - {x: -0.4476652, y: -0.36470175}
+      - {x: -0.47500658, y: -0.121640205}
+      - {x: -0.45046186, y: 0.33893704}
+      - {x: -0.44011164, y: 0.6003356}
+      - {x: -0.3513875, y: 0.98249173}
+--- !u!60 &60591028392617050
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -85,11 +107,30 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.0061597824, y: 0.14028215}
-  serializedVersion: 2
-  m_Size: {x: 0.93191075, y: 1.6307411}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.15683651, y: 1.110708}
+      - {x: 0.052725315, y: 1.0480771}
+      - {x: 0.19461441, y: 0.7113633}
+      - {x: 0.3769679, y: 0.047684193}
+      - {x: 0.40674162, y: -0.53051996}
+      - {x: 0.40327215, y: -0.77211404}
+      - {x: 0.34165287, y: -0.84448457}
+      - {x: 0.2685609, y: -0.8928249}
+      - {x: 0.16286755, y: -0.97874284}
+      - {x: 0.039942265, y: -1.0086262}
+      - {x: -0.1338377, y: -1.006212}
+      - {x: -0.2910099, y: -0.9941251}
+      - {x: -0.43094873, y: -0.80901694}
+      - {x: -0.43569565, y: -0.55436945}
+      - {x: -0.4476652, y: -0.36470175}
+      - {x: -0.47500658, y: -0.121640205}
+      - {x: -0.45046186, y: 0.33893704}
+      - {x: -0.44011164, y: 0.6003356}
+      - {x: -0.3513875, y: 0.98249173}
 --- !u!95 &95000012398153820
 Animator:
   serializedVersion: 3
@@ -123,10 +164,15 @@ MonoBehaviour:
   m_speed: 8
   m_climbing_speed: 5
   m_Jump_force: 10
+  quicksand_jump_force: 5
   climbing: 0
   jumping: 0
   sliding: 0
   IsNearLadder: 0
+  IsNearLever: 0
+  min_cam_bounds: {x: 0, y: 0}
+  max_cam_bounds: {x: 0, y: 0}
+  move_camera_bounds_to_reactivate: []
   timeToDie: 1
 --- !u!212 &212000012265379028
 SpriteRenderer:
@@ -142,7 +188,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -150,7 +198,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
