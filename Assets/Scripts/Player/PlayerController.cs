@@ -294,6 +294,7 @@ public class PlayerController : MonoBehaviour
                 {
                     g.GetComponent<sun_manager>().activ = false;
                     g.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                    g.transform.GetChild(0).gameObject.SetActive(false);
                 }
                 boss.phase1.SetActive(true);
                 boss.phase2.SetActive(false);

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class sun_manager : MonoBehaviour {
 
+    GameObject ps;
     public BossFightShaman shaman;
     public bool activ;
 
 	// Use this for initialization
 	void Start () {
+        ps = transform.GetChild(0).gameObject;
         activ = false;
 	}
 	
@@ -24,6 +26,7 @@ public class sun_manager : MonoBehaviour {
             shaman.AddSun();
             activ = true;
             GetComponent<SpriteRenderer>().sortingOrder = 2;
+            ps.SetActive(true);
         }
     }
 
