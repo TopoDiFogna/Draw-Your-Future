@@ -64,6 +64,7 @@ public class Level2Boss : MonoBehaviour {
         time_multipliers[2] = 2f; // 2-> 3
         time_multipliers[3] = 1.5f; // 3-> 4
         tr.position = landing_vectors[0];
+        current_position = 0;
     }
 
     IEnumerator Jump()

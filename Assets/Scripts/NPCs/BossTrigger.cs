@@ -23,11 +23,14 @@ public class BossTrigger : MonoBehaviour {
     {
         foreach (GameObject obj in objectsToActivate)
         {
+            if(obj.GetComponent<Level2Boss>() != null)
+            {
+                obj.GetComponent<Level2Boss>().ResetVariables();
+            }
             obj.SetActive(false);
             activated = false;
         }
 
-        GameObject.FindObjectOfType<Level2Boss>().ResetVariables();
 
     }
 }
