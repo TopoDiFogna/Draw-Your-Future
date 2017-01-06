@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212286036544231336}
   - component: {fileID: 95019423543637716}
   - component: {fileID: 114353400767584074}
-  - component: {fileID: 61238505210619592}
+  - component: {fileID: 68149995652120736}
   m_Layer: 0
   m_Name: LeafJumpFG
   m_TagString: Untagged
@@ -37,14 +37,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1256480266976136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 226.28, y: 11.06, z: 1}
+  m_LocalPosition: {x: 223.88, y: 9.68, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61238505210619592
-BoxCollider2D:
+--- !u!68 &68149995652120736
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -54,9 +54,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.041763306, y: 0.6266699}
-  serializedVersion: 2
-  m_Size: {x: 5.9514976, y: 1.5361109}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -3.052719, y: 0.48087883}
+  - {x: 3.082718, y: 0.48087883}
 --- !u!95 &95019423543637716
 Animator:
   serializedVersion: 3
@@ -85,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51fd6d9930f4c644bec552e44cac5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  force: 15
 --- !u!212 &212286036544231336
 SpriteRenderer:
   m_ObjectHideFlags: 1
