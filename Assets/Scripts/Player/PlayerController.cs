@@ -287,9 +287,6 @@ public class PlayerController : MonoBehaviour
                 BossFightShaman boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossFightShaman>();
                 boss.phase = 0;
                 boss.FightStarted = false;
-                boss.wasp_spawned = false;
-                boss.wasp.transform.position = boss.waspSpawn.transform.position;
-                boss.wasp.SetActive(false);
                 foreach (GameObject g in GameObject.FindGameObjectsWithTag("Sun"))
                 {
                     g.GetComponent<sun_manager>().activ = false;
@@ -299,10 +296,19 @@ public class PlayerController : MonoBehaviour
                 boss.phase1.SetActive(true);
                 boss.phase2.SetActive(false);
                 boss.phase3.SetActive(false);
-                boss.GetComponent<EdgeCollider2D>().enabled = true;
+                StartCoroutine(DelayColliderActivation(boss.GetComponent<EdgeCollider2D>()));
+                boss.wasp_spawned = false;
+                boss.wasp.transform.position = boss.waspSpawn.transform.position;
+                boss.wasp.SetActive(false);
                 boss.SunNumber = 0;
             }
         }
+    }
+
+    private IEnumerator DelayColliderActivation(EdgeCollider2D c)
+    {
+        yield return new WaitForSeconds(timeToDie);
+        c.enabled = true;
     }
 
     private IEnumerator ResetScene()

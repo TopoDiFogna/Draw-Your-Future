@@ -13,6 +13,7 @@ public class wasp : MonoBehaviour {
     bool charge;
     public float chargeTime;
     float timer;
+    bool first_charge;
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class wasp : MonoBehaviour {
 
     void OnEnable()
     {
+        gameObject.tag = "Untagged";
+        first_charge = true;
         player = GameObject.FindGameObjectWithTag("Player");
         chasing = true;
         charge = false;
@@ -46,6 +49,11 @@ public class wasp : MonoBehaviour {
                 if (Vector2.Distance(transform.position, playerpos) <= 0.2)
                 {
                     charge = false;
+                    if (first_charge)
+                    {
+                        first_charge = false;
+                        gameObject.tag = "Swarm";
+                    }
                 }
             }
             
