@@ -123,6 +123,7 @@ public class BossFightShaman : MonoBehaviour
             phase1.SetActive(false);
             phase2.SetActive(true);
             timer = 0;
+            ClearPaint();
         }
         if (coll.tag == "Light" && coll.GetComponent<Attack>().canhitshaman && phase == 1)
         {
@@ -130,6 +131,16 @@ public class BossFightShaman : MonoBehaviour
             phase2.SetActive(false);
             phase3.SetActive(true);
             SpawnSkeleton();
+            ClearPaint();
+            coll.gameObject.SetActive(false);
+        }
+    }
+
+    public void ClearPaint()
+    {
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Scratch"))
+        {
+            g.GetComponent<Paint>().DisablePaintRoutine();
         }
     }
 }
