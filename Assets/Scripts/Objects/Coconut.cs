@@ -32,6 +32,7 @@ public class Coconut : MonoBehaviour {
         {
             active = false;
             collision.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
