@@ -23,6 +23,7 @@ public class Level2Boss : MonoBehaviour {
     public bool hit = false;
     public bool landed = false;
 
+    GameController gc;
 
 	// Use this for initialization
 	void Awake () {
@@ -40,6 +41,7 @@ public class Level2Boss : MonoBehaviour {
         time_multipliers[2] = 2f; // 2-> 3
         time_multipliers[3] = 1.5f; // 3-> 4
         original_time_multipliers = time_multipliers.Clone() as float[];
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -102,6 +104,7 @@ public class Level2Boss : MonoBehaviour {
         }else
         {
             //TODO morte boss e fine livello
+            gc.ShowWinningMenu();
         }
 
     }

@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
         get { return paused; }
     }
     public GameObject PauseMenu;
+    public GameObject WinMenu;
     PlayerController player;
 
 	// Use this for initialization
@@ -56,5 +57,25 @@ public class GameController : MonoBehaviour {
             g.SetActive(false);
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ShowWinningMenu()
+    {
+        WinMenu.SetActive(true);
+        paused = true;
+        Time.timeScale = 0;
+    }
+
+    public void NextLevel()
+    {
+        string active_name = SceneManager.GetActiveScene().name;
+        if (active_name == "Level1")
+        {
+            SceneManager.LoadScene("Jungle");
+        }
+        if (active_name == "Jungle")
+        {
+            SceneManager.LoadScene("Level3_Maya");
+        }
     }
 }
