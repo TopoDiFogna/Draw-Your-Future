@@ -39,8 +39,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4688418931986356}
   - component: {fileID: 212827637816709074}
-  - component: {fileID: 61229800803506390}
   - component: {fileID: 120002346883364484}
+  - component: {fileID: 58811396506632734}
   m_Layer: 0
   m_Name: lingua
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381351331640594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0228612, y: 0.34957385, z: 0}
+  m_LocalPosition: {x: -2.26, y: -0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4777820215758918}
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314187401180846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.38, y: 0.15997362, z: 0}
+  m_LocalPosition: {x: 2.35, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4688418931986356}
@@ -109,8 +109,8 @@ CircleCollider2D:
   m_Offset: {x: 0.18, y: 0}
   serializedVersion: 2
   m_Radius: 0.12158108
---- !u!61 &61229800803506390
-BoxCollider2D:
+--- !u!58 &58811396506632734
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -120,9 +120,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.19999993, y: 0.011771519}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.39999998, y: 0.23518957}
+  m_Radius: 0.15
 --- !u!114 &114711841658242216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tongue: {fileID: 1381351331640594}
-  speed: 5
+  speed: 6
 --- !u!120 &120002346883364484
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -173,7 +173,7 @@ LineRenderer:
   - {x: 5.59, y: -2.8, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.2
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -266,7 +266,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b2c954af5faa0fa46a6b2eb510ec76ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ea5dbd7a06813d479ca8ed6073f1749, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: bee118f66c9e2574898b66b296b355e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c302bbbc29404e049849bd303c064b51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
