@@ -77,5 +77,7 @@ public class GameController : MonoBehaviour {
         {
             SceneManager.LoadScene("Level3_Maya");
         }
+        paused = false;
+        Time.timeScale = 1;
     }
 }
