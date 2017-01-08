@@ -1587,6 +1587,7 @@ MonoBehaviour:
   ended: 0
   paused: 0
   PauseMenu: {fileID: 1589585563}
+  WinMenu: {fileID: 0}
 --- !u!4 &243678849
 Transform:
   m_ObjectHideFlags: 0
@@ -3135,11 +3136,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011652798310, guid: 71eadb6d8592dbb42b351323503c9f91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 81.40786
+      value: 80.977
       objectReference: {fileID: 0}
     - target: {fileID: 4000011652798310, guid: 71eadb6d8592dbb42b351323503c9f91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.6486585
+      value: -1.6439
       objectReference: {fileID: 0}
     - target: {fileID: 4000011652798310, guid: 71eadb6d8592dbb42b351323503c9f91, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3164,6 +3165,10 @@ Prefab:
     - target: {fileID: 4000011652798310, guid: 71eadb6d8592dbb42b351323503c9f91, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011652798310, guid: 71eadb6d8592dbb42b351323503c9f91, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 71eadb6d8592dbb42b351323503c9f91, type: 2}
@@ -12573,11 +12578,6 @@ Prefab:
       propertyPath: spawn
       value: 
       objectReference: {fileID: 1905299386}
-    - target: {fileID: 114572762385205594, guid: 949ebc8dc51306d41a680ed8642fd51d,
-        type: 2}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 949ebc8dc51306d41a680ed8642fd51d, type: 2}
   m_IsPrefabParent: 0
