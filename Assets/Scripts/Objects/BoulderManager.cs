@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoulderManager : MonoBehaviour {
 
+    public GameObject crack;
     GameController gc;
     Vector3 spawnPos;
     public GameObject rock;
@@ -52,6 +53,14 @@ public class BoulderManager : MonoBehaviour {
         }
     }
 
+    IEnumerator Crack()
+    {
+        crack.SetActive(true);
+        yield return new WaitForSeconds(1);
+        crack.SetActive(false);
+        tr.position = spawnPos;
+    }
+
     public void Set_Reset_Boulder(bool status)
     {
         //true -> set false -> reset
@@ -59,7 +68,9 @@ public class BoulderManager : MonoBehaviour {
         cc.enabled = status;
         ec.enabled = !status;
         rock.SetActive(status);
-        if(!status)
-            tr.position = spawnPos;
+        if (!status)
+        {
+            StartCoroutine(Crack());
+        }
     }
 }

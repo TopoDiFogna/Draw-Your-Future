@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BossFightShaman : MonoBehaviour
 {
-
+    public GameObject portal;
     GameController gc;
     public DoorSpawnEvent dse;
     GameObject player;
@@ -27,6 +27,7 @@ public class BossFightShaman : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        portal.SetActive(false);
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         SunNumber = 0;
         ObjectPoolingManager.Instance.CreatePool(Attack, 10, 10);
@@ -77,6 +78,7 @@ public class BossFightShaman : MonoBehaviour
                             g.SetActive(false);
                         }
                         dse.Open();
+                        portal.SetActive(true);
                         gameObject.SetActive(false);
                     }
                 }
