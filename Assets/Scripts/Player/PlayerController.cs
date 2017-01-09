@@ -137,6 +137,10 @@ public class PlayerController : MonoBehaviour
             {
                 rb.isKinematic = false;
             }
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                DieWithFade();
+            }
         }
     }
 
