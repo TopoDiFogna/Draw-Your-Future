@@ -2001,7 +2001,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 203670121}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -3854,7 +3854,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 434816950}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -3910,7 +3910,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 446285599}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -5748,7 +5748,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 669799855}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -6200,7 +6200,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 733309297}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -6500,7 +6500,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 772200262}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -6600,7 +6600,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 784974257}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -7688,7 +7688,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 893241687}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -8678,6 +8678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   with_player: 0
   m_speed: 5
+  m_Jump_force: 10
 --- !u!61 &960066827
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9272,7 +9273,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1006375846}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -9891,7 +9892,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1072148222}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -10373,7 +10374,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1097453806}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -11568,7 +11569,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1257122936}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -14608,7 +14609,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1530268118}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -14935,7 +14936,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1557097797}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -15901,7 +15902,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1631378663}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -16443,7 +16444,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1721194305}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -16723,7 +16724,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1732253320}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -17286,7 +17287,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1784288998}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -18422,7 +18423,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1994785699}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -19171,6 +19172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   with_player: 0
   m_speed: 5
+  m_Jump_force: 10
 --- !u!61 &2047661045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19628,7 +19630,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2095126733}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 96e9084237cfeee45b1d606138093685, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
