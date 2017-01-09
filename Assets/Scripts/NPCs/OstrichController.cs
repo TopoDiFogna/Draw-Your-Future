@@ -103,16 +103,31 @@ public class OstrichController : MonoBehaviour
                 if (!in_water)
                 {
                     rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+                    if(m_horizontal != 0)
+                    {
+                        animator.SetBool("Walking", true);
+                    }else
+                    {
+                        animator.SetBool("Walking", false);
+                    }
                     if (m_axis_jump > 0 && !jumping)
                     {
                         rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
                         jumping = true;
+                        animator.SetTrigger("Jump");
                     }
                 }
                 if (in_water)
                 {
                     rb.velocity = new Vector2(m_horizontal * m_underwater_speed, m_vertical * m_underwater_speed);
-              
+                    if (m_horizontal != 0)
+                    {
+                        animator.SetBool("Walking", true);
+                    }
+                    else
+                    {
+                        animator.SetBool("Walking", false);
+                    }
                 }
             }
         }
@@ -124,6 +139,7 @@ public class OstrichController : MonoBehaviour
         if (jumping == true && coll.gameObject.tag == "Terrain" && with_player)
         {
             jumping = false;
+            animator.SetTrigger("Landed");
         }
         if(coll.gameObject.tag == "Player" && active)
         {
@@ -146,6 +162,7 @@ public class OstrichController : MonoBehaviour
         if (jumping == false && coll.gameObject.tag == "Terrain" && with_player)
         {
             jumping = true;
+
         }
     }
 
@@ -154,6 +171,7 @@ public class OstrichController : MonoBehaviour
         if (jumping == true && coll.gameObject.tag == "Terrain" && with_player)
         {
             jumping = false;
+            animator.SetTrigger("Landed");
         }
 
     }
@@ -172,7 +190,7 @@ public class OstrichController : MonoBehaviour
         }
         if (coll.gameObject.tag == "Scratch" && active)
         {
-            gameObject.layer = m_player_layer;
+            gameObject.layer = m_scratch_layer;
         }
         if(coll.gameObject.tag == "Water")
         {
@@ -206,6 +224,8 @@ public class OstrichController : MonoBehaviour
         if (with_player)
         {
             dismounting = true;
+            animator.SetBool("Walking", false);
+            animator.SetTrigger("Landed");
             with_player = false;
             rb.isKinematic = true;
             rb.velocity = Vector2.zero;
@@ -249,7 +269,10 @@ public class OstrichController : MonoBehaviour
     private IEnumerator ResetScene()
     {
         yield return new WaitForSeconds(timeToDie);
-        transform.position = checkPointPosition;
+        tr.localScale = new Vector3(1, 1, 1);
+        facing_right = true;
+        animator.SetBool("Walking", false);
+        animator.SetTrigger("Landed");
         CameraController camControl = Camera.main.GetComponent<CameraController>();
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
@@ -258,6 +281,7 @@ public class OstrichController : MonoBehaviour
             go.GetComponent<CameraWithGoingBack>().ResetForDeath();
         }
         yield return new WaitForSeconds(1f);
+        transform.position = checkPointPosition;
         CameraFade.instance.Die();
         dead = false;
     }
