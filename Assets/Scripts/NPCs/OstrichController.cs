@@ -148,7 +148,6 @@ public class OstrichController : MonoBehaviour
         }
         if(coll.gameObject.tag == "Player" && active)
         {
-            Debug.Log("salgo sullo struzzo");
             player = coll.gameObject;
             player.SetActive(false);
             checkPointPosition = transform.position;
