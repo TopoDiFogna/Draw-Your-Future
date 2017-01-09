@@ -4739,7 +4739,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.59
+      value: 150.55
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8131,9 +8131,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.11478424, y: -0.6762271}
+  m_Offset: {x: 3.7578888, y: -2.8013496}
   serializedVersion: 2
-  m_Size: {x: 1.2295349, y: 11.903969}
+  m_Size: {x: 8.515698, y: 16.154215}
 --- !u!1001 &1128148419
 Prefab:
   m_ObjectHideFlags: 0
@@ -11651,9 +11651,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.28855896, y: 0.19246101}
+  m_Offset: {x: 2.779358, y: -2.3576822}
   serializedVersion: 2
-  m_Size: {x: 52.338837, y: 1.384922}
+  m_Size: {x: 58.47467, y: 6.4852133}
 --- !u!1 &1599402737
 GameObject:
   m_ObjectHideFlags: 0
