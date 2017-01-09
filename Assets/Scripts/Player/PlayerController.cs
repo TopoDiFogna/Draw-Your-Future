@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private float m_horizontal = 0f;
     private float m_vertical = 0f;
     private float m_axis_jump = 0f;
+    bool hasJumped = false;
 
     private Vector3 checkPointPosition = new Vector3((-26.84f + 19.5f), -2.106468f, -1);
     public Vector3 CheckPointPosition
@@ -90,6 +91,10 @@ public class PlayerController : MonoBehaviour
             m_horizontal = Input.GetAxisRaw("Horizontal");
             m_vertical = Input.GetAxisRaw("Vertical");
             m_axis_jump = Input.GetAxisRaw("Jump");
+            if(m_axis_jump == 0)
+            {
+                hasJumped = false;
+            }
             if (!sliding && !dead)
             {
                 animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
@@ -168,13 +173,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
 
-            if (m_axis_jump > 0 && !jumping && !dead)
+            if (m_axis_jump > 0 && !jumping && !dead && !hasJumped)
             {
                 if (!IsNearLadder)
                 {
                     
                     rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
                     jumping = true;
+                    hasJumped = true;
                     animator.SetBool("Jumping", true);
                 }
                 else
