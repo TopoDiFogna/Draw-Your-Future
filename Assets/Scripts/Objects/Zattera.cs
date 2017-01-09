@@ -30,6 +30,7 @@ public class Zattera : MonoBehaviour {
 
             if (with_player && Input.GetKeyDown(KeyCode.W))
             {
+                print("Mi stacco");
                 joint.connectedBody = null;
                 playerController.enabled = true;
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerController.m_Jump_force, ForceMode2D.Impulse);
@@ -61,14 +62,15 @@ public class Zattera : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
 
-        if (collision.gameObject.tag == "Player")
-        {
-            SetUpPlayerVariables(collision);
-        }
-    }
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        print("Mi attacco");
+    //        SetUpPlayerVariables(collision);
+    //    }
+    //}
 
     private void FixedUpdate()
     {
