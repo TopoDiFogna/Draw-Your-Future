@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Levels BG/azteco_temple_body.png.meta
 guid: c21242a216cfc6c4d893015ef278565e
 timeCreated: 1483950844
+=======
+guid: 244638298a025a949be689a2e4929cc6
+timeCreated: 1483950366
+>>>>>>> 1511a62e490405041a34fe7a55be9bfcc268979e:Assets/Sprites/Levels BG/azteco_temple_body.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
