@@ -47,11 +47,12 @@ public class PlayerController : MonoBehaviour
 
     public bool IsNearLever = false;
 
-    private bool facing_right = false;
+    private bool facing_right = true;
 
     //Controls variables
     private float m_horizontal = 0f;
     private float m_vertical = 0f;
+    private float m_axis_jump = 0f;
 
     private Vector3 checkPointPosition = new Vector3((-26.84f + 19.5f), -2.106468f, -1);
     public Vector3 CheckPointPosition
@@ -88,6 +89,7 @@ public class PlayerController : MonoBehaviour
         {
             m_horizontal = Input.GetAxisRaw("Horizontal");
             m_vertical = Input.GetAxisRaw("Vertical");
+            m_axis_jump = Input.GetAxisRaw("Jump");
             if (!sliding && !dead)
             {
                 animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
@@ -103,14 +105,14 @@ public class PlayerController : MonoBehaviour
                 sr.flipX = false;
                 facing_right = true;
             }
-
+            
             if (Input.GetKeyDown(KeyCode.W) && !jumping && !dead)
             {
                 if (!IsNearLadder)
                 {
-                    rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                   /* rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
                     jumping = true;
-                    animator.SetBool("Jumping", true);
+                    animator.SetBool("Jumping", true);*/
                 }
                 else
                 {
@@ -165,6 +167,22 @@ public class PlayerController : MonoBehaviour
         else if (!climbing && !sliding)
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
+
+            if (m_axis_jump > 0 && !jumping && !dead)
+            {
+                if (!IsNearLadder)
+                {
+                    
+                    rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                    jumping = true;
+                    animator.SetBool("Jumping", true);
+                }
+                else
+                {
+                    climbing = true;
+                    rb.isKinematic = true;
+                }
+            }
         }
         else if (climbing)
         {
@@ -333,6 +351,8 @@ public class PlayerController : MonoBehaviour
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
         transform.position = checkPointPosition;
+        m_Jump_force = normal_jump_force;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<PolygonCollider2D>().enabled = true;
         foreach (GameObject go in move_camera_bounds_to_reactivate)
         {

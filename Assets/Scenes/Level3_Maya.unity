@@ -10294,6 +10294,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 82786925228924202, guid: b11c1e697523ac740bb546b1392a61f0,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d1d1d8509a457a4387add1532a8141f, type: 3}
+    - target: {fileID: 114973583571124554, guid: b11c1e697523ac740bb546b1392a61f0,
+        type: 2}
+      propertyPath: level3_bg
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d1d1d8509a457a4387add1532a8141f, type: 3}
+    - target: {fileID: 114973583571124554, guid: b11c1e697523ac740bb546b1392a61f0,
+        type: 2}
+      propertyPath: menu_bg
+      value: 
+      objectReference: {fileID: 8300000, guid: ca9580105e5b0d04dbf94047fd2b2fd4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b11c1e697523ac740bb546b1392a61f0, type: 2}
   m_IsPrefabParent: 0

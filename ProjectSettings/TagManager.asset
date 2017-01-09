@@ -30,6 +30,7 @@ TagManager:
   - Sun
   - DoorSpawner
   - ResetCamera
+  - SpawnerForGeyser
   layers:
   - Default
   - TransparentFX

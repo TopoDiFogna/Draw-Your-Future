@@ -44,7 +44,8 @@ public class OstrichController : MonoBehaviour
     bool dismounting = false;
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
-    PolygonCollider2D polycoll;
+    //PolygonCollider2D polycoll;
+    EdgeCollider2D polycoll;
     Animator animator;
     Transform tr;
     GameObject player;
@@ -63,7 +64,7 @@ public class OstrichController : MonoBehaviour
         tr = transform;
         boxcoll = GetComponent<BoxCollider2D>();
         circlecoll = GetComponent<CircleCollider2D>();
-        polycoll = GetComponent<PolygonCollider2D>();
+        polycoll = GetComponent<EdgeCollider2D>();
         animator = gameObject.GetComponent<Animator>();
         normal_jump_force = m_Jump_force;
     }
@@ -86,6 +87,10 @@ public class OstrichController : MonoBehaviour
             {
                 tr.localScale = new Vector3(tr.localScale.x * -1, 1, 1);
                 facing_right = true;
+            }
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                DieWithFade();
             }
         }
     }
@@ -143,7 +148,6 @@ public class OstrichController : MonoBehaviour
         }
         if(coll.gameObject.tag == "Player" && active)
         {
-            Debug.Log("salgo sullo struzzo");
             player = coll.gameObject;
             player.SetActive(false);
             checkPointPosition = transform.position;
