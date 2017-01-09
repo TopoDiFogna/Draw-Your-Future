@@ -22,6 +22,7 @@ public class BossFightShaman : MonoBehaviour
     public int SunNumber;
 
     public GameObject Attack;
+    public bool stopFight;
 
     // Use this for initialization
     void Start()
@@ -34,12 +35,13 @@ public class BossFightShaman : MonoBehaviour
         FightStarted = false;
         phase = 0;
         wasp_spawned = false;
+        stopFight = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!gc.paused)
+        if (!gc.paused && !stopFight)
         {
             if (FightStarted)
             {
