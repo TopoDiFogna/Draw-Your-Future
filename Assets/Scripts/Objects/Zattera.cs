@@ -5,6 +5,7 @@ using UnityEngine;
 public class Zattera : MonoBehaviour {
 
     private PlayerController playerController;
+    GameController gc;
     public bool with_player = false;
     private float m_horizontal = 0f;
     private Rigidbody2D rb;
@@ -15,39 +16,48 @@ public class Zattera : MonoBehaviour {
 
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         joint = GetComponent<FixedJoint2D>();
         starting_position = transform.position;
     }
 	
 	void Update () {
-        m_horizontal = Input.GetAxisRaw("Horizontal");
-        
-
-        if (with_player && Input.GetKeyDown(KeyCode.W)){
-            joint.connectedBody = null;
-            playerController.enabled = true;
-            player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerController.m_Jump_force, ForceMode2D.Impulse);
-            playerController.jumping = true;
-            player.GetComponent<Animator>().SetBool("Jumping", true);
-            with_player = false;
-        }
-
-        if (with_player && playerController.Dead)
+        if (!gc.paused)
         {
-            joint.connectedBody = null;
-            transform.position = starting_position;
-            playerController.enabled = true;
-            playerController = null;
-            with_player = false;
-        }
-        if (playerController != null && playerController.Dead)
-        {
-            joint.connectedBody = null;
-            transform.position = starting_position;
-            playerController.enabled = true;
-            playerController = null;
-            with_player = false;
+            m_horizontal = Input.GetAxisRaw("Horizontal");
+
+
+            if (with_player && Input.GetKeyDown(KeyCode.W))
+            {
+                joint.connectedBody = null;
+                playerController.enabled = true;
+                player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerController.m_Jump_force, ForceMode2D.Impulse);
+                playerController.jumping = true;
+                player.GetComponent<Animator>().SetBool("Jumping", true);
+                with_player = false;
+            }
+
+            if (with_player && playerController.Dead)
+            {
+                joint.connectedBody = null;
+                transform.position = starting_position;
+                playerController.enabled = true;
+                playerController = null;
+                with_player = false;
+            }
+            if (playerController != null && playerController.Dead)
+            {
+                joint.connectedBody = null;
+                transform.position = starting_position;
+                playerController.enabled = true;
+                playerController = null;
+                with_player = false;
+            }
+            if (Input.GetKeyDown(KeyCode.F11) && with_player)
+            {
+                playerController.DieWithFade();
+            }
         }
     }
 
