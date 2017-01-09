@@ -92,5 +92,6 @@ public class GameController : MonoBehaviour {
         GameObject rocks = GameObject.Find("RockForGeyser");
         rocks.SetActive(false);
         GameObject.FindObjectOfType<Geyser>().enabled = true;
+        GameObject.FindGameObjectWithTag("SpawnerForGeyser").GetComponent<RockSpawner>().spawned_objects = 0;
     }
 }

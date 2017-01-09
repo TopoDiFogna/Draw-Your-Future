@@ -9,7 +9,7 @@ public class RockSpawner : MonoBehaviour
     public GameObject m_spawned_object;
     public int objects_to_spawn = 5;
 
-    private int spawned_objects = 0;
+    public int spawned_objects = 0;
 
     // Use this for initialization
     void Start()

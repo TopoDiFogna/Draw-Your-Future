@@ -329,6 +329,8 @@ public class PlayerController : MonoBehaviour
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
         transform.position = checkPointPosition;
+        m_Jump_force = normal_jump_force;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<PolygonCollider2D>().enabled = true;
         foreach (GameObject go in move_camera_bounds_to_reactivate)
         {
