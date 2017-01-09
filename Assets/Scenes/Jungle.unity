@@ -3487,9 +3487,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 1
-  m_Offset: {x: 5.956726, y: 1.5425453}
+  m_Offset: {x: 5.956726, y: 1.4464426}
   serializedVersion: 2
-  m_Size: {x: 51.329987, y: 11.930206}
+  m_Size: {x: 51.329987, y: 12.122414}
 --- !u!1001 &467717386
 Prefab:
   m_ObjectHideFlags: 0
@@ -4739,7 +4739,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.82
+      value: 19.59
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y

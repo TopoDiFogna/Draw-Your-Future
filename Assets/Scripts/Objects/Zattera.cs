@@ -13,6 +13,7 @@ public class Zattera : MonoBehaviour {
     private GameObject player;
     private FixedJoint2D joint;
     private Vector3 starting_position;
+    public float m_Jump_force = 10;
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class Zattera : MonoBehaviour {
                 print("Mi stacco");
                 joint.connectedBody = null;
                 playerController.enabled = true;
-                player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerController.m_Jump_force, ForceMode2D.Impulse);
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,m_Jump_force), ForceMode2D.Impulse);
                 playerController.jumping = true;
                 player.GetComponent<Animator>().SetBool("Jumping", true);
                 with_player = false;
