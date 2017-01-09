@@ -26,9 +26,9 @@ public class BoulderManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if(spawned && !gc.paused)
-            tr.position += new Vector3(speed * Time.deltaTime, 0, 0);
+            tr.position += new Vector3(speed * Time.fixedDeltaTime, 0, 0);
 	}
 
     void OnTriggerEnter2D(Collider2D coll)
