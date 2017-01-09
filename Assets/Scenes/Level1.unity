@@ -11995,6 +11995,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82444324885902380, guid: 69f785b8b1e478d4a8385cc72005f3d9,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69f785b8b1e478d4a8385cc72005f3d9, type: 2}
   m_IsPrefabParent: 0
@@ -12629,6 +12634,11 @@ Prefab:
     - target: {fileID: 1000012587518974, guid: 1ec6133ac73cc764b954758a58531667, type: 2}
       propertyPath: m_Name
       value: Bomb (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 82486716220439496, guid: 1ec6133ac73cc764b954758a58531667,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ec6133ac73cc764b954758a58531667, type: 2}
