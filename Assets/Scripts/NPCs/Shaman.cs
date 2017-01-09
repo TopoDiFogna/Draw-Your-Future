@@ -48,6 +48,7 @@ public class Shaman : MonoBehaviour {
         activated = status;
         if (!status)
         {
+            StopCoroutine("SpawnSkeletons");
             foreach (GameObject g in Skeletons)
             {
                 g.SetActive(false);
