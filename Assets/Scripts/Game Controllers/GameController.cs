@@ -56,7 +56,12 @@ public class GameController : MonoBehaviour {
         {
             g.SetActive(false);
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        string active_scene_name = SceneManager.GetActiveScene().name;
+        if (active_scene_name == "Jungle")
+        {
+            DeactivateRockForGeyser();
+        }
+        SceneManager.LoadScene(active_scene_name);
     }
 
     public void ShowWinningMenu()
@@ -75,9 +80,16 @@ public class GameController : MonoBehaviour {
         }
         if (active_name == "Jungle")
         {
+            DeactivateRockForGeyser();
             SceneManager.LoadScene("Level3_Maya");
         }
         paused = false;
         Time.timeScale = 1;
+    }
+
+    void DeactivateRockForGeyser()
+    {
+        GameObject rocks = GameObject.Find("RockForGeyser");
+        rocks.SetActive(false);
     }
 }
