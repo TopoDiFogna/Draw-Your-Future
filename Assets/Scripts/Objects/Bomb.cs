@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Bomb : MonoBehaviour {
 
+    public GameObject Spark;
     public AudioClip m_explosion_sound;
     public GameObject m_explosion;
     private bool active = false;
@@ -19,12 +20,14 @@ public class Bomb : MonoBehaviour {
         {
             active = true;
             StartCoroutine(explode_bomb());
+            Spark.SetActive(true);
         }
     }
 
     IEnumerator explode_bomb()
     {
         yield return new WaitForSeconds(5f);
+        Spark.SetActive(false);
         ExplodeBomb();
         sr.enabled = false;
         foreach(CircleCollider2D collider in GetComponents<CircleCollider2D>())
