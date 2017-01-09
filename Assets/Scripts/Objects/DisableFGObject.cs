@@ -30,6 +30,8 @@ public class DisableFGObject : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Scratch")
+        {
             gameObject.layer = defaultLayer;
+        }
     }
 }

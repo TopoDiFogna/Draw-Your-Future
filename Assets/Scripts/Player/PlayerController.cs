@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     private float m_horizontal = 0f;
     private float m_vertical = 0f;
 
-    private Vector3 checkPointPosition = new Vector3((-26.84f+19.5f), -2.106468f, -1);
+    private Vector3 checkPointPosition = new Vector3((-26.84f + 19.5f), -2.106468f, -1);
     public Vector3 CheckPointPosition
     {
         get { return checkPointPosition; }
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
                     rb.isKinematic = true;
                 }
             }
-            if(Input.GetKeyDown(KeyCode.W) && !dead && IsNearLadder)
+            if (Input.GetKeyDown(KeyCode.W) && !dead && IsNearLadder)
             {
                 climbing = true;
                 rb.velocity = Vector2.zero;
@@ -129,13 +129,17 @@ public class PlayerController : MonoBehaviour
                 climbing = true;
                 rb.isKinematic = true;
             }
-            else if(Input.GetKeyDown(KeyCode.S) && !jumping && !dead && !IsNearLadder && IsNearLever)
+            else if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && !IsNearLadder && IsNearLever)
             {
 
             }
             if (!IsNearLadder && rb.isKinematic)
             {
                 rb.isKinematic = false;
+            }
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                DieWithFade();
             }
         }
     }
@@ -162,9 +166,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
         }
-        else if(climbing)
+        else if (climbing)
         {
-            
+
             if (m_horizontal != 0 || !IsNearLadder)
             {
                 climbing = false;
@@ -218,7 +222,7 @@ public class PlayerController : MonoBehaviour
             IsNearLadder = true;
             rb.velocity = Vector2.zero;
         }
-        if(coll.gameObject.tag == "Quicksand")
+        if (coll.gameObject.tag == "Quicksand")
         {
             m_Jump_force = quicksand_jump_force;
             jumping = false;
@@ -256,6 +260,7 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = false;
+            gameObject.layer = 9;
         }
         if (coll.gameObject.tag == "Quicksand")
         {
@@ -276,13 +281,13 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ResetScene());
             if (SceneManager.GetActiveScene().name == "Level3_Maya")
             {
-                GameObject.Find("LockedDoor").GetComponent<LockedDoorManager>().Reset();
-                foreach(GameObject d in GameObject.FindGameObjectsWithTag("DoorSpawner"))
+                //GameObject.Find("LockedDoor").GetComponent<LockedDoorManager>().Reset();
+                foreach (GameObject d in GameObject.FindGameObjectsWithTag("DoorSpawner"))
                 {
                     d.GetComponent<DoorSpawnEvent>().Open();
                 }
                 GameObject.FindGameObjectWithTag("Boulder").GetComponent<BoulderManager>().Set_Reset_Boulder(false);
-                foreach(GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
+                foreach (GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
                 {
                     g.SetActive(false);
                 }
@@ -303,6 +308,10 @@ public class PlayerController : MonoBehaviour
                 boss.wasp.transform.position = boss.waspSpawn.transform.position;
                 boss.wasp.SetActive(false);
                 boss.SunNumber = 0;
+            }
+            else if (SceneManager.GetActiveScene().name == "Level1")
+            {
+                gameObject.transform.parent = null;
             }
         }
     }
@@ -328,5 +337,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CameraFade.instance.Die();
         dead = false;
+        if (SceneManager.GetActiveScene().name == "Level3_Maya")
+        {
+            GameObject.Find("LockedDoor").GetComponent<LockedDoorManager>().Reset();
+        }
     }
 }
