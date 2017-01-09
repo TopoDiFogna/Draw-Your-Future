@@ -54,7 +54,7 @@ public class ThrowingEnemy : MonoBehaviour
             g.GetComponent<Rigidbody2D>().AddForce(new Vector2(v0x, v0y), ForceMode2D.Impulse);
             yield return new WaitForSeconds(3f);
         }
-        print(Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius / 2);
+        //print(Vector2.Distance(new Vector2(tr.position.x, tr.position.y), new Vector2(player.transform.position.x, player.transform.position.y)) < radius / 2);
         shooting = false;
         yield break;
 
