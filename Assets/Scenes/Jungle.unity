@@ -4739,7 +4739,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.9
+      value: -7.82
       objectReference: {fileID: 0}
     - target: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5678,7 +5678,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000013940152554, guid: 6914f8360e595c14cbdda2b3001b9509, type: 2}
       propertyPath: m_TagString
-      value: Terrain
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 212000011354776934, guid: 6914f8360e595c14cbdda2b3001b9509,
         type: 2}
@@ -9774,7 +9774,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000013940152554, guid: 6914f8360e595c14cbdda2b3001b9509, type: 2}
       propertyPath: m_TagString
-      value: Terrain
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 212000011354776934, guid: 6914f8360e595c14cbdda2b3001b9509,
         type: 2}
@@ -13694,7 +13694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1890839579
 Transform:
   m_ObjectHideFlags: 0
