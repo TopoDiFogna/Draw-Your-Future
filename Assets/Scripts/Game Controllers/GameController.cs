@@ -91,5 +91,6 @@ public class GameController : MonoBehaviour {
     {
         GameObject rocks = GameObject.Find("RockForGeyser");
         rocks.SetActive(false);
+        GameObject.FindObjectOfType<Geyser>().enabled = true;
     }
 }

@@ -87,6 +87,10 @@ public class OstrichController : MonoBehaviour
                 tr.localScale = new Vector3(tr.localScale.x * -1, 1, 1);
                 facing_right = true;
             }
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                DieWithFade();
+            }
         }
     }
 
