@@ -45,6 +45,8 @@ public class OstrichController : MonoBehaviour
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
     PolygonCollider2D polycoll;
+    Animator animator;
+    Transform tr;
     GameObject player;
 
     public Vector2 min_cam_bounds;
@@ -58,9 +60,11 @@ public class OstrichController : MonoBehaviour
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        tr = transform;
         boxcoll = GetComponent<BoxCollider2D>();
         circlecoll = GetComponent<CircleCollider2D>();
         polycoll = GetComponent<PolygonCollider2D>();
+        animator = gameObject.GetComponent<Animator>();
         normal_jump_force = m_Jump_force;
     }
 
@@ -75,12 +79,12 @@ public class OstrichController : MonoBehaviour
 
             if (facing_right && m_horizontal < 0)
             {
-                // TODO GIRARE STRUZZO E PLAYER sr.flipX = true;
+                tr.localScale = new Vector3(tr.localScale.x * -1, 1, 1);
                 facing_right = false;
             }
             else if (!facing_right && m_horizontal > 0)
             {
-                // TODO GIRARE STRUZZO E PLAYER sr.flipX = false;
+                tr.localScale = new Vector3(tr.localScale.x * -1, 1, 1);
                 facing_right = true;
             }
         }
