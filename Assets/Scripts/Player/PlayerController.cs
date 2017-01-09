@@ -276,6 +276,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ResetScene());
             if (SceneManager.GetActiveScene().name == "Level3_Maya")
             {
+                GameObject.Find("LockedDoor").GetComponent<LockedDoorManager>().Reset();
                 foreach(GameObject d in GameObject.FindGameObjectsWithTag("DoorSpawner"))
                 {
                     d.GetComponent<DoorSpawnEvent>().Open();

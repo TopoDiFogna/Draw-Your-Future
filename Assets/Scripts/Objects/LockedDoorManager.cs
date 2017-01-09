@@ -16,6 +16,15 @@ public class LockedDoorManager : MonoBehaviour {
         combination = new List<int>();
 	}
 	
+    public void Reset()
+    {
+        combination = new List<int>();
+        foreach (TastoController tc in tcs)
+        {
+            tc.Reset();
+        }
+    }
+
     public void AddElement(int e)
     {
         

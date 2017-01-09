@@ -1587,7 +1587,7 @@ MonoBehaviour:
   ended: 0
   paused: 0
   PauseMenu: {fileID: 1589585563}
-  WinMenu: {fileID: 0}
+  WinMenu: {fileID: 1497639178}
 --- !u!4 &243678849
 Transform:
   m_ObjectHideFlags: 0
