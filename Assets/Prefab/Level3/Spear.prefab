@@ -215,8 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timetolive: 5
   m_rock_effects: {fileID: 82439743404883122}
-  m_player_impact: {fileID: 8300000, guid: 1e0cab7399693d540bd860c1926fbcad, type: 3}
-  m_general_impact: {fileID: 8300000, guid: 06f0d32f2e1da10468116b8dc0e82f23, type: 3}
+  m_player_impact: {fileID: 0}
+  m_general_impact: {fileID: 0}
 --- !u!114 &114849356295496138
 MonoBehaviour:
   m_ObjectHideFlags: 1

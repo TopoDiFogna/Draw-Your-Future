@@ -2,7 +2,8 @@
 using System.Collections;
 using System;
 
-public class RockTTL : MonoBehaviour {
+public class RockTTL : MonoBehaviour
+{
 
     public float timetolive = 5;
     public AudioSource m_rock_effects;
@@ -11,8 +12,9 @@ public class RockTTL : MonoBehaviour {
     private bool played = false;
 
     // Use this for initialization
-    void Start () {
-	}
+    void Start()
+    {
+    }
 
     private void OnEnable()
     {
@@ -28,16 +30,18 @@ public class RockTTL : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" && !played)
+        if (collision.tag == "Player" && !played)
         {
-            m_rock_effects.PlayOneShot(m_player_impact);
+            if (m_player_impact != null)
+                m_rock_effects.PlayOneShot(m_player_impact);
             Debug.Log("Ho suonato");
             played = true;
         }
-        if(!played)
+        if (!played)
         {
             played = true;
-            m_rock_effects.PlayOneShot(m_general_impact);
+            if (m_general_impact != null)
+                m_rock_effects.PlayOneShot(m_general_impact);
         }
     }
 
