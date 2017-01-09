@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4675438216455928}
   - component: {fileID: 212297468310277120}
-  - component: {fileID: 61665907889072760}
   - component: {fileID: 114572762385205594}
   - component: {fileID: 114875068270399506}
   - component: {fileID: 50084839069286074}
+  - component: {fileID: 60072860218502418}
   m_Layer: 0
   m_Name: FloatingSpear
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651941893089078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 117.14826, y: -2.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!61 &61665907889072760
-BoxCollider2D:
+--- !u!60 &60072860218502418
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,9 +75,52 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -1.7260437, y: -0.012154579}
-  serializedVersion: 2
-  m_Size: {x: 0.6713227, y: 0.2017765}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -1.6775194, y: -0.05039758}
+      - {x: -1.6919187, y: -0.04628349}
+      - {x: -1.6731339, y: -0.019071102}
+      - {x: -1.6928635, y: -0.02657032}
+      - {x: -1.694252, y: -0.02657032}
+      - {x: -1.694252, y: 0.019670486}
+      - {x: -1.6724014, y: 0.008785725}
+      - {x: -1.6581345, y: 0.005399704}
+      - {x: -1.6960329, y: 0.038055316}
+      - {x: -1.6775194, y: 0.04422645}
+      - {x: -1.6466638, y: 0.056568712}
+      - {x: -1.5870095, y: 0.08125324}
+      - {x: -1.5787814, y: 0.087424375}
+      - {x: -1.5808383, y: 0.09153846}
+      - {x: -1.6055229, y: 0.09153846}
+      - {x: -1.613751, y: 0.08948141}
+      - {x: -1.7207173, y: 0.07096802}
+      - {x: -1.7803717, y: 0.0606828}
+      - {x: -1.8276837, y: 0.052454624}
+      - {x: -1.8379688, y: 0.05039758}
+      - {x: -1.8523682, y: 0.048340537}
+      - {x: -1.8626534, y: 0.04628349}
+      - {x: -1.8996801, y: 0.040112358}
+      - {x: -2.031331, y: 0.017484875}
+      - {x: -2.0683577, y: 0.013370787}
+      - {x: -2.0909853, y: 0.009256698}
+      - {x: -2.0971565, y: 0.001028522}
+      - {x: -2.0950994, y: -0.00514261}
+      - {x: -2.0580726, y: -0.011313742}
+      - {x: -2.0004754, y: -0.021598963}
+      - {x: -1.9552203, y: -0.029827138}
+      - {x: -1.9202507, y: -0.03599827}
+      - {x: -1.8626534, y: -0.04628349}
+      - {x: -1.8173984, y: -0.054511666}
+      - {x: -1.7598011, y: -0.06479689}
+      - {x: -1.6898617, y: -0.077139154}
+      - {x: -1.6672342, y: -0.08125324}
+      - {x: -1.6322645, y: -0.087424375}
+      - {x: -1.609637, y: -0.09153846}
+      - {x: -1.5911236, y: -0.09153846}
+      - {x: -1.5911236, y: -0.087424375}
+      - {x: -1.5993518, y: -0.08125324}
+      - {x: -1.6466638, y: -0.06273984}
 --- !u!114 &114572762385205594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7509b4b904701a24c98c785d45e24dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 8
   spawn: {fileID: 0}
 --- !u!114 &114875068270399506
 MonoBehaviour:

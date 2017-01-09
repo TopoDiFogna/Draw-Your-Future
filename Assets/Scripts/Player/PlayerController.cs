@@ -270,6 +270,7 @@ public class PlayerController : MonoBehaviour
         if (!dead)
         {
             dead = true;
+            GetComponent<PolygonCollider2D>().enabled = false;
             StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
             StartCoroutine(ResetScene());
@@ -314,10 +315,11 @@ public class PlayerController : MonoBehaviour
     private IEnumerator ResetScene()
     {
         yield return new WaitForSeconds(timeToDie);
-        transform.position = checkPointPosition;
         CameraController camControl = Camera.main.GetComponent<CameraController>();
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
+        transform.position = checkPointPosition;
+        GetComponent<PolygonCollider2D>().enabled = true;
         foreach (GameObject go in move_camera_bounds_to_reactivate)
         {
             go.GetComponent<CameraWithGoingBack>().ResetForDeath();

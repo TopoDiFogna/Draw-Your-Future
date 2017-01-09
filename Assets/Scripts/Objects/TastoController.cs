@@ -12,12 +12,13 @@ public class TastoController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pressed = false;
-	}
+        target.color = Color.white;
+    }
 	
     public void Reset()
     {
         pressed = false;
-        target.color = Color.red;
+        target.color = Color.white;
     }
 	// Update is called once per frame
 
@@ -26,7 +27,7 @@ public class TastoController : MonoBehaviour {
         if(coll.tag=="Player" && !pressed)
         {
             pressed = true;
-            target.color = Color.green;
+            target.color = Color.yellow;
             ldm.AddElement(element);
         }
     }

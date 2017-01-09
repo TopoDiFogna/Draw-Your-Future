@@ -31,8 +31,9 @@ public class BouncySnakeController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Terrain" && jumping)
         {
-            jumping = false;
             anim.SetTrigger("Land");
+            jumping = false;
+            //anim.SetTrigger("Land");
             StartCoroutine(Jump());
         }
     }
