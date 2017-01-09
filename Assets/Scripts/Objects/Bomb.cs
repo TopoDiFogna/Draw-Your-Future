@@ -4,6 +4,7 @@ using System.Collections;
 public class Bomb : MonoBehaviour {
 
     public GameObject Spark;
+    public GameObject Boom;
     public AudioClip m_explosion_sound;
     public GameObject m_explosion;
     private bool active = false;
@@ -40,6 +41,7 @@ public class Bomb : MonoBehaviour {
     IEnumerator RestoreStatus()
     {
         yield return new WaitForSeconds(1);
+        Boom.SetActive(false);
         m_explosion.SetActive(false);
         yield return new WaitForSeconds(9);
         foreach (CircleCollider2D collider in GetComponents<CircleCollider2D>())
@@ -52,6 +54,7 @@ public class Bomb : MonoBehaviour {
 
     void ExplodeBomb()
     {
+        Boom.SetActive(true);
         gameObject.GetComponent<AudioSource>().PlayOneShot(m_explosion_sound);
         m_explosion.SetActive(true);
     }
