@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shaman : MonoBehaviour {
 
+    public GameObject Spawner;
     public GameObject[] Skeletons;
     public DoorSpawnEvent dse;
     bool activated;
@@ -24,6 +25,7 @@ public class Shaman : MonoBehaviour {
         if (coll.tag == "Player")
         {
             Activate(true);
+            //GetComponent<BoxCollider2D>().enabled = false;
             StartCoroutine(SpawnSkeletons(5f));
             dse.Close();
         }
@@ -36,6 +38,7 @@ public class Shaman : MonoBehaviour {
             if (!activated)
                 break;
             g.SetActive(true);
+            g.transform.position = Spawner.transform.position;
             yield return new WaitForSeconds(delay);
         }
     }
