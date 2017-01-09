@@ -256,6 +256,7 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = false;
+            gameObject.layer = 9;
         }
         if (coll.gameObject.tag == "Quicksand")
         {
