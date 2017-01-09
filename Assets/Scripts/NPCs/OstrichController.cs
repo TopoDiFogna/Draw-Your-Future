@@ -44,7 +44,8 @@ public class OstrichController : MonoBehaviour
     bool dismounting = false;
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
-    PolygonCollider2D polycoll;
+    //PolygonCollider2D polycoll;
+    EdgeCollider2D polycoll;
     Animator animator;
     Transform tr;
     GameObject player;
@@ -63,7 +64,7 @@ public class OstrichController : MonoBehaviour
         tr = transform;
         boxcoll = GetComponent<BoxCollider2D>();
         circlecoll = GetComponent<CircleCollider2D>();
-        polycoll = GetComponent<PolygonCollider2D>();
+        polycoll = GetComponent<EdgeCollider2D>();
         animator = gameObject.GetComponent<Animator>();
         normal_jump_force = m_Jump_force;
     }
