@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39a02b368794bf40b31819bcfd6fd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToHit: 1.5
+  timeToHit: 1.2
   max_length: 15
   m_player_layer: 9
   active_tag: Projectile
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_can_Be_Disabled: 0
+  m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 1
   deadly: 1
 --- !u!212 &212331677190575098
