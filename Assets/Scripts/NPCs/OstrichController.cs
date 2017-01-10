@@ -25,7 +25,7 @@ public class OstrichController : MonoBehaviour
     public Vector3 checkPointPosition;
 
     public bool jumping = false;
-    private bool dead = false;
+    public bool dead = false;
     public float timeToDismount = 0.5f;
     public int cycles_to_dismount = 50;
 

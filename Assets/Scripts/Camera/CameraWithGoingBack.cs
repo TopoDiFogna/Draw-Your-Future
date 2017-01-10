@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraWithGoingBack : MonoBehaviour {
 
@@ -10,6 +11,17 @@ public class CameraWithGoingBack : MonoBehaviour {
     public float max_bound_x;
     bool activated = false;
     public GameObject backwardCameraToActivate;
+    PlayerController player;
+    OstrichController ostrich;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if(SceneManager.GetActiveScene().name == "Jungle")
+        {
+            ostrich = GameObject.FindGameObjectWithTag("Ostrich").GetComponent<OstrichController>();
+        }
+    }
 
     private void OnEnable()
     {
@@ -19,7 +31,14 @@ public class CameraWithGoingBack : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.tag == "Ostrich" || collision.tag == "Player") && !activated)
+        if (collision.tag == "Player" && !player.Dead && !activated)
+        {
+            CameraController camControl = Camera.main.GetComponent<CameraController>();
+            camControl.M_minBounds = new Vector2(min_bound_x, camControl.M_minBounds.y - min_bound_delta_y);
+            camControl.M_maxBounds = new Vector2(max_bound_x, camControl.M_maxBounds.y - max_bound_delta_y);
+            activated = true;
+        }
+        if(collision.tag == "Ostrich" && !ostrich.dead && !activated)
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             camControl.M_minBounds = new Vector2(min_bound_x, camControl.M_minBounds.y - min_bound_delta_y);
@@ -31,7 +50,14 @@ public class CameraWithGoingBack : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D coll)
     {
-        if ((coll.tag == "Ostrich" || coll.tag == "Player") && !activated)
+        if (coll.tag == "Player" && !player.Dead && !activated)
+        {
+            CameraController camControl = Camera.main.GetComponent<CameraController>();
+            camControl.M_minBounds = new Vector2(min_bound_x, camControl.M_minBounds.y - min_bound_delta_y);
+            camControl.M_maxBounds = new Vector2(max_bound_x, camControl.M_maxBounds.y - max_bound_delta_y);
+            activated = true;
+        }
+        if (coll.tag == "Ostrich" && !ostrich.dead && !activated)
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             camControl.M_minBounds = new Vector2(min_bound_x, camControl.M_minBounds.y - min_bound_delta_y);
@@ -42,7 +68,12 @@ public class CameraWithGoingBack : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((collision.tag == "Ostrich" || collision.tag == "Player") && activated)
+        if (collision.tag == "Player" && !player.Dead && activated)
+        {
+            backwardCameraToActivate.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        if (collision.tag == "OStrich" && !ostrich.dead && activated)
         {
             backwardCameraToActivate.SetActive(true);
             gameObject.SetActive(false);
