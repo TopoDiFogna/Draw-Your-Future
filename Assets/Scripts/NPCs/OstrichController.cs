@@ -150,7 +150,6 @@ public class OstrichController : MonoBehaviour
         {
             player = coll.gameObject;
             player.SetActive(false);
-            checkPointPosition = transform.position;
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             min_cam_bounds = camControl.M_minBounds;
             max_cam_bounds = camControl.M_maxBounds;
@@ -190,6 +189,7 @@ public class OstrichController : MonoBehaviour
             rb.isKinematic = false;
             gameObject.layer = m_player_layer;
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            checkPointPosition = transform.position;
             active = true;
         }
         if (coll.gameObject.tag == "Scratch" && active)
