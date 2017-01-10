@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class YoyoSpawner : MonoBehaviour {
 
+    public GameObject LR_Start;
+    public LineRenderer lr;
     bool activated = false;
     public GameObject m_spawned_object;
 
     private void Start()
     {
+        lr.SetPosition(0, LR_Start.transform.position);
+        lr.SetPosition(1, LR_Start.transform.position);
+        lr.enabled = false;
         m_spawned_object = Instantiate(m_spawned_object);
         m_spawned_object.SetActive(false);
         if(m_spawned_object.GetComponent<Yoyo>() != null)
         {
             m_spawned_object.GetComponent<Yoyo>().flamingo_animator = GameObject.FindGameObjectWithTag("Flamingo").GetComponent<Animator>();
+            m_spawned_object.GetComponent<Yoyo>().lr = lr;
         }
     }
 
@@ -24,6 +30,7 @@ public class YoyoSpawner : MonoBehaviour {
             activated = true;
             m_spawned_object.transform.position = transform.position;
             m_spawned_object.SetActive(true);
+            lr.enabled = true;
         }
     }
 

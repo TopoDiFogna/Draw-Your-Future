@@ -19,6 +19,10 @@ public class DestructibleObject : MonoBehaviour {
         if(coll.gameObject.tag == "Projectile")
         {
             m_counter++;
+            if(coll.gameObject.GetComponent<Yoyo>()!= null)
+            {
+                coll.gameObject.GetComponent<Yoyo>().lr.enabled = false;
+            }
             coll.gameObject.SetActive(false);
             if (m_counter >= m_hitlimit)
             {

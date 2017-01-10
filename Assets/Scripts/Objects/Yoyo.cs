@@ -17,6 +17,7 @@ public class Yoyo : MonoBehaviour {
     public int m_player_layer = 9;
     public string active_tag = "Projectile";
     public Animator flamingo_animator;
+    public LineRenderer lr;
     private int first_activation = 0;
     GameController gc;
 
@@ -32,6 +33,10 @@ public class Yoyo : MonoBehaviour {
     {
         if (active && !gc.paused)
         {
+            if (lr != null)
+            {
+                lr.SetPosition(1, transform.position);
+            }
             if (goingForward)
             {
                 time += Time.deltaTime;
@@ -51,6 +56,7 @@ public class Yoyo : MonoBehaviour {
                 time += Time.deltaTime;
                 if (time >= timeToHit)
                 {
+                    lr.enabled = false;
                     gameObject.SetActive(false);
                 }
                 else
