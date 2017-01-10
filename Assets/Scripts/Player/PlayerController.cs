@@ -298,8 +298,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!dead)
         {
+            rb.isKinematic = true;
             dead = true;
-            GetComponent<PolygonCollider2D>().enabled = false;
             StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
             StartCoroutine(ResetScene());
@@ -365,6 +365,7 @@ public class PlayerController : MonoBehaviour
             go.GetComponent<CameraWithGoingBack>().ResetForDeath();
         }
         yield return new WaitForSeconds(1f);
+        rb.isKinematic = false;
         CameraFade.instance.Die();
         dead = false;
         if (SceneManager.GetActiveScene().name == "Level3_Maya")

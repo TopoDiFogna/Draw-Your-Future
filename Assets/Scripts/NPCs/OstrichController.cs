@@ -255,6 +255,7 @@ public class OstrichController : MonoBehaviour
     {
         if (!dead)
         {
+            rb.isKinematic = true;
             dead = true;
             //StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
@@ -286,6 +287,7 @@ public class OstrichController : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         transform.position = checkPointPosition;
+        rb.isKinematic = false;
         CameraFade.instance.Die();
         dead = false;
     }
