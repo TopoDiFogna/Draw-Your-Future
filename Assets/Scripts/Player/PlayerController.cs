@@ -334,7 +334,7 @@ public class PlayerController : MonoBehaviour
                 boss.wasp.SetActive(false);
                 boss.SunNumber = 0;
             }
-            else if (SceneManager.GetActiveScene().name == "Level1")
+            else if (SceneManager.GetActiveScene().name == "Level1" || SceneManager.GetActiveScene().name == "Jungle" )
             {
                 gameObject.transform.parent = null;
             }
