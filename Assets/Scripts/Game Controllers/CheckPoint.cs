@@ -17,19 +17,26 @@ public class CheckPoint : MonoBehaviour {
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             PlayerController player = coll.gameObject.GetComponent<PlayerController>();
-            player.CheckPointPosition = spawnPosition;
-            player.min_cam_bounds = camControl.M_minBounds;
-            player.max_cam_bounds = camControl.M_maxBounds;
-            player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
+            if (!player.Dead)
+            {
+                player.CheckPointPosition = spawnPosition;
+                player.min_cam_bounds = camControl.M_minBounds;
+                player.max_cam_bounds = camControl.M_maxBounds;
+                player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
+            }
+
         }
         if(coll.tag == "Ostrich")
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             OstrichController player = coll.gameObject.GetComponent<OstrichController>();
-            player.checkPointPosition = spawnPosition;
-            player.min_cam_bounds = camControl.M_minBounds;
-            player.max_cam_bounds = camControl.M_maxBounds;
-            player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
+            if (!player.Dead)
+            {
+                player.CheckPointPosition = spawnPosition;
+                player.min_cam_bounds = camControl.M_minBounds;
+                player.max_cam_bounds = camControl.M_maxBounds;
+                player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
+            }
         }
     }
 }
