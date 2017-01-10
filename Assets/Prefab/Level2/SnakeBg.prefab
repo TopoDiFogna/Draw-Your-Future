@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200789427912626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.22, y: 2.4, z: 0}
+  m_LocalPosition: {x: 81.33, y: 5.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4590289137001630}
@@ -115,9 +115,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.09373474, y: 0.34375572}
+  m_Offset: {x: 0.107587814, y: 0.40841484}
   serializedVersion: 2
-  m_Size: {x: 0.29156876, y: 4.3974867}
+  m_Size: {x: 0.15302579, y: 4.268167}
 --- !u!61 &61626876034097192
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -129,9 +129,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.006292343, y: 0.048351526}
+  m_Offset: {x: -0.0062713623, y: 0.17767024}
   serializedVersion: 2
-  m_Size: {x: 0.34715652, y: 4.988299}
+  m_Size: {x: 0.21784246, y: 4.729662}
 --- !u!114 &114242564106942124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_can_Be_Disabled: 0
+  m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 5
   deadly: 1
 --- !u!114 &114407946849923246
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_can_Be_Disabled: 0
+  m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 1
   deadly: 1
 --- !u!212 &212400350798085898
