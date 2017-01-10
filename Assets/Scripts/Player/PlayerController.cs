@@ -88,13 +88,18 @@ public class PlayerController : MonoBehaviour
     {
         if (!gc.Pause)
         {
+            //prendo gli input
             m_horizontal = Input.GetAxisRaw("Horizontal");
             m_vertical = Input.GetAxisRaw("Vertical");
             m_axis_jump = Input.GetAxisRaw("Jump");
+
+            //controllo per non fare un doppio salto troppo in alto
             if(m_axis_jump == 0)
             {
                 hasJumped = false;
             }
+
+            //parte di animazione player
             if (!sliding && !dead)
             {
                 animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
@@ -110,21 +115,13 @@ public class PlayerController : MonoBehaviour
                 sr.flipX = false;
                 facing_right = true;
             }
-            
-            if (Input.GetKeyDown(KeyCode.W) && !jumping && !dead)
+
+            //comandi
+            if (m_vertical != 0 && !jumping && !dead && IsNearLadder)
             {
-                if (!IsNearLadder)
-                {
-                   /* rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
-                    jumping = true;
-                    animator.SetBool("Jumping", true);*/
-                }
-                else
-                {
                     climbing = true;
-                    rb.isKinematic = true;
-                }
             }
+            /*
             if (Input.GetKeyDown(KeyCode.W) && !dead && IsNearLadder)
             {
                 climbing = true;
@@ -135,15 +132,18 @@ public class PlayerController : MonoBehaviour
             {
                 climbing = true;
                 rb.isKinematic = true;
-            }
+            }*/
             else if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && !IsNearLadder && IsNearLever)
             {
-
+                //TODO non ho idea di cosa sia questo per cui lo lascio
             }
+
+            /*
             if (!IsNearLadder && rb.isKinematic)
             {
                 rb.isKinematic = false;
-            }
+            }*/
+
             if (Input.GetKeyDown(KeyCode.F11))
             {
                 DieWithFade();
@@ -165,16 +165,23 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (dead || (sliding && !IsNearLadder))
+        if (dead)
         {
             //donothing
+            return;
         }
-        else if (!climbing && !sliding)
+        if (sliding)
+        {
+            //donothing
+            return;
+        }
+        if (!climbing)
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
 
             if (m_axis_jump > 0 && !jumping && !dead && !hasJumped)
             {
+                //TODO qui si potrebbe provare a farlo saltare dalla scala
                 if (!IsNearLadder)
                 {
                     
@@ -182,28 +189,36 @@ public class PlayerController : MonoBehaviour
                     jumping = true;
                     hasJumped = true;
                     animator.SetBool("Jumping", true);
-                }
+                }/*
                 else
                 {
                     climbing = true;
                     rb.isKinematic = true;
-                }
+                }*/
             }
         }
-        else if (climbing)
+        else
         {
-
-            if (m_horizontal != 0 || !IsNearLadder)
+            rb.velocity = new Vector2(m_horizontal * m_climbing_speed, m_vertical * m_climbing_speed);
+            /*if (m_horizontal != 0 || !IsNearLadder)
             {
                 climbing = false;
                 rb.isKinematic = false;
                 rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
             }
             else
-                rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);
+                rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);*/
         }
 
     }
+
+
+
+
+
+
+
+
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
@@ -243,7 +258,9 @@ public class PlayerController : MonoBehaviour
 
         if (coll.gameObject.tag == "Climbable")
         {
+            //TODO animazione scalata
             IsNearLadder = true;
+            rb.gravityScale = 0;
             rb.velocity = Vector2.zero;
         }
         if (coll.gameObject.tag == "Quicksand")
@@ -263,10 +280,10 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = true;
-            if (climbing)
+            /*if (climbing)
             {
                 rb.isKinematic = true;
-            }
+            }*/
         }
         if (coll.gameObject.tag == "Quicksand")
         {
@@ -284,6 +301,8 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = false;
+            climbing = false;
+            rb.gravityScale = 2;
             gameObject.layer = 9;
         }
         if (coll.gameObject.tag == "Quicksand")
