@@ -30,9 +30,9 @@ public class CheckPoint : MonoBehaviour {
         {
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             OstrichController player = coll.gameObject.GetComponent<OstrichController>();
-            if (!player.Dead)
+            if (!player.dead)
             {
-                player.CheckPointPosition = spawnPosition;
+                player.checkPointPosition = spawnPosition;
                 player.min_cam_bounds = camControl.M_minBounds;
                 player.max_cam_bounds = camControl.M_maxBounds;
                 player.move_camera_bounds_to_reactivate = move_camera_bounds_to_reactivate;
