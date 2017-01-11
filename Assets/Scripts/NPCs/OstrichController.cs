@@ -42,6 +42,7 @@ public class OstrichController : MonoBehaviour
     bool with_player = false;
     bool in_water = false;
     bool dismounting = false;
+    bool hasJumped = false;
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
     EdgeCollider2D polycoll;
@@ -76,6 +77,11 @@ public class OstrichController : MonoBehaviour
             m_horizontal = Input.GetAxisRaw("Horizontal");
             m_vertical = Input.GetAxisRaw("Vertical");
             m_axis_jump = Input.GetAxisRaw("Jump");
+
+            if (m_axis_jump == 0)
+            {
+                hasJumped = false;
+            }
 
             if (facing_right && m_horizontal < 0)
             {
@@ -114,10 +120,12 @@ public class OstrichController : MonoBehaviour
                     {
                         animator.SetBool("Walking", false);
                     }
-                    if (m_axis_jump > 0 && !jumping)
+                    if (m_axis_jump > 0 && !jumping && !hasJumped)
                     {
                         rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
                         jumping = true;
+                        hasJumped = true;
+                        Debug.Log("set trigger jump");
                         animator.SetTrigger("Jump");
                     }
                 }
@@ -173,7 +181,7 @@ public class OstrichController : MonoBehaviour
         if (jumping == true && coll.gameObject.tag == "Terrain" && with_player)
         {
             jumping = false;
-            animator.SetTrigger("Landed");
+            //animator.SetTrigger("Landed");
         }
 
     }

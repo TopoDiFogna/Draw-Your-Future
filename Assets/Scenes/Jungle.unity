@@ -617,7 +617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 315153227}
-  m_RootOrder: 26
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &53345674
 SpriteRenderer:
@@ -2424,22 +2424,22 @@ Transform:
   - {fileID: 433618580}
   - {fileID: 1402936035}
   - {fileID: 101899706}
-  - {fileID: 1266319050}
   - {fileID: 1894167959}
+  - {fileID: 1266319050}
   - {fileID: 372963862}
   - {fileID: 1526956196}
   - {fileID: 1893784664}
   - {fileID: 1573351348}
   - {fileID: 125245958}
   - {fileID: 1121297993}
-  - {fileID: 558018074}
   - {fileID: 520743836}
-  - {fileID: 742598183}
   - {fileID: 53345673}
+  - {fileID: 2061907112}
+  - {fileID: 558018074}
+  - {fileID: 742598183}
   - {fileID: 1256780091}
   - {fileID: 128760312}
   - {fileID: 770915858}
-  - {fileID: 2061907112}
   - {fileID: 1835167972}
   - {fileID: 2053318710}
   m_Father: {fileID: 0}
@@ -4131,7 +4131,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 315153227}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &520743837
 MonoBehaviour:
@@ -6700,7 +6700,7 @@ Prefab:
     - target: {fileID: 114265307204465426, guid: 68890346ede40984ea8dd1533745b272,
         type: 2}
       propertyPath: m_Jump_force
-      value: 14
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114265307204465426, guid: 68890346ede40984ea8dd1533745b272,
         type: 2}
@@ -14072,7 +14072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 315153227}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1894167960
 SpriteRenderer:
@@ -15443,7 +15443,7 @@ Transform:
   - {fileID: 1967483845}
   - {fileID: 2038158530}
   m_Father: {fileID: 315153227}
-  m_RootOrder: 30
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2061907113
 BoxCollider2D:
