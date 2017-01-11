@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public bool sliding = false;
     private bool dead = false;
 
+    Ladder ladder;
+
     public bool Dead
     {
         get { return dead; }
@@ -117,17 +119,25 @@ public class PlayerController : MonoBehaviour
             }
 
             //comandi
+            /*
             if (m_vertical != 0 && !jumping && !dead && IsNearLadder)
             {
                     climbing = true;
-            }
-            /*
-            if (Input.GetKeyDown(KeyCode.W) && !dead && IsNearLadder)
+            }*/
+            
+            if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && !dead && IsNearLadder)
             {
                 climbing = true;
+                rb.gravityScale = 0;
                 rb.velocity = Vector2.zero;
-                rb.isKinematic = true;
+                if(ladder != null)
+                {
+                    ladder.DeactivatePlatform();
+                }
+
+                //TODO aggiungere oggetto vuoto per centrare il player sulla scala
             }
+            /*
             if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && IsNearLadder && !IsNearLever)
             {
                 climbing = true;
@@ -179,17 +189,13 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
 
-            if (m_axis_jump > 0 && !jumping && !dead && !hasJumped)
+            if (m_axis_jump > 0 && !jumping && !hasJumped)
             {
-                //TODO qui si potrebbe provare a farlo saltare dalla scala
-                if (!IsNearLadder)
-                {
-                    
-                    rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
-                    jumping = true;
-                    hasJumped = true;
-                    animator.SetBool("Jumping", true);
-                }/*
+                rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                jumping = true;
+                hasJumped = true;
+                animator.SetBool("Jumping", true);
+                /*
                 else
                 {
                     climbing = true;
@@ -199,7 +205,20 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(m_horizontal * m_climbing_speed, m_vertical * m_climbing_speed);
+            if(m_axis_jump > 0)
+            {
+                rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
+                jumping = true;
+                hasJumped = true;
+                climbing = false;
+                animator.SetBool("Jumping", true);
+                if(ladder != null)
+                {
+                    ladder.ActivatePlatform();
+                }
+                return;
+            }
+            rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);
             /*if (m_horizontal != 0 || !IsNearLadder)
             {
                 climbing = false;
@@ -224,6 +243,16 @@ public class PlayerController : MonoBehaviour
     {
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
+            if (climbing)
+            {
+                climbing = false;
+                rb.gravityScale = 2;
+                if (ladder != null)
+                {
+                    ladder.ActivatePlatform();
+                }
+                ladder = null;
+            }
             jumping = false;
             animator.SetBool("Jumping", false);
         }
@@ -259,9 +288,8 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             //TODO animazione scalata
+            ladder = coll.gameObject.GetComponent<Ladder>();
             IsNearLadder = true;
-            rb.gravityScale = 0;
-            rb.velocity = Vector2.zero;
         }
         if (coll.gameObject.tag == "Quicksand")
         {
@@ -303,7 +331,12 @@ public class PlayerController : MonoBehaviour
             IsNearLadder = false;
             climbing = false;
             rb.gravityScale = 2;
-            gameObject.layer = 9;
+            if (ladder != null)
+            {
+                ladder.ActivatePlatform();
+            }
+            ladder = null;
+            //gameObject.layer = 9;
         }
         if (coll.gameObject.tag == "Quicksand")
         {

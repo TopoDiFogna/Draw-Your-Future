@@ -3628,6 +3628,69 @@ Transform:
   m_PrefabParentObject: {fileID: 4018772671954418, guid: 17087fc29337ef54684a27b0f309cc3a,
     type: 2}
   m_PrefabInternal: {fileID: 61454770}
+--- !u!1 &415535760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 415535761}
+  - component: {fileID: 415535763}
+  - component: {fileID: 415535762}
+  m_Layer: 0
+  m_Name: Platform
+  m_TagString: Terrain
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &415535761
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415535760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 833773751}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!251 &415535762
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415535760}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!68 &415535763
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415535760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -0.95420456, y: -0.0062031746}
+  - {x: 0.93527985, y: -0.0037846565}
 --- !u!1 &421238665 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013850339760, guid: 48dd40e9ea7ba4d41a05c29239101a23,
@@ -6796,6 +6859,10 @@ Prefab:
       propertyPath: menu_bg
       value: 
       objectReference: {fileID: 8300000, guid: ca9580105e5b0d04dbf94047fd2b2fd4, type: 3}
+    - target: {fileID: 1422440703350842, guid: b11c1e697523ac740bb546b1392a61f0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b11c1e697523ac740bb546b1392a61f0, type: 2}
   m_IsPrefabParent: 0
@@ -6860,6 +6927,7 @@ GameObject:
   - component: {fileID: 833773751}
   - component: {fileID: 833773750}
   - component: {fileID: 833773752}
+  - component: {fileID: 833773753}
   m_Layer: 0
   m_Name: stairway
   m_TagString: Climbable
@@ -6909,9 +6977,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 833773749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.46, y: 16.3, z: -1}
+  m_LocalPosition: {x: 60.79, y: 9.87, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 415535761}
   m_Father: {fileID: 425315599}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6929,6 +6998,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.75, y: 5.97}
+--- !u!114 &833773753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833773749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abea3b66f7214d74394797fbea8d3c70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 415535760}
 --- !u!1001 &835062614
 Prefab:
   m_ObjectHideFlags: 0
