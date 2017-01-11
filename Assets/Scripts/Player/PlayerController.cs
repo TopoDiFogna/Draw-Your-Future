@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //parte di animazione player
-            if (!sliding && !dead)
+            if (!sliding && !dead && !climbing)
             {
                 animator.SetFloat("Horizontal", Mathf.Abs(m_horizontal));
             }

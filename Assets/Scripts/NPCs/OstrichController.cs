@@ -44,7 +44,6 @@ public class OstrichController : MonoBehaviour
     bool dismounting = false;
     BoxCollider2D boxcoll;
     CircleCollider2D circlecoll;
-    //PolygonCollider2D polycoll;
     EdgeCollider2D polycoll;
     Animator animator;
     Transform tr;
@@ -183,6 +182,7 @@ public class OstrichController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Scratch" && !active)
         {
+            active = true;
             boxcoll.enabled = false;
             circlecoll.enabled = true;
             polycoll.enabled = true;
@@ -190,7 +190,6 @@ public class OstrichController : MonoBehaviour
             gameObject.layer = m_player_layer;
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
             checkPointPosition = transform.position;
-            active = true;
         }
         if (coll.gameObject.tag == "Scratch" && active)
         {
@@ -257,6 +256,7 @@ public class OstrichController : MonoBehaviour
         if (!dead)
         {
             rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
             dead = true;
             //StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
