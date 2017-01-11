@@ -31,7 +31,7 @@ public class Zattera : MonoBehaviour {
             m_horizontal = Input.GetAxisRaw("Horizontal");
 
 
-            if (with_player && Input.GetKeyDown(KeyCode.W))
+            if (with_player && Input.GetAxisRaw("Jump")>0)
             {
                 print("Mi stacco");
                 joint.connectedBody = null;
