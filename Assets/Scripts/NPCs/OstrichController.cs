@@ -290,6 +290,10 @@ public class OstrichController : MonoBehaviour
         CameraController camControl = Camera.main.GetComponent<CameraController>();
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Scratch"))
+        {
+            g.GetComponent<Paint>().DisablePaintRoutine();
+        }
         foreach (GameObject go in move_camera_bounds_to_reactivate)
         {
             go.GetComponent<CameraWithGoingBack>().ResetForDeath();

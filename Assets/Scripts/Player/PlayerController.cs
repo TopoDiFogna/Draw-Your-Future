@@ -389,6 +389,10 @@ public class PlayerController : MonoBehaviour
         {
             go.GetComponent<CameraWithGoingBack>().ResetForDeath();
         }
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Scratch"))
+        {
+            g.GetComponent<Paint>().DisablePaintRoutine();
+        }
         yield return new WaitForSeconds(1f);
         rb.isKinematic = false;
         facing_right = true;
