@@ -70,7 +70,7 @@ public class FlyingMovement : MonoBehaviour
                 coll.gameObject.GetComponent<PlayerController>().StopAnimation();
                 coll.gameObject.GetComponent<PlayerController>().enabled = false;
                 coll.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-                coll.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+                coll.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             }
             else
             {
@@ -90,7 +90,7 @@ public class FlyingMovement : MonoBehaviour
         p.GetComponent<PlayerController>().enabled = true;
         p.GetComponent<PlayerController>().jumping = true;
         p.GetComponent<Rigidbody2D>().isKinematic = false;
-        p.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        p.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
         p.transform.parent = null;
         can_grab = false;
         transform.parent.GetComponentInChildren<FlyingEnemySight>().LeavePlayer();
