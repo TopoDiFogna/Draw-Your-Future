@@ -14,12 +14,12 @@ public class CameraWithGoingBack : MonoBehaviour {
     PlayerController player;
     OstrichController ostrich;
 
-    private void Start()
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = Resources.FindObjectsOfTypeAll<PlayerController>()[0];
         if(SceneManager.GetActiveScene().name == "Jungle")
         {
-            ostrich = GameObject.FindGameObjectWithTag("Ostrich").GetComponent<OstrichController>();
+            ostrich = Resources.FindObjectsOfTypeAll<OstrichController>()[0];
         }
     }
 
@@ -40,6 +40,7 @@ public class CameraWithGoingBack : MonoBehaviour {
         }
         if(collision.tag == "Ostrich" && !ostrich.dead && !activated)
         {
+            Debug.Log("attivato");
             CameraController camControl = Camera.main.GetComponent<CameraController>();
             camControl.M_minBounds = new Vector2(min_bound_x, camControl.M_minBounds.y - min_bound_delta_y);
             camControl.M_maxBounds = new Vector2(max_bound_x, camControl.M_maxBounds.y - max_bound_delta_y);
@@ -73,10 +74,10 @@ public class CameraWithGoingBack : MonoBehaviour {
             backwardCameraToActivate.SetActive(true);
             gameObject.SetActive(false);
         }
-        if (collision.tag == "OStrich" && !ostrich.dead && activated)
+        if (collision.tag == "Ostrich" && activated && !ostrich.dead)
         {
-            backwardCameraToActivate.SetActive(true);
-            gameObject.SetActive(false);
+                backwardCameraToActivate.SetActive(true);
+                gameObject.SetActive(false);
         }
     }
 
