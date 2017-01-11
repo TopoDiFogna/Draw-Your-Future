@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630288793462394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64.68084, y: 20.400373, z: -1}
+  m_LocalPosition: {x: 69.59734, y: 20.400373, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4087587415125862}
@@ -207,7 +207,7 @@ Animator:
   m_GameObject: {fileID: 1114122123664422}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d67c4cbef10dda74ba20fb446e5536b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -343,7 +343,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d3e1a044e3f38484199e53a18d961e3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2fb9f9cccae9f849bbabceec7b2257b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -384,7 +384,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.52}
-  m_ConnectedAnchor: {x: 64.75084, y: -12.389626}
+  m_ConnectedAnchor: {x: 69.66734, y: -12.389626}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
