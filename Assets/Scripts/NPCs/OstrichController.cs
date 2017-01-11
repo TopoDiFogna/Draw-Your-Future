@@ -200,6 +200,7 @@ public class OstrichController : MonoBehaviour
         {
             in_water = true;
             jumping = true;
+            animator.SetTrigger("Landed");
         }
     }
 
