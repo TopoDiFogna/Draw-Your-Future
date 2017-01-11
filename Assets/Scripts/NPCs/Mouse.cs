@@ -5,7 +5,8 @@ using UnityEngine;
 public class Mouse : MonoBehaviour {
 
     public GameObject m_cheese;
-    public float m_speed;
+    public float m_speed_out = 1;
+    public float m_speed_in = 1;
     private Vector3 startingPos;
     private bool atCheese = false;
 
@@ -34,7 +35,7 @@ public class Mouse : MonoBehaviour {
     IEnumerator MoveToCheese()
     {
         while(Vector2.Distance(transform.position, m_cheese.transform.position) > 0.5){
-            transform.position += new Vector3(-Vector3.right.x * m_speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(-Vector3.right.x * m_speed_in * Time.deltaTime, 0, 0);
             yield return new WaitForEndOfFrame();
         }
 
@@ -44,7 +45,7 @@ public class Mouse : MonoBehaviour {
     {
         while (Vector2.Distance(transform.position, startingPos) > 0.5)
         {
-            transform.position += new Vector3(Vector3.right.x * m_speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(Vector3.right.x * m_speed_out * Time.deltaTime, 0, 0);
             yield return new WaitForEndOfFrame();
         }
         GetComponent<MovingNPC>().enabled = true;
