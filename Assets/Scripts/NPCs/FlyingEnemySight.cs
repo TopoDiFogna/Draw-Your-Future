@@ -16,7 +16,7 @@ public class FlyingEnemySight : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.tag == "Player" && !monster_script.seek && monster_script.CanGrab && !coll.GetComponent<PlayerController>().Dead)
+        if (coll.tag == "Player" && !monster_script.seek && monster_script.CanGrab && !coll.GetComponent<PlayerController>().Dead && coll.GetComponent<PlayerController>().CanBeGrabbed)
         {
             old = monster_script.Target;
             monster_script.seek = true;
@@ -34,7 +34,7 @@ public class FlyingEnemySight : MonoBehaviour
             {
                 LeavePlayer();
             }
-            else
+            else if (coll.GetComponent<PlayerController>().CanBeGrabbed)
             {
                 monster_script.seek = true;
                 monster_script.Target = coll.gameObject;

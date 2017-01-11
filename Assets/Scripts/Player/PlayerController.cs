@@ -29,6 +29,13 @@ public class PlayerController : MonoBehaviour
     public bool jumping = false;
     public bool sliding = false;
     private bool dead = false;
+    public bool canBeGrabbed = true;
+
+    public bool CanBeGrabbed
+    {
+        get { return canBeGrabbed; }
+        set { canBeGrabbed = value; }
+    }
 
     Ladder ladder;
 
@@ -296,6 +303,10 @@ public class PlayerController : MonoBehaviour
             m_Jump_force = quicksand_jump_force;
             jumping = false;
         }
+        if (coll.tag == "SafeZone")
+        {
+            canBeGrabbed = false;
+        }
 
     }
 
@@ -316,6 +327,10 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Quicksand")
         {
             jumping = false;
+        }
+        if (coll.tag == "SafeZone")
+        {
+            canBeGrabbed = false;
         }
     }
 
@@ -343,6 +358,10 @@ public class PlayerController : MonoBehaviour
             jumping = true;
             m_Jump_force = normal_jump_force;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        if (coll.tag == "SafeZone")
+        {
+            canBeGrabbed = true;
         }
     }
 

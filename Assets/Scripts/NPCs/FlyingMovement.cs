@@ -51,13 +51,14 @@ public class FlyingMovement : MonoBehaviour
         CheckTriggers(coll);
     }
 
+
     private void CheckTriggers(Collider2D coll)
     {
         if (coll.tag == "FlyingBoundary" && Target.name == coll.gameObject.name && !seek && !hasplayer)
         {
             Target = coll.gameObject.GetComponent<FlyingBoundaries>().OtherSide;
         }
-        else if (coll.tag == "Player" && can_grab)
+        else if (coll.tag == "Player" && can_grab && coll.GetComponent<PlayerController>().CanBeGrabbed)
         {
             if (!coll.GetComponent<PlayerController>().Dead)
             {
