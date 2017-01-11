@@ -13,11 +13,16 @@ public class BossEggSpawner : MonoBehaviour
 
     private GameObject instance;
 
-    private void Start()
+    private void Awake()
     {
         instance = GameObject.Instantiate(m_spawned_object);
         instance.GetComponent<BossEgg>().endingGO = endingGO.transform;
         tr = transform;
+    }
+
+    private void OnEnable()
+    {
+        activated = false;
     }
 
     void OnTriggerEnter2D(Collider2D coll)

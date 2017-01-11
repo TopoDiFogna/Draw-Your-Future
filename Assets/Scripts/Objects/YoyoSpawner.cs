@@ -31,7 +31,11 @@ public class YoyoSpawner : MonoBehaviour {
             activated = true;
             m_spawned_object.transform.position = transform.position;
             m_spawned_object.SetActive(true);
-            lr.enabled = true;
+            if(lr != null)
+            {
+                lr.enabled = true;
+            }
+
         }
     }
 

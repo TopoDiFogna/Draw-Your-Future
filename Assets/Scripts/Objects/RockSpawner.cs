@@ -11,6 +11,8 @@ public class RockSpawner : MonoBehaviour
 
     public int spawned_objects = 0;
 
+    GameObject rockforgeyser;
+
     // Use this for initialization
     void Start()
     {
@@ -30,7 +32,12 @@ public class RockSpawner : MonoBehaviour
             activated = true;
             GameObject obj = ObjectPoolingManager.Instance.GetObject(m_spawned_object.name);
             obj.transform.position = transform.position;
+            obj.SetActive(true);
             spawned_objects++;
+            if(m_spawned_object.name == "RockForGeyser")
+            {
+                rockforgeyser = obj;
+            }
         }
     }
     void OnTriggerStay2D(Collider2D coll)
@@ -47,5 +54,10 @@ public class RockSpawner : MonoBehaviour
         {
             activated = false;
         }
+    }
+
+    public void DeactivateRockForGeyser()
+    {
+        rockforgeyser.SetActive(false);
     }
 }
