@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CrateBreak : MonoBehaviour {
 
-
 	// Use this for initialization
-	void Start () {
+	void Start () {;
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -14,7 +13,9 @@ public class CrateBreak : MonoBehaviour {
         if(collision.gameObject.tag == "Terrain")
         {
             collision.gameObject.SetActive(false);
-            gameObject.SetActive(false);
+            GetComponent<Animator>().SetTrigger("Hit");
+            GetComponent<Rigidbody2D>().isKinematic = true;
+
         }
     }
 
@@ -26,4 +27,10 @@ public class CrateBreak : MonoBehaviour {
             this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
         }
     }
+
+    public void DisableCrate()
+    {
+        gameObject.SetActive(false);
+    }
+
 }
