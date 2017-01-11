@@ -9,8 +9,7 @@ public class ChangeLever : MonoBehaviour {
     public SpriteRenderer left;
     public SpriteRenderer right;
     private bool activated = false;
-    public GameObject trapdoor1;
-    public GameObject trapdoor2;
+    public GameObject rotating_platform;
     public GameObject platform;
     public Vector3 platformlimit;
 
@@ -27,10 +26,9 @@ public class ChangeLever : MonoBehaviour {
             right.enabled = true;
             activated = true;
 
-            if (trapdoor1 != null && trapdoor2 != null)
+            if (rotating_platform != null)
             {
-                trapdoor1.SetActive(false);
-                trapdoor2.SetActive(false);
+                rotating_platform.GetComponent<Rigidbody2D>().isKinematic = false;
             }
             else if (platform != null)
             {

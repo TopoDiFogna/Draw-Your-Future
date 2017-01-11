@@ -11,6 +11,11 @@ public class ActivateChild : MonoBehaviour {
     {
         if(collision.tag == "Scratch")
         {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if(sr != null)
+            {
+                sr.enabled = false;
+            }
             m_object.gameObject.SetActive(true);
         }
     }
