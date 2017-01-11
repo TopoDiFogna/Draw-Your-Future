@@ -385,7 +385,6 @@ public class PlayerController : MonoBehaviour
         transform.position = checkPointPosition;
         m_Jump_force = normal_jump_force;
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<PolygonCollider2D>().enabled = true;
         foreach (GameObject go in move_camera_bounds_to_reactivate)
         {
             go.GetComponent<CameraWithGoingBack>().ResetForDeath();
