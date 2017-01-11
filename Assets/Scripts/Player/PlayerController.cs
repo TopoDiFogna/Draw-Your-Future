@@ -118,22 +118,17 @@ public class PlayerController : MonoBehaviour
 
             if (facing_right && m_horizontal < 0)
             {
-                sr.flipX = true;
+                tr.localScale = new Vector3(-1, 1, 1);
                 facing_right = false;
             }
             else if (!facing_right && m_horizontal > 0)
             {
                 sr.flipX = false;
+                tr.localScale = new Vector3(1, 1, 1);
                 facing_right = true;
             }
 
             //comandi
-            /*
-            if (m_vertical != 0 && !jumping && !dead && IsNearLadder)
-            {
-                    climbing = true;
-            }*/
-            
             if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && !dead && IsNearLadder)
             {
                 climbing = true;
@@ -142,40 +137,25 @@ public class PlayerController : MonoBehaviour
                 if(ladder != null)
                 {
                     ladder.DeactivatePlatform();
-                    tr.position = new Vector3(ladder.platform.transform.position.x, tr.position.y, tr.position.z);
+                    if(ladder.platform != null)
+                    {
+                        tr.position = new Vector3(ladder.platform.transform.position.x, tr.position.y, tr.position.z);
+                    }
+
                 }
 
                 //TODO aggiungere oggetto vuoto per centrare il player sulla scala
             }
-            /*
-            if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && IsNearLadder && !IsNearLever)
-            {
-                climbing = true;
-                rb.isKinematic = true;
-            }*/
             else if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && !IsNearLadder && IsNearLever)
             {
                 //TODO non ho idea di cosa sia questo per cui lo lascio
             }
-
-            /*
-            if (!IsNearLadder && rb.isKinematic)
-            {
-                rb.isKinematic = false;
-            }*/
-
             if (Input.GetKeyDown(KeyCode.F11))
             {
                 DieWithFade();
             }
         }
     }
-
-    /*private IEnumerator StopJumpAnimation()
-    {
-        yield return new WaitForSeconds(0.1f);
-        animator.SetBool("Jumping", false);
-    }*/
 
     public void StopAnimation()
     {
@@ -205,12 +185,6 @@ public class PlayerController : MonoBehaviour
                 jumping = true;
                 hasJumped = true;
                 animator.SetBool("Jumping", true);
-                /*
-                else
-                {
-                    climbing = true;
-                    rb.isKinematic = true;
-                }*/
             }
         }
         else
@@ -229,25 +203,9 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);
-            /*if (m_horizontal != 0 || !IsNearLadder)
-            {
-                climbing = false;
-                rb.isKinematic = false;
-                rb.velocity = new Vector2(m_horizontal * m_speed, rb.velocity.y);
-            }
-            else
-                rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);*/
         }
 
     }
-
-
-
-
-
-
-
-
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
@@ -274,7 +232,6 @@ public class PlayerController : MonoBehaviour
         if (jumping == false && coll.gameObject.tag == "Terrain")
         {
             jumping = true;
-            //animator.SetBool("Jumping", true);
         }
     }
 
@@ -283,7 +240,6 @@ public class PlayerController : MonoBehaviour
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
             jumping = false;
-            //animator.SetBool("Jumping", false);
         }
 
     }
@@ -322,10 +278,6 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "Climbable")
         {
             IsNearLadder = true;
-            /*if (climbing)
-            {
-                rb.isKinematic = true;
-            }*/
         }
         if (coll.gameObject.tag == "Quicksand")
         {
@@ -354,7 +306,6 @@ public class PlayerController : MonoBehaviour
                 ladder.ActivatePlatform();
             }
             ladder = null;
-            //gameObject.layer = 9;
         }
         if (coll.gameObject.tag == "Quicksand")
         {
@@ -373,6 +324,7 @@ public class PlayerController : MonoBehaviour
         if (!dead)
         {
             rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
             dead = true;
             StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
@@ -440,6 +392,8 @@ public class PlayerController : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         rb.isKinematic = false;
+        facing_right = true;
+        tr.localScale = new Vector3(1, 1, 1);
         CameraFade.instance.Die();
         dead = false;
         if (SceneManager.GetActiveScene().name == "Level3_Maya")
