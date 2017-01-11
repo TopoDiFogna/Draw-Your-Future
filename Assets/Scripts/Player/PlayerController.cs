@@ -118,12 +118,14 @@ public class PlayerController : MonoBehaviour
 
             if (facing_right && m_horizontal < 0)
             {
-                sr.flipX = true;
+                //sr.flipX = true;
+                tr.localScale = new Vector3(-1, 1, 1);
                 facing_right = false;
             }
             else if (!facing_right && m_horizontal > 0)
             {
                 sr.flipX = false;
+                tr.localScale = new Vector3(1, 1, 1);
                 facing_right = true;
             }
 
@@ -373,6 +375,7 @@ public class PlayerController : MonoBehaviour
         if (!dead)
         {
             rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
             dead = true;
             StopAnimation();
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
@@ -440,6 +443,8 @@ public class PlayerController : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         rb.isKinematic = false;
+        facing_right = true;
+        tr.localScale = new Vector3(1, 1, 1);
         CameraFade.instance.Die();
         dead = false;
         if (SceneManager.GetActiveScene().name == "Level3_Maya")
