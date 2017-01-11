@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer sr;
+    Transform tr;
 
     // Status variables
     public bool climbing = false;
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         normal_jump_force = m_Jump_force;
+        tr = transform;
     }
 
     // Update is called once per frame
@@ -140,6 +142,7 @@ public class PlayerController : MonoBehaviour
                 if(ladder != null)
                 {
                     ladder.DeactivatePlatform();
+                    tr.position = new Vector3(ladder.platform.transform.position.x, tr.position.y, tr.position.z);
                 }
 
                 //TODO aggiungere oggetto vuoto per centrare il player sulla scala
