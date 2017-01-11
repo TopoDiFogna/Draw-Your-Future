@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Zattera : MonoBehaviour {
 
+    public int m_scratch_layer = 8;
+    public int m_player_layer = 9;
     private PlayerController playerController;
     GameController gc;
     public bool with_player = false;
@@ -99,5 +101,21 @@ public class Zattera : MonoBehaviour {
         player.GetComponent<Animator>().SetBool("Jumping", false);
         playerController.enabled = false;
         with_player = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Scratch" && with_player)
+        {
+            gameObject.layer = m_scratch_layer;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Scratch")
+        {
+            gameObject.layer = m_player_layer;
+        }
     }
 }
