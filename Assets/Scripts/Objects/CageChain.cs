@@ -20,7 +20,6 @@ public class CageChain : MonoBehaviour {
                 if (j.connectedBody == null)
                 {
                     j.connectedBody = m_crate.GetComponent<Rigidbody2D>();
-                    print(m_crate.GetComponent<Rigidbody2D>());
                 }
             }
         }

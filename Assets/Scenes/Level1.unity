@@ -198,7 +198,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1454029796912722, guid: ab4be6d0c330de94383eb5b0803a05d0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212023704483030484, guid: ab4be6d0c330de94383eb5b0803a05d0,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab4be6d0c330de94383eb5b0803a05d0, type: 2}
@@ -6371,11 +6376,6 @@ Prefab:
       propertyPath: m_Name
       value: cage (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 233767707988481792, guid: 7a49f5d575ad84341990edf25a8c2daa,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.x
-      value: 69.66734
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a49f5d575ad84341990edf25a8c2daa, type: 2}
   m_IsPrefabParent: 0
@@ -9227,7 +9227,7 @@ Animator:
   m_GameObject: {fileID: 948229945}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20f385d77ad593d40af6616d61a5ed6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: d67c4cbef10dda74ba20fb446e5536b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10478,6 +10478,11 @@ Prefab:
     - target: {fileID: 4213627928805010, guid: 7a49f5d575ad84341990edf25a8c2daa, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 233767707988481792, guid: 7a49f5d575ad84341990edf25a8c2daa,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 64.75084
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a49f5d575ad84341990edf25a8c2daa, type: 2}
@@ -20661,11 +20666,6 @@ Prefab:
     - target: {fileID: 4000012502954516, guid: 830c028e939f5d94b8442b21d6cb7500, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000014258089900, guid: 830c028e939f5d94b8442b21d6cb7500,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 830c028e939f5d94b8442b21d6cb7500, type: 2}
