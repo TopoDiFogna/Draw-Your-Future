@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CrateBreak : MonoBehaviour {
 
+    public GameObject m_particles;
+
 	// Use this for initialization
-	void Start () {;
+	void Start () {
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,7 +32,19 @@ public class CrateBreak : MonoBehaviour {
 
     public void DisableCrate()
     {
+        StartCoroutine(CreateParticles());
+    }
+
+    IEnumerator CreateParticles()
+    {
+        m_particles.SetActive(true);
+        yield return new WaitForSeconds(0.8f);
         gameObject.SetActive(false);
+    }
+
+    public void DisableSprite()
+    {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }
