@@ -22605,7 +22605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  chargeTime: 1
+  chargeTime: 2
 --- !u!212 &2063135871
 SpriteRenderer:
   m_ObjectHideFlags: 0
