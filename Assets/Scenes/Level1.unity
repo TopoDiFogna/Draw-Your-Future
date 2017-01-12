@@ -198,7 +198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1454029796912722, guid: ab4be6d0c330de94383eb5b0803a05d0, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212023704483030484, guid: ab4be6d0c330de94383eb5b0803a05d0,
         type: 2}
@@ -8763,6 +8763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 415535760}
+  center: {fileID: 0}
 --- !u!1001 &835062614
 Prefab:
   m_ObjectHideFlags: 0
