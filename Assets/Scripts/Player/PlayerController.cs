@@ -193,6 +193,7 @@ public class PlayerController : MonoBehaviour
         {
             if(m_axis_jump > 0)
             {
+                rb.gravityScale = 2;
                 rb.AddForce(Vector2.up * m_Jump_force, ForceMode2D.Impulse);
                 jumping = true;
                 hasJumped = true;
