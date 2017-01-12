@@ -8,7 +8,7 @@ public class CheckPoint : MonoBehaviour {
 
     void Start()
     {
-        spawnPosition = gameObject.GetComponentInChildren<Transform>().position;
+        spawnPosition = gameObject.GetComponentsInChildren<Transform>()[1].position;
     }
 	
 	void OnTriggerEnter2D(Collider2D coll)
