@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class wasp : MonoBehaviour {
 
+    Animator anim;
     Vector2 playerpos;
     GameController gc;
     public float speed;
@@ -17,6 +18,7 @@ public class wasp : MonoBehaviour {
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
@@ -41,7 +43,16 @@ public class wasp : MonoBehaviour {
                 timer = 0f;
                 playerpos = player.transform.position;
                 dir = (player.transform.position - transform.position).normalized;
+                if (dir.x > 0 && transform.localScale.x==1)
+                {
+                    transform.localScale = new Vector3(-1,1,1);
+                }
+                else if(dir.x < 0 && transform.localScale.x == -1)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
                 charge = true;
+                anim.SetTrigger("Charge");
             }
             if (charge)
             {
@@ -49,6 +60,7 @@ public class wasp : MonoBehaviour {
                 if (Vector2.Distance(transform.position, playerpos) <= 0.2)
                 {
                     charge = false;
+                    anim.SetTrigger("Idle");
                     if (first_charge)
                     {
                         first_charge = false;

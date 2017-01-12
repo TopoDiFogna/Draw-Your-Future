@@ -22570,8 +22570,9 @@ GameObject:
   - component: {fileID: 2063135869}
   - component: {fileID: 2063135871}
   - component: {fileID: 2063135870}
-  - component: {fileID: 2063135873}
   - component: {fileID: 2063135872}
+  - component: {fileID: 2063135873}
+  - component: {fileID: 2063135874}
   m_Layer: 0
   m_Name: ape
   m_TagString: Swarm
@@ -22636,7 +22637,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 24668bdca82474d40bb36a3fa75f2486, type: 3}
+  m_Sprite: {fileID: 21300000, guid: def5e43004886a949adca39f687a55e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22655,8 +22656,8 @@ MonoBehaviour:
   m_disable_deadly_on_terrain_collision: 0
   m_time_to_despawn: 5
   deadly: 1
---- !u!61 &2063135873
-BoxCollider2D:
+--- !u!60 &2063135873
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -22666,9 +22667,36 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.03955078, y: -0.019771576}
-  serializedVersion: 2
-  m_Size: {x: 0.3307116, y: 0.39588878}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.064043045, y: -0.0014617443}
+      - {x: 0.060224533, y: -0.046154737}
+      - {x: 0.48225212, y: -0.07185817}
+      - {x: 0.61309624, y: -0.40683246}
+      - {x: 0.64867973, y: -0.5009296}
+      - {x: 0.518919, y: -0.40788913}
+      - {x: 0.09231377, y: -0.28523707}
+      - {x: -0.11673164, y: -0.366513}
+      - {x: -0.47133064, y: -0.2791736}
+      - {x: -0.39209175, y: -0.034508467}
+--- !u!95 &2063135874
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063135868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8290480008fdaf44bc3796af825717b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &2069611995
 Prefab:
   m_ObjectHideFlags: 0
