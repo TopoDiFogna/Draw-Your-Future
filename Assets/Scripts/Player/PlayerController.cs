@@ -132,14 +132,16 @@ public class PlayerController : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && !dead && IsNearLadder)
             {
                 climbing = true;
+                jumping = false;
+                hasJumped = false;
                 rb.gravityScale = 0;
                 rb.velocity = Vector2.zero;
                 if(ladder != null)
                 {
                     ladder.DeactivatePlatform();
-                    if(ladder.platform != null)
+                    if(ladder.center != null)
                     {
-                        tr.position = new Vector3(ladder.platform.transform.position.x, tr.position.y, tr.position.z);
+                        tr.position = new Vector3(ladder.center.transform.position.x, tr.position.y, tr.position.z);
                     }
 
                 }
@@ -224,12 +226,21 @@ public class PlayerController : MonoBehaviour
             jumping = false;
             animator.SetBool("Jumping", false);
         }
+        else if(climbing && coll.gameObject.tag == "Terrain")
+        {
+            print("GNAAAAA");
+            climbing = false;
+            if (ladder != null)
+            {
+                ladder.ActivatePlatform();
+            }
+        }
     }
 
 
     private void OnCollisionExit2D(Collision2D coll)
     {
-        if (jumping == false && coll.gameObject.tag == "Terrain")
+        if (jumping == false && coll.gameObject.tag == "Terrain" && !climbing)
         {
             jumping = true;
         }

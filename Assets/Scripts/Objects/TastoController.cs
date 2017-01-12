@@ -24,6 +24,7 @@ public class TastoController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
+        print("E che cazzo");
         if(coll.tag=="Player" && !pressed)
         {
             pressed = true;

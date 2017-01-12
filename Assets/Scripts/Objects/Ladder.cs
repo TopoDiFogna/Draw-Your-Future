@@ -6,6 +6,7 @@ public class Ladder : MonoBehaviour
 {
 
     public GameObject platform;
+    public GameObject center;
 
     public void DeactivatePlatform()
     {

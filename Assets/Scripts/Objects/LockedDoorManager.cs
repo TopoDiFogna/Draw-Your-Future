@@ -10,7 +10,7 @@ public class LockedDoorManager : MonoBehaviour {
     public GameObject Door;
     List<int> combination;
     public List<int> Solution;
-    public TastoController[] tcs;
+    public LeverCostellation[] lcs;
 	// Use this for initialization
 	void Start () {
         combination = new List<int>();
@@ -19,7 +19,7 @@ public class LockedDoorManager : MonoBehaviour {
     public void Reset()
     {
         combination = new List<int>();
-        foreach (TastoController tc in tcs)
+        foreach (LeverCostellation tc in lcs)
         {
             tc.Reset();
         }
@@ -39,15 +39,20 @@ public class LockedDoorManager : MonoBehaviour {
             else
             {
                 combination = new List<int>();
-                foreach (TastoController tc in tcs)
+                foreach (LeverCostellation lc in lcs)
                 {
-                    tc.Reset();
+                    lc.Reset();
                 }
                 speartrap.enabled = true;
             }
         }
     }
 
+
+    public void PopElement(int element)
+    {
+        combination.Remove(element);
+    }
 	// Update is called once per frame
 	void Update () {
 		
