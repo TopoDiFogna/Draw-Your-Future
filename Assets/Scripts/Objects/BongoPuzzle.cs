@@ -31,6 +31,7 @@ public class BongoPuzzle : MonoBehaviour
 
     private IEnumerator PlayBongos()
     {
+        yield return new WaitForSeconds(1);
         if (!solved1)
         {
             for (int i = 0; i < sol1.Count && !solved1; i++)
