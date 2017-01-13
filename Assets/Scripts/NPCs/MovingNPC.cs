@@ -12,6 +12,7 @@ public class MovingNPC : MonoBehaviour {
     private Vector3 startingPos;
 
     private float random;
+    private bool can_flip = true;
 
 	// Use this for initialization
 	void Start () {
@@ -25,14 +26,19 @@ public class MovingNPC : MonoBehaviour {
 	void Update () {
         float x = Mathf.Sin(Time.time * m_speed + random);
         transform.localPosition = startingPos + new Vector3(m_amplitude * x, 0, 0);
-        if (x >= 0.95)
+        if (x >= 0.95 && can_flip)
         {
-            sr.flipX = !flippedX;
+            transform.localScale = new Vector3( -1, transform.localScale.y, transform.localScale.z);
+            can_flip = false;
             
         }
-        else if (x <= -0.95) {
-            sr.flipX = flippedX;
-           
+        else if (x <= -0.95 && can_flip) {
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            can_flip = false;
+        }
+        else if (x<0.2 && x>-0.2)
+        {
+            can_flip = true;
         }
     }
 }
