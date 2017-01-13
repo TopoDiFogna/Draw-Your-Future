@@ -12286,7 +12286,6 @@ GameObject:
   - component: {fileID: 893241691}
   - component: {fileID: 893241690}
   - component: {fileID: 893241689}
-  - component: {fileID: 893241692}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -12376,23 +12375,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!95 &893241692
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 893241687}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 27adb45e36a120d429d36c013ff2e34a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &897578807
 Prefab:
   m_ObjectHideFlags: 0
