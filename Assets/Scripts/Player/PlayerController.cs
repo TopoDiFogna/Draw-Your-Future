@@ -339,7 +339,9 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             dead = true;
             StopAnimation();
-            CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
+            //animator.SetTrigger("Death");
+            //fadedelay aumentato a 0.5 per far andare animazione morte
+            CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0.5f); // Fades out the screen to black   
             StartCoroutine(ResetScene());
             if (SceneManager.GetActiveScene().name == "Level3_Maya")
             {
@@ -394,7 +396,6 @@ public class PlayerController : MonoBehaviour
         CameraController camControl = Camera.main.GetComponent<CameraController>();
         camControl.M_minBounds = min_cam_bounds;
         camControl.M_maxBounds = max_cam_bounds;
-        transform.position = checkPointPosition;
         m_Jump_force = normal_jump_force;
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         foreach (GameObject go in move_camera_bounds_to_reactivate)
@@ -406,8 +407,9 @@ public class PlayerController : MonoBehaviour
             g.GetComponent<Paint>().DisablePaintRoutine();
         }
         yield return new WaitForSeconds(1f);
-        rb.isKinematic = false;
         facing_right = true;
+        transform.position = checkPointPosition;
+        rb.isKinematic = false;
         tr.localScale = new Vector3(1, 1, 1);
         CameraFade.instance.Die();
         dead = false;
