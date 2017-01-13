@@ -339,7 +339,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             dead = true;
             StopAnimation();
-            //animator.SetTrigger("Death");
+            animator.SetTrigger("Death");
             //fadedelay aumentato a 0.5 per far andare animazione morte
             CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0.5f); // Fades out the screen to black   
             StartCoroutine(ResetScene());
