@@ -8,6 +8,7 @@ public class Shaman : MonoBehaviour {
     public GameObject Spawner;
     public GameObject[] Skeletons;
     public DoorSpawnEvent dse;
+    public GameObject Summon;
     bool activated;
 
 	// Use this for initialization
@@ -31,12 +32,20 @@ public class Shaman : MonoBehaviour {
         }
     }
 
+    IEnumerator Summ()
+    {
+        Summon.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        Summon.SetActive(false);
+    }
+
     private IEnumerator SpawnSkeletons(float delay)
     {
         foreach (GameObject g in Skeletons)
         {
             if (!activated)
                 break;
+            StartCoroutine(Summ());
             g.SetActive(true);
             g.transform.position = Spawner.transform.position;
             yield return new WaitForSeconds(delay);

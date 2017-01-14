@@ -36,9 +36,9 @@ public class BongoPuzzle : MonoBehaviour
         {
             for (int i = 0; i < sol1.Count && !solved1; i++)
             {
-                auso.clip = bong[sol1[i]];
+                //auso.clip = bong[sol1[i]];
                 anim.SetTrigger(triggers[sol1[i]]);
-                auso.Play();
+                //auso.Play();
                 yield return new WaitForSeconds(1.2f);
             }
         }
@@ -46,13 +46,20 @@ public class BongoPuzzle : MonoBehaviour
         {
             for (int i = 0; i < sol2.Count && !solved2; i++)
             {
-                auso.clip = bong[sol2[i]];
+                //auso.clip = bong[sol2[i]];
                 anim.SetTrigger(triggers[sol2[i]]);
-                auso.Play();
+                //auso.Play();
                 yield return new WaitForSeconds(1.2f);
             }
         }
+        yield return new WaitForSeconds(2f);
         playing = false;
+    }
+
+    public void PlayClip(AudioClip ac)
+    {
+        auso.clip = ac;
+        auso.Play();
     }
 
     public void AddElement(int e)
