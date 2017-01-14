@@ -145,8 +145,8 @@ public class PlayerController : MonoBehaviour
                     }
 
                 }
-
-                //TODO aggiungere oggetto vuoto per centrare il player sulla scala
+                animator.SetBool("Climbing", true);
+                animator.SetBool("Jumping", false);
             }
             else if (Input.GetKeyDown(KeyCode.S) && !jumping && !dead && !IsNearLadder && IsNearLever)
             {
@@ -163,6 +163,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetFloat("Horizontal", 0);
         animator.SetBool("Jumping", false);
+        animator.SetBool("Climbing", false);
     }
 
     private void FixedUpdate()
@@ -187,6 +188,7 @@ public class PlayerController : MonoBehaviour
                 jumping = true;
                 hasJumped = true;
                 animator.SetBool("Jumping", true);
+                Debug.Log("ho saltato");
             }
         }
         else
@@ -198,7 +200,9 @@ public class PlayerController : MonoBehaviour
                 jumping = true;
                 hasJumped = true;
                 climbing = false;
+                animator.SetFloat("Vertical", 0f);
                 animator.SetBool("Jumping", true);
+                animator.SetBool("Climbing", false);
                 if(ladder != null)
                 {
                     ladder.ActivatePlatform();
@@ -206,6 +210,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             rb.velocity = new Vector2(0, m_vertical * m_climbing_speed);
+            animator.SetFloat("Vertical", Mathf.Abs(m_vertical));
         }
 
     }
@@ -214,22 +219,11 @@ public class PlayerController : MonoBehaviour
     {
         if (jumping == true && coll.gameObject.tag == "Terrain")
         {
-            /*if (climbing)
-            {
-                climbing = false;
-                rb.gravityScale = 2;
-                if (ladder != null)
-                {
-                    ladder.ActivatePlatform();
-                }
-                ladder = null;
-            }*/
             jumping = false;
             animator.SetBool("Jumping", false);
         }
         else if(climbing && coll.gameObject.tag == "Terrain")
         {
-            print("GNAAAAA");
             climbing = false;
             if (ladder != null)
             {
@@ -318,6 +312,9 @@ public class PlayerController : MonoBehaviour
                 ladder.ActivatePlatform();
             }
             ladder = null;
+            jumping = true;
+            hasJumped = true;
+            animator.SetBool("Climbing", false);
         }
         if (coll.gameObject.tag == "Quicksand")
         {

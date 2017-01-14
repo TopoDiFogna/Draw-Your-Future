@@ -62,5 +62,6 @@ public class Paint : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gameObject.SetActive(false);
         scratchBar.ChangeSize(+1);
+        tr.localScale = scale;
     }
 }
