@@ -19,7 +19,6 @@ public class LightningController : MonoBehaviour {
 
     IEnumerator Lightning()
     {
-       
         yield return new WaitForSeconds(timeVisible);
         gameObject.SetActive(false);
     }
