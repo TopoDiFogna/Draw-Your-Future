@@ -20,13 +20,16 @@ public class BossFightShaman : MonoBehaviour
     public GameObject Skeleton;
     float timer = 0f;
     public int SunNumber;
-
+    SpriteRenderer sr;
     public GameObject Attack;
     public bool stopFight;
+    public GameObject Death;
+    public GameObject Summon;
 
     // Use this for initialization
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
         portal.SetActive(false);
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         SunNumber = 0;
@@ -69,13 +72,20 @@ public class BossFightShaman : MonoBehaviour
                     if (timer >= spawn_rate)
                     {
                         timer = 0;
+                        StartCoroutine(Summ());
                         SpawnSkeleton();
                     }
                     if (SunNumber == 7)
                     {
+                        Death.SetActive(true);
+                        //particellare
                         foreach (GameObject g in GameObject.FindGameObjectsWithTag("SpawnedSkeleton"))
                         {
                             g.SetActive(false);
+                        }
+                        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Sun"))
+                        {
+                            g.transform.GetChild(0).gameObject.SetActive(false);
                         }
                         dse.Open();
                         portal.SetActive(true);
@@ -84,6 +94,20 @@ public class BossFightShaman : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator Summ()
+    {
+        Summon.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        Summon.SetActive(false);
+    }
+
+    IEnumerator Hit()
+    {
+        sr.color = Color.red;
+        yield return new WaitForSeconds(.2f);
+        sr.color = Color.white;
     }
 
     public void AddSun()
@@ -123,6 +147,7 @@ public class BossFightShaman : MonoBehaviour
         }
         if (coll.tag == "Swarm" && phase == 0)
         {
+            StartCoroutine(Hit());
             phase++;
             phase1.SetActive(false);
             phase2.SetActive(true);
@@ -131,6 +156,7 @@ public class BossFightShaman : MonoBehaviour
         }
         if (coll.tag == "Light" && coll.GetComponent<Attack>().canhitshaman && phase == 1)
         {
+            StartCoroutine(Hit());
             phase++;
             phase2.SetActive(false);
             phase3.SetActive(true);
