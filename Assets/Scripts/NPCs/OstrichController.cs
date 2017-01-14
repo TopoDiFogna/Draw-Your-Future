@@ -155,6 +155,7 @@ public class OstrichController : MonoBehaviour
         }
         if(coll.gameObject.tag == "Player" && active)
         {
+            animator.SetBool("WithPlayer", true);
             player = coll.gameObject;
             player.SetActive(false);
             CameraController camControl = Camera.main.GetComponent<CameraController>();
@@ -238,6 +239,7 @@ public class OstrichController : MonoBehaviour
             dismounting = true;
             animator.SetBool("Walking", false);
             animator.SetTrigger("Landed");
+            animator.SetBool("WithPlayer", false);
             with_player = false;
             rb.isKinematic = true;
             rb.velocity = Vector2.zero;
