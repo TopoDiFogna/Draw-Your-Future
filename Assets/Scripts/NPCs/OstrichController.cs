@@ -261,7 +261,7 @@ public class OstrichController : MonoBehaviour
             }
             if (!found)
             {
-                gameObject.layer = lay;
+                gameObject.layer = m_player_layer;
             }
 
         }
