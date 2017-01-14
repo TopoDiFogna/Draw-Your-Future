@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
     [Range(0.5f, 5.0f)]
     public float timeToDie = 1.0f;
 
+    private int child_count;
+    private Transform[] children;
 
     // Use this for initialization
     private void Start()
@@ -92,6 +94,12 @@ public class PlayerController : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
         normal_jump_force = m_Jump_force;
         tr = transform;
+        child_count = tr.childCount;
+        children = new Transform[child_count];
+        for(int i = 0; i<child_count; i++)
+        {
+            children[i] = tr.GetChild(i);
+        }
     }
 
     // Update is called once per frame
@@ -299,6 +307,10 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Scratch")
         {
+            foreach(Transform child in children)
+            {
+                //RaycastHit2D ray = Physics2D.Raycast(child.position, );
+            }
             gameObject.layer = lay;
         }
 
