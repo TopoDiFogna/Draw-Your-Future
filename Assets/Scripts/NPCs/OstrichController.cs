@@ -55,6 +55,9 @@ public class OstrichController : MonoBehaviour
 
     public GameObject[] move_camera_bounds_to_reactivate;
 
+    private int child_count;
+    private Transform[] children;
+
 
     // Use this for initialization
     void Start()
@@ -67,6 +70,12 @@ public class OstrichController : MonoBehaviour
         polycoll = GetComponent<EdgeCollider2D>();
         animator = gameObject.GetComponent<Animator>();
         normal_jump_force = m_Jump_force;
+        child_count = tr.childCount;
+        children = new Transform[child_count];
+        for (int i = 0; i < child_count; i++)
+        {
+            children[i] = tr.GetChild(i);
+        }
     }
 
     // Update is called once per frame
@@ -162,7 +171,6 @@ public class OstrichController : MonoBehaviour
             min_cam_bounds = camControl.M_minBounds;
             max_cam_bounds = camControl.M_maxBounds;
             camControl.m_target = gameObject;
-            //TODO animazione del player che sale sullo struzzo e poi fa enable dei comandi
             with_player = true;
         }
     }
@@ -222,11 +230,42 @@ public class OstrichController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Scratch" && active)
+        if (coll.gameObject.tag == "Scratch")
         {
-            gameObject.layer = m_player_layer;
+            bool found = false;
+            foreach (Transform child in children)
+            {
+                RaycastHit2D[] ray1 = Physics2D.RaycastAll(child.position, new Vector2(1, 0), 0.1f);
+                Debug.DrawRay(child.position, new Vector3(1, 0, 0) * 0.1f, Color.red, 4f);
+                RaycastHit2D[] ray2 = Physics2D.RaycastAll(child.position, new Vector2(-1, 0), 0.1f);
+                Debug.DrawRay(child.position, new Vector3(-1, 0, 0) * 0.1f, Color.red, 4f);
+                foreach (RaycastHit2D ray in ray1)
+                {
+                    if (ray.collider.gameObject.tag == "Scratch")
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    foreach (RaycastHit2D ray in ray2)
+                    {
+                        if (ray.collider.gameObject.tag == "Scratch")
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (!found)
+            {
+                gameObject.layer = lay;
+            }
+
         }
-        if(coll.gameObject.tag == "Water")
+        if (coll.gameObject.tag == "Water")
         {
             in_water = false;
         }

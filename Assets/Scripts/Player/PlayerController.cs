@@ -307,11 +307,38 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Scratch")
         {
+            bool found = false;
             foreach(Transform child in children)
             {
-                //RaycastHit2D ray = Physics2D.Raycast(child.position, );
+                RaycastHit2D[] ray1 = Physics2D.RaycastAll(child.position, new Vector2(1,0), 0.1f);
+                Debug.DrawRay(child.position, new Vector3(1, 0, 0)*0.1f, Color.red, 4f);
+                RaycastHit2D[] ray2 = Physics2D.RaycastAll(child.position, new Vector2(-1, 0), 0.1f);
+                Debug.DrawRay(child.position, new Vector3(-1, 0, 0)*0.1f, Color.red, 4f);
+                foreach (RaycastHit2D ray in ray1)
+                {
+                    if(ray.collider.gameObject.tag == "Scratch")
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    foreach (RaycastHit2D ray in ray2)
+                    {
+                        if (ray.collider.gameObject.tag == "Scratch")
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
             }
-            gameObject.layer = lay;
+            if (!found)
+            {
+                gameObject.layer = lay;
+            }
+
         }
 
         if (coll.gameObject.tag == "Climbable")
