@@ -2974,8 +2974,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scratch: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
-  player_position: {fileID: 2118071275}
-  min_distance: 0
 --- !u!114 &265714907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28472,7 +28470,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013571599134, guid: c60f1c26960d17949be258cd8e8c2a26, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 151
+      value: 151.96
       objectReference: {fileID: 0}
     - target: {fileID: 4000013571599134, guid: c60f1c26960d17949be258cd8e8c2a26, type: 2}
       propertyPath: m_LocalPosition.y
@@ -28631,11 +28629,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdc41fa14e3aa6c4f9119064ca4e5007, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &2118071275 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
-    type: 2}
-  m_PrefabInternal: {fileID: 2118071274}
 --- !u!4 &2122219730 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013555720046, guid: 48dd40e9ea7ba4d41a05c29239101a23,

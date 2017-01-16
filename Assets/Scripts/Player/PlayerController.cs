@@ -232,7 +232,11 @@ public class PlayerController : MonoBehaviour
         }
         else if(climbing && coll.gameObject.tag == "Terrain")
         {
+            jumping = false;
+            hasJumped = false;
+            rb.gravityScale = 2;
             climbing = false;
+            animator.SetBool("Climbing", false);
             if (ladder != null)
             {
                 ladder.ActivatePlatform();
