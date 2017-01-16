@@ -4874,11 +4874,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013828586744, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
     type: 2}
   m_PrefabInternal: {fileID: 653740427}
---- !u!4 &641232422 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
-    type: 2}
-  m_PrefabInternal: {fileID: 653740427}
 --- !u!1001 &650006279
 Prefab:
   m_ObjectHideFlags: 0
@@ -15105,8 +15100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scratch: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
-  player_position: {fileID: 641232422}
-  min_distance: 1.5
 --- !u!114 &2021125067
 MonoBehaviour:
   m_ObjectHideFlags: 0
