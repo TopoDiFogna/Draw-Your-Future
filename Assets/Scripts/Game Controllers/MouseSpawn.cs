@@ -6,8 +6,6 @@ public class MouseSpawn : MonoBehaviour
 
     public GameObject m_scratch;
     Vector3 mouse_position;
-    public Transform player_position;
-    public float min_distance = 5.0f;
 
     int number_of_scratches = 200;
     public int NumberOfScratches
