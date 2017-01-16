@@ -40,6 +40,7 @@ public class RockSpawner : MonoBehaviour
             }
         }
     }
+    /*
     void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Scratch" && !activated)
@@ -54,7 +55,7 @@ public class RockSpawner : MonoBehaviour
         {
             activated = false;
         }
-    }
+    }*/
 
     public void DeactivateRockForGeyser()
     {
