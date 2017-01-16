@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MouseSpawn : MonoBehaviour {
+public class MouseSpawn : MonoBehaviour
+{
 
     public GameObject m_scratch;
     Vector3 mouse_position;
@@ -18,28 +19,30 @@ public class MouseSpawn : MonoBehaviour {
     ScratchBarController scratchBar;
     GameController gc;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         ObjectPoolingManager.Instance.CreatePool(m_scratch, number_of_scratches, number_of_scratches);
         gc = gameObject.GetComponent<GameController>();
         scratchBar = gameObject.GetComponent<ScratchBarController>();
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-        if (Input.GetMouseButton(0) && !gc.Pause && !gc.ended) 
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (Input.GetMouseButton(0) && !gc.Pause && !gc.ended)
         {
             mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (Vector2.Distance(new Vector2(player_position.position.x, player_position.position.y), new Vector2(mouse_position.x, mouse_position.y)) > min_distance) {
-                GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
-                if (go != null)
-                {
-                    go.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
-                    go.transform.rotation = Quaternion.identity;
-                    scratchBar.ChangeSize(-1);
-                }
+
+            GameObject go = ObjectPoolingManager.Instance.GetObject("Paint");
+            if (go != null)
+            {
+                go.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
+                go.transform.rotation = Quaternion.identity;
+                scratchBar.ChangeSize(-1);
+
             }
         }
-	}
+    }
 }

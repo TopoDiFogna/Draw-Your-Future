@@ -419,7 +419,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator DelayColliderActivation(EdgeCollider2D c, BossFightShaman boss)
     {
-        yield return new WaitForSeconds(timeToDie);
+        yield return new WaitForSeconds(timeToDie+2f);
         c.enabled = true;
         boss.FightStarted = false;
         boss.wasp_spawned = false;
