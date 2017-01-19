@@ -7,6 +7,7 @@ public class Level2Boss : MonoBehaviour {
 
     private Rigidbody2D rb;
     private Transform tr;
+    private SpriteRenderer sr;
     public Transform[] landing_positions;
     private Vector3[] landing_vectors;
     private float[] time_multipliers;
@@ -42,6 +43,7 @@ public class Level2Boss : MonoBehaviour {
         time_multipliers[3] = 1.5f; // 3-> 4
         original_time_multipliers = time_multipliers.Clone() as float[];
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -88,6 +90,9 @@ public class Level2Boss : MonoBehaviour {
 
     IEnumerator Hit()
     {
+        sr.color = Color.red;
+        yield return new WaitForSeconds(.2f);
+        sr.color = Color.white;
         lives_images[3 - lives].SetActive(false);
         lives--;
         if (lives > 0)
@@ -99,7 +104,7 @@ public class Level2Boss : MonoBehaviour {
                 time_multipliers[i] = original_time_multipliers[i] * hit_multiplier;
             }
             //faccio ripartire appena finita animazione?
-            yield return new WaitForSeconds(time_to_wait_in_landing);
+            yield return new WaitForSeconds(time_to_wait_in_landing - 0.2f);
             is_jumping = false;
             hit = false;
         }else
