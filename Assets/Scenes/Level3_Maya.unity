@@ -2076,8 +2076,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scratch: {fileID: 1000011665615972, guid: a7bb7ef2bf4933e4fb0347bea53d2c43, type: 2}
-  player_position: {fileID: 910857019}
-  min_distance: 1.5
 --- !u!114 &243678848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12115,11 +12113,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 908296843}
---- !u!4 &910857019 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000013955563948, guid: bdc41fa14e3aa6c4f9119064ca4e5007,
-    type: 2}
-  m_PrefabInternal: {fileID: 566736122}
 --- !u!1 &913310957
 GameObject:
   m_ObjectHideFlags: 0
@@ -26880,23 +26873,6 @@ Prefab:
     - target: {fileID: 4909473201262808, guid: d2d0c2727bf409d4d8caa43cdd75a99f, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1115908184399352, guid: d2d0c2727bf409d4d8caa43cdd75a99f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212525674047333910, guid: d2d0c2727bf409d4d8caa43cdd75a99f,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4909473201262808, guid: d2d0c2727bf409d4d8caa43cdd75a99f, type: 2}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1115908184399352, guid: d2d0c2727bf409d4d8caa43cdd75a99f, type: 2}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2d0c2727bf409d4d8caa43cdd75a99f, type: 2}
