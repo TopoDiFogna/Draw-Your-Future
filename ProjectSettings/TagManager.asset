@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Terrain
+  - Scratch
+  - Climbable
+  - FlyingEnd
+  - FlyingBoundary
+  - Projectile
+  - Checkpoint
+  - Ending
+  - Crab
+  - Quicksand
+  - Ant
+  - Hyppo
+  - Water
+  - Boulder
+  - Ostrich
+  - SpawnedSkeleton
+  - Flamingo
+  - Geyser
+  - Tiger
+  - Boss
+  - Swarm
+  - Lens
+  - Light
+  - Sun
+  - DoorSpawner
+  - ResetCamera
+  - SpawnerForGeyser
+  - SafeZone
+  - PowerUp
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Scratch
+  - Player
+  - DisabledFg
+  - Zattera
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3737941381
+    locked: 0
