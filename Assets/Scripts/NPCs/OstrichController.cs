@@ -308,7 +308,8 @@ public class OstrichController : MonoBehaviour
             rb.velocity = Vector2.zero;
             dead = true;
             //StopAnimation();
-            CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black   
+            CameraFade.StartAlphaFade(Color.black, false, timeToDie * 2f, 0f); // Fades out the screen to black  
+            animator.SetTrigger("Death");
             StartCoroutine(ResetScene());
             if (SceneManager.GetActiveScene().name == "Level3_Maya")
             {
