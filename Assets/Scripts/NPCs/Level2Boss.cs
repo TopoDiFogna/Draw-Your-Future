@@ -23,6 +23,8 @@ public class Level2Boss : MonoBehaviour {
     bool is_jumping = false;
     public bool hit = false;
     public bool landed = false;
+    bool facing_left = true;
+    bool facing_right = false;
 
     GameController gc;
 
@@ -70,12 +72,27 @@ public class Level2Boss : MonoBehaviour {
         tr.position = landing_vectors[0];
         hit_multiplier = 1;
         current_position = 0;
+        facing_left = true;
+        facing_right = false;
+        tr.localScale = new Vector3(1, 1, 1);
     }
 
     IEnumerator Jump()
     {
         Vector3 startingPosition = tr.position;
         Vector3 endingPoint = landing_vectors[current_position];
+        if((startingPosition.x-endingPoint.x > 0) && facing_right)
+        {
+            facing_left = true;
+            facing_right = false;
+            tr.localScale = new Vector3(1, 1, 1);
+        }
+        if((startingPosition.x - endingPoint.x<0)&& facing_left)
+        {
+            facing_left = false;
+            facing_right = true;
+            tr.localScale = new Vector3(-1, 1, 1);
+        }
         float multiplier = time_multipliers[current_position];
         float v0x = (endingPoint.x - startingPosition.x) / multiplier * time_to_jump;
         float v0y = (endingPoint.y + 0.5f * rb.gravityScale * 10 * time_to_jump * time_to_jump * multiplier * multiplier - startingPosition.y) / multiplier * time_to_jump;
