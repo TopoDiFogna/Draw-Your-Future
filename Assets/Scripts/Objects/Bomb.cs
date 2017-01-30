@@ -25,6 +25,15 @@ public class Bomb : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Projectile")
+        {
+            StartCoroutine(explode_bomb());
+            Spark.SetActive(true);
+        }
+    }
+
     IEnumerator explode_bomb()
     {
         yield return new WaitForSeconds(5f);
