@@ -81,9 +81,11 @@ public class CannonOn : MonoBehaviour {
             Transform cannonPos = m_cannon.transform;
             while (Vector2.Distance(cannonPos.position, finalPos) > 2f)
             {
+                activated = true;
                 cannonPos.position += new Vector3(Vector3.right.x * m_movement_speed * Time.deltaTime, 0, 0);
                 yield return new WaitForEndOfFrame();
             }
+            activated = false;
         }
     }
 }
