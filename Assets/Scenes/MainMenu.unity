@@ -1487,7 +1487,15 @@ MonoBehaviour:
 
     Music:
 
-    Fulvio Carlini'
+    Fulvio Carlini
+
+
+    Story:
+
+    Eleonora Sbettega
+
+
+    Created for PolimiGameCollective 2016/2017'
 --- !u!222 &1412519752
 CanvasRenderer:
   m_ObjectHideFlags: 0
