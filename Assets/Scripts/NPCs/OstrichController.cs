@@ -205,7 +205,7 @@ public class OstrichController : MonoBehaviour
             polycoll.enabled = true;
             rb.isKinematic = false;
             gameObject.layer = m_player_layer;
-            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
             checkPointPosition = transform.position;
         }
         if (coll.gameObject.tag == "Scratch" && active)
