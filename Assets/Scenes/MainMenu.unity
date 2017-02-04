@@ -1441,7 +1441,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -35}
-  m_SizeDelta: {x: 500, y: 213}
+  m_SizeDelta: {x: 600, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1412519751
 MonoBehaviour:
@@ -1475,27 +1475,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Programmers:
-
-    Paolo Paterna - Erica Stella - Marcello Bertoli
-
-
-    Artist:
-
-    Irene Carminati
-
-
-    Music:
-
-    Fulvio Carlini
-
-
-    Story:
-
-    Eleonora Sbettega
-
-
-    Created for PolimiGameCollective 2016/2017'
+  m_Text: "Programmers:\nPaolo Paterna\nErica Stella\nMarcello Bertoli\n\nArtist:\nIrene
+    Carminati\n\nMusic:\nFulvio Carlini\n\nStory:\nEleonora Sbettega\n\nDeveloped
+    for the Video game Design and\r\nProgramming course of the Politecnico di Milano\nProf.
+    Pier Luca Lanzi\nProf Dr. Daniele Loiacono"
 --- !u!222 &1412519752
 CanvasRenderer:
   m_ObjectHideFlags: 0
